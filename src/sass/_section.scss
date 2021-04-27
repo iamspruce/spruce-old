@@ -1,0 +1,62 @@
+.section {
+    padding: 3em 0em;
+}
+.section-content {
+
+    > * + * {
+        margin-top: 1em;
+    }
+}
+.section-flex > *:nth-child(3) {
+    align-self: flex-end;
+    justify-self: flex-start;
+}
+.section-flex {
+    position: relative;
+}
+@media (min-width: 757px) {
+    .section-flex  {
+        display: flex;
+
+        .section-content {
+            max-width: 12em;
+        }
+    }
+}
+@media (max-width: 756px) {
+    .section {
+        padding: 0px;
+
+        .wrapper {
+            width: 100%;
+        }
+    }
+    .hero-skills {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .section-flex  {
+
+        .section-content {
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-top: 7px;
+        }
+
+        .section-img {
+            background-color: #e0e8eb;
+            text-align: center;
+            margin-top: 2em;
+            padding-top: 1em;
+
+
+            img {
+                border-radius: unset;
+            }
+        }
+
+        > *:nth-child(3) {
+            display: none;
+        }
+    }
+}

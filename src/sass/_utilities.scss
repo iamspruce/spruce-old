@@ -1,0 +1,97 @@
+.wrapper {
+  width: 86%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stroke-text {
+  text-decoration: underline;
+}
+.line {
+  position: relative;
+  display: block;
+  font-style: normal;
+  width: 100%;
+  color: var(--black);
+  -ms-font-feature-settings: "smcp" 1, "c2sc" 1;
+  -o-font-feature-settings: "smcp" 1, "c2sc" 1;
+  font-feature-settings: "smcp" 1, "c2sc" 1;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  background-position: center 72%;
+  letter-spacing: 3px;
+  font-size: 0.75em;
+  z-index: 2;
+  padding-left: calc(30px + 1em);
+  margin: 1em 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: currentColor;
+    left: 0;
+    top: 50%;
+  }
+}
+
+.line-vertical {
+  position: absolute;
+  transform: translate(0, 100%) rotate(90deg);
+  transform-origin: top left;
+  top: -7em;
+  left: 97%;
+  padding: 0;
+  margin: 0;
+  height: 20%;
+
+  &::before {
+    width: 1px;
+    height: calc(100% - 1em);
+    top: 1px;
+    left: 5px;
+    transform: rotate(90deg);
+    transform-origin: top right;
+  }
+
+  span {
+    transform: translate(1em, -50%);
+    position: absolute;
+  }
+}
+@media (max-width: 663px) {
+    .line-vertical {
+        display: none;
+    }
+}
+@media (min-width: 664px) and (max-width: 757px) {
+    .line-vertical {
+        left: 4em;
+        top: 0px;
+    }
+}
+/* flex */
+
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.j-btw {
+  justify-content: space-between;
+}
+.j-bsl {
+  align-items: center;
+}
+
+/* links */
+
+.link {
+  text-decoration: underline;
+  color: var(--black);
+}

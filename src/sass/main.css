@@ -1,0 +1,564 @@
+@charset "UTF-8";
+/**
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+h1, .h1 {
+  font-size: 26px;
+}
+
+/*------------------------------------*  #SHARED
+\*------------------------------------*/
+/**
+ * Shared declarations for certain elements.
+ */
+/**
+ * Always declare margins in the same direction:
+ * csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  text-align: center;
+}
+
+/*------------------------------------*  #PAGE
+\*------------------------------------*/
+/**
+ * Page-level styling (e.g. HTML and BODY elements).
+ */
+:root {
+  --normal:400;
+  --semi:500;
+  --bold:600;
+  --font: sans-serif ;
+  --font-size: 15px;
+  --black: #000000;
+  --gray: #999999;
+  --white: #ffffff;
+  --green: #008060;
+  --bg: #fff;
+  --text: #333;
+  --border: rgba(0,0,0,.1);
+}
+
+html {
+  font-family: sans-serif;
+  font-weight: var(--normal);
+  color: var(--text);
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  line-height: 1.4;
+  letter-spacing: 0.011em;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+a:focus, button:focus {
+  border: 1px dashed var(--black);
+}
+
+/*------------------------------------*  #HEADINGS
+\*------------------------------------*/
+/**
+ * Simple default styles for headings 1 through 6.
+ */
+/*------------------------------------*  #PARAGRAPHS
+\*------------------------------------*/
+/**
+ * Basic styling for paragraphs.
+ */
+p {
+  line-height: 1.4;
+}
+
+/*------------------------------------*  #LINKS
+\*------------------------------------*/
+/**
+ * Default styles for simple hyperlinks.
+ */
+a {
+  text-decoration: none;
+  color: var(--green);
+  transition: color 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.link {
+  display: inline-block;
+  padding: 6px;
+}
+
+a.link:hover {
+  text-decoration: underline;
+  color: var(--black);
+}
+
+button {
+  background: transparent;
+  cursor: pointer;
+  border: 0;
+}
+
+/*------------------------------------*  #LISTS
+\*------------------------------------*/
+/**
+ * Remove trailing margins from nested lists.
+ */
+ol, ul {
+  list-style: none;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+/**
+ * Visually offset definition titles from their definitions.
+ */
+dt {
+  font-weight: 700;
+}
+
+/*------------------------------------*    #IMAGES
+\*------------------------------------*/
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ */
+img {
+  max-width: 100%;
+  /* [1] */
+  font-style: italic;
+  /* [2] */
+  vertical-align: middle;
+  /* [3] */
+}
+
+/**
+ * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
+ *    not make the image fluid.
+ */
+img[width],
+img[height] {
+  /* [1] */
+  max-width: none;
+}
+
+/*------------------------------------*  #QUOTES
+\*------------------------------------*/
+/**
+ * Basic styling for quoted text.
+ */
+q {
+  quotes: "‘‘" "";
+  margin-top: 0.6em;
+}
+
+q:before {
+  content: open-quote;
+  color: var(--black);
+  font-size: 32px;
+  font-family: "cocon";
+}
+
+blockquote {
+  quotes: "“" "”";
+}
+
+[hidden] {
+  display: none;
+}
+
+svg {
+  fill: currentColor;
+  vertical-align: middle;
+}
+
+button svg {
+  margin-top: 9px;
+}
+
+.header, .list-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  padding: 1em 0px;
+}
+
+.header-logo img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.header-logo span {
+  color: var(--black);
+  margin-left: 0.6em;
+  font-weight: var(--bold);
+}
+
+.list-items a {
+  display: inline-block;
+  padding: 1em 0.7em;
+  color: var(--black);
+}
+.list-items a:hover {
+  color: var(--gray);
+}
+
+@media (max-width: 620px) {
+  .header {
+    justify-content: unset;
+    padding: 0px;
+  }
+
+  .header-nav {
+    margin-left: auto;
+  }
+
+  .list-items, .header-control > *:first-child {
+    display: none;
+  }
+
+  .header-btn {
+    display: block;
+    padding: 1em 0.5em;
+  }
+}
+.wrapper {
+  width: 86%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stroke-text {
+  text-decoration: underline;
+}
+
+.line {
+  position: relative;
+  display: block;
+  font-style: normal;
+  width: 100%;
+  color: var(--black);
+  -ms-font-feature-settings: "smcp" 1, "c2sc" 1;
+  -o-font-feature-settings: "smcp" 1, "c2sc" 1;
+  font-feature-settings: "smcp" 1, "c2sc" 1;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  background-position: center 72%;
+  letter-spacing: 3px;
+  font-size: 0.75em;
+  z-index: 2;
+  padding-left: calc(30px + 1em);
+  margin: 1em 0;
+}
+.line::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: currentColor;
+  left: 0;
+  top: 50%;
+}
+
+.line-vertical {
+  position: absolute;
+  transform: translate(0, 100%) rotate(90deg);
+  transform-origin: top left;
+  top: -7em;
+  left: 97%;
+  padding: 0;
+  margin: 0;
+  height: 20%;
+}
+.line-vertical::before {
+  width: 1px;
+  height: calc(100% - 1em);
+  top: 1px;
+  left: 5px;
+  transform: rotate(90deg);
+  transform-origin: top right;
+}
+.line-vertical span {
+  transform: translate(1em, -50%);
+  position: absolute;
+}
+
+@media (max-width: 663px) {
+  .line-vertical {
+    display: none;
+  }
+}
+@media (min-width: 664px) and (max-width: 757px) {
+  .line-vertical {
+    left: 4em;
+    top: 0px;
+  }
+}
+/* flex */
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.j-btw {
+  justify-content: space-between;
+}
+
+.j-bsl {
+  align-items: center;
+}
+
+/* links */
+.link {
+  text-decoration: underline;
+  color: var(--black);
+}
+
+.section {
+  padding: 3em 0em;
+}
+
+.section-content > * + * {
+  margin-top: 1em;
+}
+
+.section-flex > *:nth-child(3) {
+  align-self: flex-end;
+  justify-self: flex-start;
+}
+
+.section-flex {
+  position: relative;
+}
+
+@media (min-width: 757px) {
+  .section-flex {
+    display: flex;
+  }
+  .section-flex .section-content {
+    max-width: 12em;
+  }
+}
+@media (max-width: 756px) {
+  .section {
+    padding: 0px;
+  }
+  .section .wrapper {
+    width: 100%;
+  }
+
+  .hero-skills {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .section-flex .section-content {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 7px;
+  }
+  .section-flex .section-img {
+    background-color: #e0e8eb;
+    text-align: center;
+    margin-top: 2em;
+    padding-top: 1em;
+  }
+  .section-flex .section-img img {
+    border-radius: unset;
+  }
+  .section-flex > *:nth-child(3) {
+    display: none;
+  }
+}
+.btn {
+  display: inline-block;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn--primary {
+  background-color: var(--green);
+  color: #fff;
+  box-shadow: 1px 2px 4px var(--border);
+}
+.btn--primary:hover {
+  box-shadow: 0px 0px 1px var(--border);
+  opacity: 0.5;
+}
+
+.btn--small {
+  padding: 1em;
+}
+
+.btn--round {
+  border-radius: 40em;
+}
+
+@media (min-width: 597px) {
+  .section-img {
+    position: relative;
+  }
+  .section-img:hover .hero-img-msg {
+    display: block;
+  }
+  .section-img .hero-img-msg {
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: calc(100% + 2em);
+    width: 12em;
+    background: var(--bg);
+    box-shadow: 1px 2px 4px var(--border);
+    border-radius: 11px;
+    padding: 15px;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}
+.hero-img img {
+  border-bottom-left-radius: 84px;
+  border-bottom-right-radius: 59px;
+  position: relative;
+  z-index: 1;
+  max-width: 12em;
+}
+.hero-img .img-overlay {
+  position: relative;
+  display: inline-block;
+}
+.hero-img .img-overlay::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 20px;
+  left: -24px;
+  width: 250px;
+  height: 250px;
+  background-color: #f3f7f8;
+  border-radius: 50%;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+}
+.hero-img .img-overlay::before {
+  content: "";
+  background: #e0e8eb;
+  position: absolute;
+  z-index: 0;
+  bottom: -2px;
+  left: -50px;
+  width: calc(150px * 2);
+  height: 150px;
+  border-bottom-left-radius: calc(150px * 2);
+  border-bottom-right-radius: calc(150px * 2);
+}
+
+@media (min-width: 597px) and (max-width: 756px) {
+  .section-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    background: #e0e8eb;
+    padding-top: 3em;
+  }
+  .section-flex .section-content {
+    padding-right: 32px;
+    padding-left: 32px;
+    max-width: 19em;
+  }
+  .section-flex .section-img {
+    margin-left: 7em;
+    margin-top: 0px;
+  }
+}
+.title_sub {
+  margin-top: 3em;
+  border-top: 1px solid var(--border);
+  padding-top: 9px;
+  max-width: max-content;
+}
+
+.hero-skills {
+  align-items: center;
+  margin: 2em 0px;
+}
+.hero-skills ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero-skills ul li {
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+}
+.hero-skills ul li span {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 14px;
+}
+
+@media (max-width: 620px) {
+  .hero-skills {
+    margin: 0px;
+  }
+  .hero-skills ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.test {
+  height: 200px;
+  background: #f5f5f5;
+  width: 100%;
+}/*# sourceMappingURL=main.css.map */
