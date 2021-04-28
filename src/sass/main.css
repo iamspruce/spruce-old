@@ -544,6 +544,10 @@ button svg {
   .section-content .line {
     text-align: left;
   }
+
+  .img-overlay {
+    position: relative;
+  }
 }
 .title_sub {
   margin-top: 3em;
