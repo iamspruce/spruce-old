@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Spruce.dev",
     author: "Spruce",
-    description: "Frontend Web developer from Nigeria",
+    description: "Frontend Web developer from Nigeria,with an eye for great design",
     skills: [
       {
         name: "React",

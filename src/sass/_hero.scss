@@ -75,8 +75,17 @@
     }
 
     .section-img {
-      margin-left: 7em;
+      margin-left: 6em;
       margin-top: 0px;
+    }
+  }
+}
+@media (max-width: 596px) {
+  .section-content {
+    text-align: center;
+
+    .line {
+      text-align: left;
     }
   }
 }
@@ -84,9 +93,12 @@
   margin-top: 3em;
   border-top: 1px solid var(--border);
   padding-top: 9px;
-  max-width: max-content;
 }
-
+@media (min-width: 597px) {
+  .title_sub {
+  max-width: max-content;
+  }
+}
 .hero-skills {
   align-items: center;
   margin: 2em 0px;
@@ -112,11 +124,6 @@
 @media (max-width: 620px) {
   .hero-skills {
     margin: 0px;
-
-    ul {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
   }
 }
 .test {

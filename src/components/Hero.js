@@ -56,8 +56,8 @@ const Hero = () => {
               <span>Default</span>
             </span>
         </div>
-        <div className="hero-skills">
-          <ul className="flex">
+        <div className="hero-skills slide-left">
+          <ul className="">
             <span>Skills:</span>
             {data.site.siteMetadata.skills.map(skill => (
               <li
