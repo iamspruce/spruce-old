@@ -31,7 +31,6 @@
     max-width: 12em;
   }
   .img-overlay {
-    position: relative;
     display: inline-block;
 
     &::after {
@@ -52,8 +51,8 @@
       position: absolute;
       z-index: 0;
       bottom: -2px;
-      left: -50px;
-      width: calc(150px * 2);
+      left: -24px;
+      width: calc(125px * 2);
       height: 150px;
       border-bottom-left-radius: calc(150px * 2);
       border-bottom-right-radius: calc(150px * 2);

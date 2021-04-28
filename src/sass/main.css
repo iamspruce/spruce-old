@@ -224,7 +224,7 @@ button svg {
 
 @media (max-width: 597px) {
   .slide-left {
-    animation: slide-left 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite both;
+    animation: slide-left 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite both;
   }
 }
 @keyframes slide-left {
@@ -493,7 +493,6 @@ button svg {
   max-width: 12em;
 }
 .hero-img .img-overlay {
-  position: relative;
   display: inline-block;
 }
 .hero-img .img-overlay::after {
@@ -514,8 +513,8 @@ button svg {
   position: absolute;
   z-index: 0;
   bottom: -2px;
-  left: -50px;
-  width: calc(150px * 2);
+  left: -24px;
+  width: calc(125px * 2);
   height: 150px;
   border-bottom-left-radius: calc(150px * 2);
   border-bottom-right-radius: calc(150px * 2);
