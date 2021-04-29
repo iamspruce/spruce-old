@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="section-img">
             <div className="hero-img">
               <span className="img-overlay">
-                <img src="/img/spruce2.webp" alt="" />
+                <img src="/img/spruce.png" alt="" />
               </span>
               <span className="hero-img-msg" hidden>
                 <p>Hey there! I make Websites, Want one?</p>

@@ -24,39 +24,14 @@
 }
 .hero-img {
   img {
-    border-bottom-left-radius: 84px;
-    border-bottom-right-radius: 59px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     position: relative;
     z-index: 1;
-    max-width: 12em;
+    max-width: 16em;
   }
   .img-overlay {
     display: inline-block;
-
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      bottom: 20px;
-      left: -24px;
-      width: 250px;
-      height: 250px;
-      background-color: #f3f7f8;
-      border-radius: 50%;
-      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
-    }
-    &::before {
-      content: "";
-      background: #e0e8eb;
-      position: absolute;
-      z-index: 0;
-      bottom: -2px;
-      left: -24px;
-      width: calc(125px * 2);
-      height: 150px;
-      border-bottom-left-radius: calc(150px * 2);
-      border-bottom-right-radius: calc(150px * 2);
-    }
   }
 }
 
@@ -74,11 +49,30 @@
     }
 
     .section-img {
-      margin-left: 6em;
+      margin-left: 6vw;
       margin-top: 0px;
     }
   }
 }
+@media (min-width: 673px) and (max-width: 700px) {
+  .section-flex {
+
+    .section-img {
+      margin-left: 10vw;
+      margin-top: 0px;
+    }
+  }
+}
+@media (min-width: 700px) and (max-width: 756px) {
+  .section-flex {
+
+    .section-img {
+      margin-left: 16vw;
+      margin-top: 0px;
+    }
+  }
+}
+
 @media (max-width: 596px) {
   .section-content {
     text-align: center;
@@ -87,9 +81,7 @@
       text-align: left;
     }
   }
-  .img-overlay {
-    position: relative;
-  }
+ 
 }
 .title_sub {
   margin-top: 3em;
@@ -123,7 +115,7 @@
     }
   }
 }
-@media (max-width: 620px) {
+@media (max-width: 756px) {
   .hero-skills {
     margin: 0px;
   }
