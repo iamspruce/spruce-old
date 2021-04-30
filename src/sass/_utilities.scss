@@ -74,6 +74,9 @@
         top: 0px;
     }
 }
+.text-center {
+  text-align: center;
+}
 /* flex */
 
 .flex {
@@ -84,6 +87,9 @@
 }
 .j-btw {
   justify-content: space-between;
+}
+.j-center {
+  justify-content: center;
 }
 .j-bsl {
   align-items: center;
