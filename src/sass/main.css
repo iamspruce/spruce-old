@@ -626,12 +626,6 @@ button svg {
   background: #ffffff;
   color: var(--text);
 }
-.card:first-child::after {
-  border-color: #ffffff;
-}
-.card:first-child:hover::after {
-  border-color: var(--text);
-}
 
 .card.skill-card {
   max-width: 14em;
