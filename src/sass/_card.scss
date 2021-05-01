@@ -49,6 +49,9 @@
             border-top-right-radius: 11px;
             border-bottom-left-radius: 3px;
       }
+      &:hover::after {
+            border-color: #ffffff;
+      }
       .line {
             margin-top: 2em;
       }
