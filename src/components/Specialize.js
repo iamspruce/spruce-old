@@ -13,10 +13,13 @@ const specialize = () => {
       <ul className="card-wrapper flex flex-wrap j-center">
         {JSONData.content.map((data, index) => {
           return <li key={`content_item_${index}`} className="card skill-card">
-                <h3>{data.title}</h3>
+                <h3 className="h1">{data.title}</h3>
                 <p>
                   {data.item}
                 </p>
+                <div className="line">
+                      <span>web dev</span>
+                </div>
                 </li>
         })}
       </ul>

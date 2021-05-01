@@ -22,7 +22,34 @@
       }
 
 }
+.card:first-child {
+      background: var(--green);
+      color: #ffffff;
+
+      &:hover {
+            background: #ffffff;
+            color: var(--text);
+      }
+}
 .card.skill-card {
-      max-width: 12em;
-      margin: 2em;
+      max-width: 14em;
+      margin: 1em;
+      position: relative;
+
+      &::after {
+            content: "";
+            display: inline-block;
+            width: 80%;
+            border-top:3px solid var(--green);
+            height: 100%;
+            background: transparent;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            border-top-right-radius: 11px;
+            border-bottom-left-radius: 3px;
+      }
+      .line {
+            margin-top: 2em;
+      }
 }

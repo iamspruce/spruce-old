@@ -250,6 +250,9 @@ button svg {
   border-radius: 50%;
   object-fit: cover;
 }
+.header-logo a {
+  display: inline-block;
+}
 .header-logo span {
   color: var(--black);
   margin-left: 0.6em;
@@ -304,7 +307,7 @@ button svg {
   display: block;
   font-style: normal;
   width: 100%;
-  color: var(--black);
+  color: currentColor;
   -ms-font-feature-settings: "smcp" 1, "c2sc" 1;
   -o-font-feature-settings: "smcp" 1, "c2sc" 1;
   font-feature-settings: "smcp" 1, "c2sc" 1;
@@ -400,6 +403,10 @@ button svg {
 
 .section-pad {
   padding: 3em 0em;
+}
+
+.section-head > * + * {
+  margin-top: 1em;
 }
 
 .section-bg-alt {
@@ -611,7 +618,33 @@ button svg {
   color: white;
 }
 
+.card:first-child {
+  background: var(--green);
+  color: #ffffff;
+}
+.card:first-child:hover {
+  background: #ffffff;
+  color: var(--text);
+}
+
 .card.skill-card {
-  max-width: 12em;
-  margin: 2em;
+  max-width: 14em;
+  margin: 1em;
+  position: relative;
+}
+.card.skill-card::after {
+  content: "";
+  display: inline-block;
+  width: 80%;
+  border-top: 3px solid var(--green);
+  height: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-top-right-radius: 11px;
+  border-bottom-left-radius: 3px;
+}
+.card.skill-card .line {
+  margin-top: 2em;
 }/*# sourceMappingURL=main.css.map */
