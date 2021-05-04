@@ -14,8 +14,12 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "gatsby": "^3.2.1",
+    "gatsby-env-variables": "^2.0.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-sass": "^4.3.0",
+    "gatsby-source-contentful": "^5.4.0",
     "gatsby-source-filesystem": "^3.3.0",
     "gatsby-transformer-remark": "^4.0.0",
     "react": "^17.0.1",

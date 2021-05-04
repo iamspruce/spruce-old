@@ -12,6 +12,7 @@
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+    font-family: "Gothic A1"
   }
     html,body {
       width: 100vw;
@@ -63,7 +64,7 @@
       --normal:400;
       --semi:500;
       --bold:600;
-      --font: sans-serif ;
+      --font: "Gothic A1",Arial, Helvetica, sans-serif ;
       --font-size: 15px;
       --black: #000000;
       --gray: #999999;
@@ -76,10 +77,10 @@
      }
   
   html {
-      font-family:  sans-serif;
+      font-family:  var(--font);
       font-weight: var(--normal);
       color: var(--text);
-      font-size: 16px;
+      font-size: var(--font-size);
       transition: all .3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
       line-height: 1.4;
       letter-spacing: 0.011em;
