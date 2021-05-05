@@ -32,6 +32,9 @@
         &:hover {
             color: var(--gray);
         }
+        &.active {
+            border-bottom: 1px solid var(--green);
+        }
     }
 }
 

@@ -18,8 +18,8 @@ const BlogPost = () => {
     }
   `)
   return (
-    <div>
-      <div className="article-list">
+    <>
+      <div className="article-list" id="articles">
         {data.allContentfulBlogPost.edges.map(edge => {
           return (
             <Link to={`/blog/${edge.node.slug}`}>
@@ -46,7 +46,7 @@ const BlogPost = () => {
           )
         })}
       </div>
-    </div>
+    </>
   )
 }
 

@@ -20,18 +20,18 @@ const About = () => {
           <div className="section-content flex flex-col">
             <h4 className="text-xlg">A little more About Me</h4>
             <p>{data.site.siteMetadata.about}</p>
-            <ul className="about-link-list" style={{ marginTop: 5 + 'em'}} hidden>
+            <ul className="about-link-list" style={{ marginTop: 5 + 'em'}}>
                   <li>
-                        <a href="#portfolio" className="flex j-bsl">
-                              <span>01</span>
+                        <a href="#portfolio" activeClassName="active" className="flex j-bsl">
+                              <span className="span-num">01</span>
                               <span className="line" style={{ marginLeft: 12 + 'px'}}>
                                     Projects
                               </span>
                         </a>
                   </li>
                   <li>
-                        <a href="#articles" className="flex j-bsl">
-                              <span>02</span>
+                        <a href="#articles" activeClassName="active" className="flex j-bsl">
+                              <span className="span-num">02</span>
                               <span className="line" style={{ marginLeft: 12 + 'px'}}>
                                     articles
                               </span>
