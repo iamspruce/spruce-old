@@ -4,7 +4,7 @@ module.exports = {
     title: "Spruce.dev",
     author: "Spruce",
     description: "Frontend Web developer from Nigeria,with an eye for great design",
-    about: "I’m a Staff Software Engineer currently working as Tech Lead of the Doc Squad at Algolia. I mostly do front-end development, and I’m a Vue.js and CSS nerd. I can't shut up about test-driven development and utility-first CSS. I also share what I learn on my blog frontstuff.io, or at meetups and conferences",
+    about: "I’m a Frontend web developer, currently working as a freelencer. I mostly do front-end development, and I’m a Reactjs and CSS kind of person. I like don't just like creating web components, i like creating accessible web components. I also share what I learn and my process on my blog iamspruce.dev/blog.",
     skills: [
       {
         name: "React",
@@ -50,6 +50,7 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
-    'gatsby-transformer-remark'
+    'gatsby-transformer-remark',
+    `gatsby-plugin-image`
   ]
 }
