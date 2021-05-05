@@ -26,13 +26,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-source-contentful',
-      options: {
-        spaceId: `rxlcfytp4iti`,
-        accessToken: `BOeFPslYVrfuxo-HUU94PPPvhNkFMzHe8o1S-4FEbws`,
-      }
-    },
-    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [

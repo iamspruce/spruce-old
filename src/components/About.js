@@ -1,6 +1,6 @@
 import React from "react"
 import BlogPost from "./BlogPost"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Icon from "./Icon"
 
 const About = () => {

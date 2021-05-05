@@ -2,6 +2,7 @@
 title: "First blog post"
 date: "2021-04-21"
 author: "Spruce"
+publishedAt: "hashnode"
 ---
 
 #title here
