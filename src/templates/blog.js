@@ -1,8 +1,9 @@
 import React from "react"
-/* import { graphql } from "gatsby" */
-import Layout from "../components/layout"
+import { graphql } from "gatsby"
 
-/* export const query = graphql`
+import Layout from "../components/Layout"
+
+export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
@@ -11,16 +12,15 @@ import Layout from "../components/layout"
       }
     }
   }
-` */
+`
 
 export default function BlogPost({ data }) {
-  /* const post = data.markdownRemark */
+  const post = data.markdownRemark
   return (
     <Layout>
       <div className="wrapper">
-        {/* <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
-        <h1>post will appear here</h1>
+        <h1>{post.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
   )
