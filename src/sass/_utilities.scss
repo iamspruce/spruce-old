@@ -83,13 +83,16 @@
   font-size: 43px;
 }
 .text-small {
-  font-size: 14px;
+  font-size: 15px;
 }
 .text-xsmall {
-  font-size: 10px;
+  font-size: 13px;
 }
 .text-bold {
   font-weight: 700;
+}
+.text-gray {
+  color: var(--gray);
 }
 /* flex */
 

@@ -31,10 +31,10 @@ export default function Header() {
             <Link to="/" activeClassName="active">Home</Link>
           </li>
           <li>
-            <Link to="#about" activeClassName="active">About</Link>
+            <Link to="/#about" activeClassName="active">About</Link>
           </li>
           <li>
-            <Link to="#contact" activeClassName="active">Contact</Link>
+            <Link to="/#contact" activeClassName="active">Contact</Link>
           </li>
           <li>
             <Link to="/blog" activeClassName="active">Blog</Link>

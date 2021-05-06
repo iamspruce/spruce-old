@@ -32,7 +32,6 @@
       }
 }
 .card.skill-card {
-      max-width: 14em;
       margin: 1em;
       position: relative;
 
@@ -54,5 +53,11 @@
       }
       .line {
             margin-top: 2em;
+      }
+}
+
+@media (min-width: 559px) {
+      .card.skill-card {
+            max-width: 14em;
       }
 }

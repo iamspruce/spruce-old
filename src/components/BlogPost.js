@@ -36,10 +36,10 @@ export default function BlogPost(props) {
                         {edge.node.frontmatter.date}
                       </time>
                     </p>
-                    <small className="text-xsmall text-bold">
+                    <small className="text-gray text-xsmall">
                       {edge.node.frontmatter.publishedAt}
                     </small>
-                    <p><small className="text-xsmall text-bold">
+                    <p><small className="text-xsmall text-gray">
                       {edge.node.timeToRead} Minute(s) Read Time
                     </small></p>
                     

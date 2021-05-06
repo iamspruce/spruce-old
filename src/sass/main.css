@@ -11,7 +11,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  font-family: "Gothic A1";
+  font-family: var(--font);
 }
 
 html, body {
@@ -382,15 +382,19 @@ button svg {
 }
 
 .text-small {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .text-xsmall {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .text-bold {
   font-weight: 700;
+}
+
+.text-gray {
+  color: var(--gray);
 }
 
 /* flex */
@@ -721,7 +725,6 @@ button svg {
 }
 
 .card.skill-card {
-  max-width: 14em;
   margin: 1em;
   position: relative;
 }
@@ -745,6 +748,11 @@ button svg {
   margin-top: 2em;
 }
 
+@media (min-width: 559px) {
+  .card.skill-card {
+    max-width: 14em;
+  }
+}
 .article-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -770,7 +778,7 @@ button svg {
   }
 }
 .article-card {
-  min-height: 260px;
+  min-height: 280px;
   margin: 4px;
   background-color: var(--bg);
   box-shadow: 0px 0px 6px var(--border);
@@ -798,6 +806,10 @@ button svg {
 }
 .article-card-content h5 {
   margin-top: auto;
+}
+.article-card-content header > * + * {
+  display: block;
+  margin-top: 0.3em;
 }
 
 #portfolio:target ~ * {
