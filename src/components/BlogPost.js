@@ -2,32 +2,32 @@ import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import Icon from "./Icon"
 
-const BlogPost = () => {
+export default function BlogPost(props) {
   const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark {
-        edges {
-          node {
-            frontmatter {
-              title
-              date
-              publishedAt
-            }
-            fields {
-              slug
-            }
-            timeToRead
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          timeToRead
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            publishedAt
+          }
+          fields {
+            slug
           }
         }
       }
     }
-  `)
+  }
+`)
   return (
     <>
       <div className="article-list" id="articles">
-        {data.allMarkdownRemark.edges.map(edge => {
-          return (
-            <Link to={`/blog/${edge.node.fields.slug}`}>
+      {data.allMarkdownRemark.edges.map((edge) => (
+            <Link to={`/blog/${edge.node.fields.slug}`} key={edge.node.id}>
               <article className="article-card">
                 <div className="article-card-content">
                   <header>
@@ -62,11 +62,10 @@ const BlogPost = () => {
                 </div>
               </article>
             </Link>
-          )
-        })}
+        ))}
       </div>
     </>
   )
 }
 
-export default BlogPost
+
