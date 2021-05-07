@@ -1,6 +1,13 @@
 .footer-contact-wrapper {
-      margin-left: 16px;
-      margin-right: 16px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+}
+@media (min-width: 580px) {
+      .footer-contact-wrapper {
+            width: 88%;
+            
+      }
 }
 .footer-contact {
       background:  url(https://assets-global.website-files.com/5f3c19f18169b65d9d0bf384/5f3c19f18169b692970bf4d2_asset%2047.png), #e0e8eb;
@@ -26,6 +33,12 @@
 }
 .footer-contact-content,.footer-form {
       padding: 15px;
+}
+.footer-contact-content {
+
+      > * + * {
+            margin-top: .6em;
+      }
 }
 @media (max-width: 579px) {
       .footer-form {
