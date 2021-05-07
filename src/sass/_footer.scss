@@ -1,0 +1,116 @@
+.footer-contact-wrapper {
+      margin-left: 16px;
+      margin-right: 16px;
+}
+.footer-contact {
+      background:  url(https://assets-global.website-files.com/5f3c19f18169b65d9d0bf384/5f3c19f18169b692970bf4d2_asset%2047.png), #e0e8eb;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position:100% 100% ;
+      border-radius: 11px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding:2em 1em;
+
+      > * {
+            flex: 1 0 50%;
+      }
+}
+.input-group {
+      display: flex;
+
+      > * + * {
+            margin-left: 12px;
+      }
+}
+.footer-contact-content,.footer-form {
+      padding: 15px;
+}
+@media (max-width: 579px) {
+      .footer-form {
+            margin-top: 2em;
+      }
+      .footer-contact-content {
+            order: -1;
+      }
+      .footer-contact-content,.footer-form {
+            padding: 0px;
+      }
+      .input-group {
+            display: block;
+
+            > * + * {
+                  margin-top: 18px;
+                  margin-left: 0px;
+            }
+      }
+     
+}
+.input-label {
+      display: block;
+      height: calc(100% + 16px);
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      outline: 0px;
+      background-color: var(--bg);
+
+      .input {
+            margin-top: .6em;
+            padding:1.4em 1em;
+            border: 0px;
+            position: relative;
+            bottom: 0px;
+            width: 100%;
+            outline: 0px;
+            display: block;
+            background-color: transparent;
+      }
+}
+.input-full {
+      width: 100%;
+      margin-top: 1.7em;
+}
+.input-label-floating {
+      position: absolute;
+      top: 0%;
+      left: 0px;
+      font-size: 12px;
+      background-color: var(--bg);
+      padding: 10px 10px 0px 10px;
+}
+
+.footer-content {
+      display: flex;
+      flex-wrap: wrap;
+
+      > * {
+            flex: 1 0 50%;
+      }
+}
+.footer-content__copy,.footer-nav {
+      margin: 2em 0px;
+}
+.footer-content__copy {
+      .header-logo {
+            margin-bottom: 1.2em;
+      }
+      p {
+            max-width: 17em;
+      }
+}
+.footer-nav {
+      width: 100%;
+}
+
+.footer-nav__list--title {
+      margin-bottom: 1.2em;
+      padding: 6px;
+}
+.footer-nav__link {
+      display: inline-block;
+      color: var(--text);
+      padding: 6px;
+      text-decoration: underline;
+}
