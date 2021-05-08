@@ -1,9 +1,15 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Icon from "./Icon";
+import JSONData from "../../content/navLinks.json"
+
 
 
 export default function Header() {
+  const [openMenu, setOpenMenu] = useState("off")
+  function toggle() {
+    setOpenMenu(openMenu === "off" ? "on" : "off");
+  }
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -23,22 +29,16 @@ export default function Header() {
         </Link>
       </div>
       <nav className="header-nav">
-        <button className="header-btn" hidden>
-        <Icon name="icon-menu" width="26px" height="26px" />
+        <button className={`header-btn ${openMenu}`} onClick={toggle} hidden>
+        <Icon name="icon-menu" width="20px" height="20px" className="icon-open" />
+        <Icon name="icon-close" width="20px" height="20px" className={`icon-close ${openMenu} `} hidden />
         </button>
-        <ul className="list-items">
-          <li>
-            <Link to="/" activeClassName="active">Home</Link>
-          </li>
-          <li>
-            <Link to="/#about" activeClassName="active">About</Link>
-          </li>
-          <li>
-            <Link to="/#contact" activeClassName="active">Contact</Link>
-          </li>
-          <li>
-            <Link to="/blog" activeClassName="active">Blog</Link>
-          </li>
+        <ul className={`list-items ${openMenu}`}>
+        {JSONData.content.map((data, index) => {
+          return <li key={`content_item_${index}`}>
+            <Link to={data.link} activeClassName="active" onClick={toggle}>{data.name}</Link>
+                </li>
+        })}
         </ul>
       </nav>
       <div className="header-control">

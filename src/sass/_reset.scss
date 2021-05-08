@@ -5,6 +5,7 @@
 
  html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
   
   
@@ -210,9 +211,4 @@
         fill: currentColor;
         vertical-align: middle;
       }
-button {
 
-  svg {
-    margin-top: 9px;
-}
-}

@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *, *:before, *:after {
@@ -220,10 +221,6 @@ svg {
   vertical-align: middle;
 }
 
-button svg {
-  margin-top: 9px;
-}
-
 @media (max-width: 597px) {
   .slide-left {
     animation: slide-left 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite both;
@@ -275,7 +272,7 @@ button svg {
 @media (max-width: 620px) {
   .header {
     justify-content: unset;
-    padding: 0px;
+    padding: 0.5em 0px;
   }
 
   .header-control {
@@ -286,13 +283,54 @@ button svg {
     order: 3;
   }
 
-  .list-items, .header-control > *:first-child {
+  .header-control > *:first-child {
     display: none;
   }
 
   .header-btn {
     display: block;
     padding: 1em 0.5em;
+  }
+  .header-btn svg {
+    margin-top: 4px;
+  }
+
+  .list-items {
+    position: fixed;
+    z-index: 999;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    top: -999px;
+    transition: top 0.3s ease-in-out;
+    flex-direction: column;
+    background-color: var(--green);
+  }
+  .list-items > * + * {
+    margin-top: 1em;
+  }
+  .list-items a {
+    color: #fff;
+    font-size: 2em;
+  }
+
+  .list-items.on {
+    top: 0px;
+    justify-content: center;
+  }
+
+  .header-btn.on {
+    position: relative;
+    z-index: 9999;
+    color: #fff;
+  }
+
+  .header-btn.on .icon-open {
+    display: none;
+  }
+
+  .icon-close.on {
+    display: block;
   }
 }
 .wrapper {
@@ -588,6 +626,16 @@ button svg {
   opacity: 0.5;
 }
 
+.btn--white {
+  background-color: var(--bg);
+  color: var(--text);
+  box-shadow: 1px 2px 4px var(--border);
+}
+.btn--white:hover {
+  box-shadow: 0px 0px 1px var(--border);
+  background-color: var(--green);
+}
+
 .btn--small {
   padding: 1em;
 }
@@ -832,6 +880,7 @@ button svg {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1200px;
 }
 
 @media (min-width: 580px) {
@@ -940,10 +989,12 @@ button svg {
 .footer-content__copy .header-logo {
   margin-bottom: 1.2em;
 }
-.footer-content__copy p {
-  max-width: 17em;
-}
 
+@media (min-width: 481px) {
+  .footer-content__copy p {
+    max-width: 17em;
+  }
+}
 .footer-nav {
   width: 100%;
 }

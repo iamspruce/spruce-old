@@ -36,8 +36,8 @@ const Contact = () => {
                     </span>
                   </label>
                 </div>
-                <div className="input-submit text-right">
-                    <button type="submit" className="btn--mediun btn--white">
+                <div className="input-submit text-right" style={{ marginTop: 1 + 'em'}}>
+                    <button type="submit" className="btn--small">
                           <Icon name="caret-right" size="26" />
                     </button>
                 </div>
