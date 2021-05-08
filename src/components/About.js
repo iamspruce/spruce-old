@@ -26,7 +26,7 @@ const About = () => {
             <p>{data.site.siteMetadata.about}</p>
             <ul className="about-link-list" style={{ marginTop: 5 + "em" }}>
               <li>
-                <Link className={`flex j-bsl ${openTab}`} onClick={toggle}>
+                <Link to="#0" className={`flex j-bsl ${openTab}`} onClick={toggle}>
                   <span className="span-num">01</span>
                   <span className="line" style={{ marginLeft: 12 + "px" }}>
                     Projects
@@ -34,7 +34,7 @@ const About = () => {
                 </Link>
               </li>
               <li>
-                <Link className={`flex j-bsl ${openTab}`} onClick={toggle}>
+                <Link to="#0" className={`flex j-bsl ${openTab}`} onClick={toggle}>
                   <span className="span-num">02</span>
                   <span className="line" style={{ marginLeft: 12 + "px" }}>
                     articles

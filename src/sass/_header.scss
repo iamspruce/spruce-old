@@ -73,12 +73,12 @@
         background-color: var(--green);
 
         > * + * {
-            margin-top: 1em;
+            margin-top: .5em;
         }
 
         a {
             color: #fff;
-            font-size: 2em;
+            font-size: 1.4em;
         }
     }
     .list-items.on {

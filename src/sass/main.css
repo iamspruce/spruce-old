@@ -307,11 +307,11 @@ svg {
     background-color: var(--green);
   }
   .list-items > * + * {
-    margin-top: 1em;
+    margin-top: 0.5em;
   }
   .list-items a {
     color: #fff;
-    font-size: 2em;
+    font-size: 1.4em;
   }
 
   .list-items.on {
@@ -868,12 +868,12 @@ svg {
   margin-top: 0.3em;
 }
 
-#portfolio:target ~ * {
-  display: none !important;
+.about-project.on {
+  display: block;
 }
 
-#portfolio:target {
-  display: block;
+.about-project.on ~ * {
+  display: none;
 }
 
 .footer-contact-wrapper {
@@ -942,6 +942,7 @@ svg {
 .input-label {
   display: block;
   height: calc(100% + 16px);
+  width: 100%;
   position: relative;
   border: 1px solid var(--border);
   border-radius: 11px;

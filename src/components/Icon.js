@@ -7,8 +7,7 @@ const Icon = ({ name, color, size, ...restProps }) => (
     xmlns="http://www.w3.org/2000/svg"
     width={size}
     height={size}
-    stroke={color}
-    strokeWidth="1"
+    fill={color}
     strokeLinecap="round"
     strokeLinejoin="round"
     {...restProps}

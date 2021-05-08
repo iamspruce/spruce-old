@@ -63,9 +63,9 @@
   }
   
 }
-#portfolio:target ~ * {
-  display: none !important;
-}
-#portfolio:target {
+.about-project.on {
   display: block;
+}
+.about-project.on ~ * {
+  display: none;
 }
