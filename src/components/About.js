@@ -25,16 +25,16 @@ const About = () => {
             <h4 className="text-xlg">A little more About Me</h4>
             <p>{data.site.siteMetadata.about}</p>
             <ul className="about-link-list" style={{ marginTop: 5 + "em" }}>
-              <li>
-                <Link to="#0" className={`flex j-bsl ${openTab}`} onClick={toggle}>
+              <li className={`about-tab ${openTab}`} onClick={toggle}>
+                <Link to="#0" className={`flex j-bsl`}>
                   <span className="span-num">01</span>
                   <span className="line" style={{ marginLeft: 12 + "px" }}>
                     Projects
                   </span>
                 </Link>
               </li>
-              <li>
-                <Link to="#0" className={`flex j-bsl ${openTab}`} onClick={toggle}>
+              <li className="about-tab" onClick={toggle}>
+                <Link to="#0" className={`flex j-bsl`}>
                   <span className="span-num">02</span>
                   <span className="line" style={{ marginLeft: 12 + "px" }}>
                     articles

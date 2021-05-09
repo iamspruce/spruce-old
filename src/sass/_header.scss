@@ -86,7 +86,9 @@
         justify-content: center;
     }
     .header-btn.on {
-        position: relative;
+        position: fixed;
+        top: 20px;
+        right: 20px;
         z-index: 9999;
         color: #fff;
     }

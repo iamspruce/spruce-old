@@ -63,9 +63,15 @@
   }
   
 }
+.about-tab.on {
+  border-bottom: 1px solid var(--border);
+}
+.about-tab.off ~ .about-tab {
+  border-bottom: 1px solid var(--border);
+}
 .about-project.on {
   display: block;
 }
-.about-project.on ~ * {
+.about-project.on ~ .article-list {
   display: none;
 }
