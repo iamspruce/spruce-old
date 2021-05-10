@@ -14,6 +14,7 @@ export default function Header() {
   const [openTheme, setOpenTheme] = useState("off")
   function toggleTheme() {
     setOpenTheme(openTheme === "off" ? "on" : "off");
+    setOpenMenu(openMenu === "off")
   }
   const data = useStaticQuery(graphql`
     query {
