@@ -9,7 +9,7 @@ import Msg from "../components/Msg"
 export default function Home() {
   return (
     <>
-    <Msg msgTitle="#EndPoliceBrutality" msg="You can't be the Judge, the jailor and ececutioner at the same time, #EndSars" icon="sad-emoji" type="info" />
+    <Msg msgTitle="#EndPoliceBrutality" msg="You can't be the Judge, the jailor and executioner at the same time, #EndSars" icon="sad-emoji" type="info" />
     <Layout>
       <Hero />
       <Specialize />
