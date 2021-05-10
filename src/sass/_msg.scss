@@ -1,18 +1,34 @@
 .msg {
+	display: none;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
       background-color: var(--msg-bg);
       width: 100%;
       color: #ffffff;
 	position: relative;
 	border: 1px solid var(--border);
       padding: 15px;
-      display: flex;
 }
+.msg.on {
+	display: flex;
+}
+
 .msg-content {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       margin-left: .6em;
       width: 100%;
+}
+@media (max-width: 350px) {
+	.msg {
+		flex-direction: column;
+
+		.msg-content {
+			margin-left: 0px;
+		}
+	}
 }
 .msg.msg--info {
 	--msg-bg: rgb(91, 192, 222);

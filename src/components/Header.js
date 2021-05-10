@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Icon from "./Icon";
 import JSONData from "../../content/navLinks.json"
+import Msg from "./Msg";
 
 
 
@@ -9,6 +10,10 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState("off")
   function toggle() {
     setOpenMenu(openMenu === "off" ? "on" : "off");
+  }
+  const [openTheme, setOpenTheme] = useState("off")
+  function toggleTheme() {
+    setOpenTheme(openTheme === "off" ? "on" : "off");
   }
   const data = useStaticQuery(graphql`
     query {
@@ -21,6 +26,9 @@ export default function Header() {
   `)
   return (
     <>
+    <div className={`theme-wrapper ${openTheme}`} hidden>
+      <Msg msgTitle="#future Not yet Available" msg="I'm sorry but this feature is not yet available as we are still in development stage" icon="info-emoji" type="info" />
+    </div>
     <header className="header wrapper">
       <div className="header-logo">
         <Link to="/">
@@ -45,7 +53,7 @@ export default function Header() {
       <button className="btn btn--primary btn--small btn--round header-btn">
         Follow Me
       </button>
-      <button className="btn btn--small header-btn theme-btn stroke-text">
+      <button className="btn btn--small header-btn theme-btn stroke-text" onClick={toggleTheme}>
         Theme
       </button>
     </div>
