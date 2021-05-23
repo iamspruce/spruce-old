@@ -6,20 +6,14 @@ import Icon from "./Icon"
 export const BlogList = () => {
       const data = useStaticQuery(graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
       edges {
         node {
           id
-          timeToRead
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            publishedAt
-          }
-          fields {
-            slug
-          }
-          excerpt
+          title
+          publishedDate(formatString: "DD MMMM, YYYY")
+          publishedAt
+          slug
         }
       }
     }
@@ -27,17 +21,17 @@ export const BlogList = () => {
 `)
       return (
             <ul className="article__list">
-               {data.allMarkdownRemark.edges.map((edge) => (
-            <Link to={`/blog/${edge.node.fields.slug}`} key={edge.node.id}>
+               {data.allContentfulBlogPost.edges.map((edge) => (
+            <Link to={`/blog/${edge.node.slug}`} key={edge.node.id}>
               <article className="article__post">
                   <header>
                   <h2 className="text-lg">
-                    {edge.node.frontmatter.title}
+                    {edge.node.title}
                   </h2>
-                  <p>{edge.node.excerpt}</p>
+                  <p>summary goes here</p>
                     
                     <p><small className="text-xsmall text-gray">
-                      {edge.node.timeToRead} Minute(s) Read Time
+                      1 Minute(s) Read Time
                     </small></p>
                   </header>
                   
@@ -45,16 +39,16 @@ export const BlogList = () => {
                     <ul className="flex j-btw j-bsl">
                           <li>
                           <p className="text-small">
-                      <time datetime={edge.node.date}>
-                        {edge.node.frontmatter.date}
+                      <time datetime={edge.node.publishedDate}>
+                        {edge.node.publishedDate}
                       </time>
                     </p>
                     <small className="text-gray text-xsmall">
-                      {edge.node.frontmatter.publishedAt}
+                      {edge.node.publishedAt}
                     </small>
                           </li>
                       <li>
-                        <Link to={`/blog/${edge.node.fields.slug}`}>
+                        <Link to={`/blog/${edge.node.slug}`}>
                           <span className="icon">
                             <Icon name="caret-right" size="26" />
                           </span>

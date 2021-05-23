@@ -3,12 +3,11 @@
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
-      background-color: var(--msg-bg);
+      background: var(--msg-bg);
       width: 100%;
       color: #ffffff;
 	position: relative;
-	border: 1px solid var(--border);
-      padding: 15px;
+      padding: 15px 2em;
 }
 .msg.on {
 	display: flex;
@@ -31,7 +30,7 @@
 	}
 }
 .msg.msg--info {
-	--msg-bg: rgb(91, 192, 222);
+	--msg-bg: var(--gradient-power);
 }
 .msg.msg--error {
 	--msg-bg: rgb(187, 33, 36);
@@ -40,7 +39,7 @@
 	--msg-bg: rgb(34, 187, 51);
 }
 .msg.msg--warning {
-	--msg-bg:  rgb(240, 173, 78);
+	--msg-bg:  var(--gradient-project);
 }
 .msg:after, .msg:before {
 	top: 100%;

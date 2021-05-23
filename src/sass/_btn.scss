@@ -5,7 +5,7 @@
 }
 
 .btn--primary {
-    background-color: var(--green);
+    background: var(--gradient-dark);
     color: #fff;
     box-shadow: 1px 2px 4px var(--border);
 
@@ -22,7 +22,7 @@
 
     &:hover {
         box-shadow: 0px 0px 1px var(--border);
-        background-color: var(--green);
+        background-color: var(--color-primary);
     }
 
 }

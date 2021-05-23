@@ -61,7 +61,9 @@
       margin-top: .3em;
     }
   }
-  
+  footer {
+    margin-top: auto;
+  }
 }
 .article__list {
 
@@ -107,15 +109,21 @@
   }
   
 }
+.about-tab {
+  max-width: max-content;
+}
 .about-tab.on {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--color-primary);
 }
 .about-tab.off ~ .about-tab {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--color-primary);
 }
-.about-project.on {
+.about-projects.off {
+  display: none;
+}
+.about-projects.on {
   display: block;
 }
-.about-project.on ~ .article-list {
+.about-projects.on ~ .article-list {
   display: none;
 }

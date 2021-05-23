@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import BlogPost from "./BlogPost"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Icon from "./Icon"
+import Projects from "./Projects"
 
 const About = () => {
   const [openTab, setOpenTab] = useState("off")
@@ -63,10 +64,8 @@ const About = () => {
             </ul>
           </div>
           <div className="section-cards">
-            <div className={`about-projects ${openTab}`} hidden>
-              test
-            </div>
-            <BlogPost className={`about-articles ${openTab}`} />
+            <Projects openTab={openTab} />
+            <BlogPost />
           </div>
         </div>
       </div>

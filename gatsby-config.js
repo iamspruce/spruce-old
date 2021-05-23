@@ -5,10 +5,11 @@ module.exports = {
     author: "Spruce",
     description: "Frontend Web developer from Nigeria, with an eye for great design",
     about: "I’m a Frontend web developer, currently working as a freelencer. I mostly do front-end development, and I’m a Reactjs and CSS kind of person. I don't just like creating web components, i like creating accessible web components. I also share what I learn and my process on my blog iamspruce.dev/blog.",
-    titleTemplate: "Spruce - homepage",
-    url: "https://www.doe.com", // No trailing slash allowed!
+    titleTemplate: "%s | Spruce",
+    url: "https://www.iamspruce.dev", // No trailing slash allowed!
     image: "/img/spruce1.webp", // Path to your image you placed in the 'static' folder
     twitterUsername: "@sprucekhalifa",
+    baseUrl: '',
     skills: [
       {
         name: "React",
@@ -29,6 +30,13 @@ module.exports = {
     ]
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_SPACE_TOKEN 
+      }
+    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
