@@ -14,6 +14,7 @@
     }
     a {
         display: inline-block;
+        color: var(--text);
     }
 
     span {
@@ -70,7 +71,7 @@
         top: -999px;
         transition: top .3s ease-in-out;
         flex-direction: column;
-        background-color: var(--green);
+        background: var(--gradient-project);
 
         > * + * {
             margin-top: .5em;

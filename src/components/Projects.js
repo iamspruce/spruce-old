@@ -23,7 +23,7 @@ export default function Projects({openTab,props}) {
     <>
       <div className={`article-list about-projects ${openTab}`}>
         {data.allContentfulProjects.edges.map(edge => (
-          <Link to={`${edge.node.url}`} key={edge.node.id}>
+          <a href={`${edge.node.url}`} key={edge.node.id}>
             <article className="article-card">
               <div className="article-card-content">
                 <header>
@@ -46,7 +46,7 @@ export default function Projects({openTab,props}) {
                 </footer>
               </div>
             </article>
-          </Link>
+          </a>
         ))}
       </div>
     </>

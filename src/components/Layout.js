@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./Header";
-import "../sass/main.css"
+import "../css/main.css"
 import Footer from "./Footer";
-import SEO from "./Seo";
+import Seo from "./Seo";
 
 export default function Layout({ children }) {
   return (
     <div>
-      <SEO />
+      <Seo />
       <Header />
       {children}
       <Footer />

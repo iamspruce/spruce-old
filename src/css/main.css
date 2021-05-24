@@ -339,6 +339,7 @@ svg {
 }
 .header-logo a {
   display: inline-block;
+  color: var(--text);
 }
 .header-logo span {
   color: var(--black);
@@ -393,7 +394,7 @@ svg {
     top: -999px;
     transition: top 0.3s ease-in-out;
     flex-direction: column;
-    background-color: var(--green);
+    background: var(--gradient-project);
   }
   .list-items > * + * {
     margin-top: 0.5em;
@@ -774,7 +775,7 @@ svg {
 }
 
 .btn--primary {
-  background: var(--gradient-dark);
+  background: var(--gradient-project);
   color: #fff;
   box-shadow: 1px 2px 4px var(--border);
 }
@@ -1068,11 +1069,11 @@ svg {
 }
 
 .about-tab.on {
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--green);
 }
 
 .about-tab.off ~ .about-tab {
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--green);
 }
 
 .about-projects.off {
