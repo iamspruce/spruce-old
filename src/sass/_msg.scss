@@ -7,7 +7,7 @@
       width: 100%;
       color: #ffffff;
 	position: relative;
-      padding: 15px 2em;
+      padding: 15px;
 }
 .msg.on {
 	display: flex;
@@ -28,9 +28,12 @@
 			margin-left: 0px;
 		}
 	}
+	.msg-icon-wrapper {
+		margin-bottom: 1em;
+	}
 }
 .msg.msg--info {
-	--msg-bg: var(--gradient-power);
+	--msg-bg: var(--bg-alt);
 }
 .msg.msg--error {
 	--msg-bg: rgb(187, 33, 36);
@@ -53,12 +56,12 @@
 }
 
 .msg:after {
-	border-top-color: var(--msg-bg);
+	border-top-color: var(--bg-alt);
 	border-width: 15px;
 	margin-left: -15px;
 }
 .msg:before {
-	border-top-color: var(--msg-bg);
+	border-top-color: var(--bg-alt);
 	border-width: 16px;
 	margin-left: -16px;
 }
