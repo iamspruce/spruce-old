@@ -43,6 +43,11 @@ export default function Header() {
         <Icon name="icon-close" width="20px" height="20px" className={`icon-close ${openMenu} `} hidden />
         </button>
         <ul className={`list-items ${openMenu}`}>
+        <div className="list-items__btn" hidden>
+        <a href="https://twitter.com/sprucekhalifa" className={`btn btn--primary btn--small list-items__btn`}>
+        Follow Me
+      </a>
+        </div>
         {JSONData.content.map((data, index) => {
           return <li key={`content_item_${index}`}>
             <Link to={data.link} activeClassName="active" onClick={toggle}>{data.name}</Link>
@@ -51,10 +56,10 @@ export default function Header() {
         </ul>
       </nav>
       <div className="header-control">
-      <button className="btn btn--primary btn--small btn--round header-btn">
+      <a href="https://twitter.com/sprucekhalifa" className={`btn btn--primary btn--small header-btn`}>
         Follow Me
-      </button>
-      <button className="btn btn--small header-btn theme-btn stroke-text" onClick={toggleTheme}>
+      </a>
+      <button className="btn btn--default header-btn theme-btn" onClick={toggleTheme}>
         Theme
       </button>
     </div>

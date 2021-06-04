@@ -1,30 +1,28 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Msg from "../components/Msg"
-
-
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-      }
+    contentfulBlogPost(slug: {eq: $slug}) {
+      title
+      publishedDate(formatString: "MMM Do, YYYY")
     }
   }
 `
 
 export default function BlogPost({ data }) {
-  const post = data.markdownRemark
+  const post = data.contentfulBlogPost
   return (
     <>
     <Msg msgTitle="#Oopsie!" msg="you seems to have stumbled on a page still under development, please check back later" icon="sad-emoji" type="warning" />
     <Layout>
       <div className="wrapper">
-        {/* <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
+         <h1>{post.title}</h1>
+         <p>{post.publishedDate}</p>
+         {documentToReactComponents(post.body.json)}
       </div>
     </Layout>
     </>

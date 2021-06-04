@@ -36,6 +36,9 @@
   h1,.h1 {
     font-size: 26px;
   }
+  h1,h2,h3,h4,h5,h6 {
+    color: var(--text-dark);
+  }
   /*------------------------------------*  #SHARED
   \*------------------------------------*/
   /**
@@ -67,18 +70,17 @@
       --bold:600;
       --font: "Gothic A1",Arial, Helvetica, sans-serif ;
       --font-size: 15px;
-      --text: rgb(42, 48, 57);
-      --border: rgb(237, 242, 244);
-      --bg-alt: #f7f7f9;
+      --text: rgb(0, 0, 0);
+      --text-dark: #20123a;
+      --text-alt: #42425a;
+      --border: #ededf0;
+      --bg: #ffffff;
+      --bg-alt: #f9f9fa;
      
---gradient-project: linear-gradient(90deg,#64c5d1 0%,#62dba6);
-
---gradient-dark: linear-gradient(90deg,#18334f 0%,#192532);
 --color-white: #fff;
---color-primary: rgb(74, 144, 226);
+--color-primary: #0250bb;
 --gray: rgb(70, 78, 91);
---green-alt: #0eb87f;
---green: #0baa75;
+
 
      }
   
@@ -98,7 +100,7 @@
     }
     
     a:focus,button:focus {
-      border: 1px dashed var(--black);
+      border: 1px dashed var(--text);
     }
     
     /*------------------------------------*  #HEADINGS
@@ -125,7 +127,7 @@
      */
     a {
       text-decoration: none;
-      color: var(--green);
+      color: var(--color-primary);
       transition: color .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .link {
@@ -134,7 +136,7 @@
     }
     a.link:hover {
       text-decoration: underline;
-      color: var(--black);
+      color: var(--text);
     }
   
       button {
@@ -200,7 +202,7 @@
     }
       q:before {
         content: open-quote;
-        color: var(--black);
+        color: var(--text);
         font-size: 32px;
         font-family: 'cocon';
       }

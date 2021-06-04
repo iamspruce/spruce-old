@@ -25,7 +25,7 @@ const Hero = () => {
               <span>Hello I'm</span>
             </span>
             <h1 className="title">Spruce Emmanuel</h1>
-            <p>{data.site.siteMetadata.description}.</p>
+            <p className="title_alt">{data.site.siteMetadata.description}.</p>
             <p className="title_sub">
               i build amazing <strong>websites</strong>
             </p>
