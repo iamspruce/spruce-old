@@ -42,7 +42,7 @@
 	--msg-bg: rgb(34, 187, 51);
 }
 .msg.msg--warning {
-	--msg-bg:  var(--gradient-project);
+	--msg-bg:  var(--bg-alt);
 }
 .msg:after, .msg:before {
 	top: 100%;

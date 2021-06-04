@@ -22,7 +22,7 @@ export default function BlogPost({ data }) {
       <div className="wrapper">
          <h1>{post.title}</h1>
          <p>{post.publishedDate}</p>
-         {documentToReactComponents(post.body.json)}
+         
       </div>
     </Layout>
     </>
