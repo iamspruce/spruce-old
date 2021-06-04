@@ -14,6 +14,7 @@
     }
 
 }
+
 .btn--white {
     background-color: var(--bg);
     color: var(--text);
@@ -30,6 +31,11 @@
 }
 .btn--default {
     padding: 1em;
+}
+@media (min-width: 620px) {
+    .btn--small {
+        padding: 4px 16px;
+    }
 }
 .btn--round {
     border-radius: 40em;

@@ -7,10 +7,10 @@ const Contact = () => {
             <section className="section-pad" id="contact">
             <div className="footer-contact-wrapper">
             <div className="footer-contact">
-              <form action="#" className="footer-form">
+              <form action="https://getform.io/f/64fe76c6-b7ca-4cd6-bd9d-d14cbbc0ffbc" method="POST" className="footer-form">
                 <div className="input-group">
                   <label className="input-label" htmlFor="name">
-                    <input className="input" type="text" name="name" id="name" />
+                    <input className="input" type="text" name="name" id="name" required />
                     <span className="input-label-floating">Name</span>
                   </label>
                   <label className="input-label" htmlFor="email">
@@ -19,6 +19,7 @@ const Contact = () => {
                       type="email"
                       name="email"
                       id="email"
+                      required
                     />
                     <span className="input-label-floating">Email</span>
                   </label>
@@ -30,6 +31,7 @@ const Contact = () => {
                       id="textarea"
                       className="input"
                       col="5"
+                      required
                     ></textarea>
                     <span className="input-label-floating">
                           Message

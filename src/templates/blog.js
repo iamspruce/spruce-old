@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Msg from "../components/Msg"
 
 export const query = graphql`
@@ -9,8 +8,8 @@ export const query = graphql`
     contentfulBlogPost(slug: {eq: $slug}) {
       title
       publishedDate(formatString: "MMM Do, YYYY")
-    }
   }
+}
 `
 
 export default function BlogPost({ data }) {
@@ -22,7 +21,6 @@ export default function BlogPost({ data }) {
       <div className="wrapper">
          <h1>{post.title}</h1>
          <p>{post.publishedDate}</p>
-         
       </div>
     </Layout>
     </>

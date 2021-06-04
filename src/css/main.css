@@ -252,27 +252,29 @@ svg {
 }
 
 .msg.on {
-  display: flex;
+  display: block;
 }
 
 .msg-content {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-left: 0.6em;
+  margin-left: 6px;
   width: 100%;
 }
 
 @media (max-width: 350px) {
-  .msg {
-    flex-direction: column;
-  }
   .msg .msg-content {
     margin-left: 0px;
   }
 
   .msg-icon-wrapper {
     margin-bottom: 1em;
+  }
+}
+@media (min-width: 351px) {
+  .msg.on {
+    display: flex;
   }
 }
 .msg.msg--info {
@@ -340,7 +342,7 @@ svg {
 
 .list-items a {
   display: inline-block;
-  padding: 0.4em;
+  padding: 0.7em;
   color: var(--text);
 }
 .list-items a:hover {
@@ -804,6 +806,11 @@ svg {
   padding: 1em;
 }
 
+@media (min-width: 620px) {
+  .btn--small {
+    padding: 4px 16px;
+  }
+}
 .btn--round {
   border-radius: 40em;
 }
