@@ -126,6 +126,11 @@
 .blog-hero {
   position: relative;
   margin-bottom: 8em;
-  background: rgba(0, 0, 0, 0) linear-gradient(359.62deg, rgb(215, 240, 250) 2.36%, rgb(255, 255, 255) 99.68%) repeat scroll 0% 0%;
-
+  background: rgba(0, 0, 0, 0) linear-gradient(359.62deg, var(--bg-alt) 2.36%, rgb(255, 255, 255) 99.68%) repeat scroll 0% 0%;
+}
+.blog-hero__content {
+  
+  > * {
+    margin-top: .8em;
+  }
 }

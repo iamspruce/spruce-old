@@ -192,7 +192,7 @@ transform: rotateY(180deg);
     display: block;
     position: relative;
     height: 40px;
-    background: rgb(215, 240, 250);
+    background: var(--bg-alt);
 }
 .wave::before {
   content: "";
@@ -212,7 +212,7 @@ transform: rotateY(180deg);
   border-radius: 100%;
   width: 113%;
   height: 300px;
-  background-color: rgb(215, 240, 250);
+  background-color: var(--bg-alt);
   left: -35%;
   top: -240px;
 }

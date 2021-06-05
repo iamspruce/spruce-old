@@ -626,7 +626,7 @@ svg {
   display: block;
   position: relative;
   height: 40px;
-  background: #d7f0fa;
+  background: var(--bg-alt);
 }
 
 .wave::before {
@@ -648,7 +648,7 @@ svg {
   border-radius: 100%;
   width: 113%;
   height: 300px;
-  background-color: #d7f0fa;
+  background-color: var(--bg-alt);
   left: -35%;
   top: -240px;
 }
@@ -924,7 +924,11 @@ svg {
 .blog-hero {
   position: relative;
   margin-bottom: 8em;
-  background: rgba(0, 0, 0, 0) linear-gradient(359.62deg, #d7f0fa 2.36%, white 99.68%) repeat scroll 0% 0%;
+  background: rgba(0, 0, 0, 0) linear-gradient(359.62deg, var(--bg-alt) 2.36%, white 99.68%) repeat scroll 0% 0%;
+}
+
+.blog-hero__content > * {
+  margin-top: 0.8em;
 }
 
 .card-wrapper {
@@ -1053,7 +1057,12 @@ svg {
   justify-content: space-between;
   background-color: var(--bg);
   border: 1px solid var(--border);
+  box-shadow: 0 8px 12px 1px rgba(29, 17, 51, 0.04), 0 3px 16px 2px rgba(9, 32, 77, 0.12), 0 5px 10px -3px rgba(29, 17, 51, 0.12);
   padding: 1em;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.article__post:hover {
+  box-shadow: initial;
 }
 .article__post header {
   max-width: 25em;
