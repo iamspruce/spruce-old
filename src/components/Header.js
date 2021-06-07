@@ -29,7 +29,7 @@ export default function Header() {
     <div className={`theme-wrapper ${openTheme}`} hidden>
       <Msg msgTitle="#future Not yet Available" msg="I'm sorry but this feature is not yet available as we are still in development stage" icon="info-emoji" type="info" />
     </div>
-    <header className="header wrapper">
+    <header className="header">
       <div className="header-logo">
         <Link to="/">
           <img src="/img/spruce-logo1.webp" alt="spruce" width="38px" height="38px" />

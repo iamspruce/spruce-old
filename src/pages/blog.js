@@ -10,10 +10,9 @@ const blog = () => {
     return (
         <div className="blog-page">
         <Head title="Articles" />
-        <Msg msgTitle="#Oopsie!" msg="you seems to have stumbled on a page still under development, please check back later" icon="sad-emoji" type="warning" />
         <Layout>
+            <div className="section-side-pad">
         <BlogHero />
-            <div className="wrapper">
             <BlogList />
             </div>
         </Layout>

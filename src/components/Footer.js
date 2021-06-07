@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="wrapper">
       <div className="footer-content">
         <div className="footer-content__copy">
           <div className="header-logo">
@@ -61,8 +60,6 @@ const Footer = () => {
         </ul>
       </nav>
       </div>
-      </div>
-
     </footer>
   )
 }

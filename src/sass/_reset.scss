@@ -95,8 +95,8 @@
    }
    
     body {
-      background-color: var(--bg);
- 
+      background: hsla(348, 88%, 66%, 1);
+      background: linear-gradient(90deg, hsla(348, 88%, 66%, 1) 0%, hsla(36, 89%, 68%, 1) 100%);
     }
     
     a:focus,button:focus {

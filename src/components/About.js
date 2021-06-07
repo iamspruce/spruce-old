@@ -19,8 +19,7 @@ const About = () => {
     }
   `)
   return (
-    <section className="section-pad" id="about">
-      <div className="wrapper">
+    <section className="section-side-pad section-pad" id="about">
         <div className="section-about">
           <div className="section-content flex flex-col">
             <h4 className="text-xlg">A little more About Me</h4>
@@ -68,7 +67,6 @@ const About = () => {
             <BlogPost />
           </div>
         </div>
-      </div>
     </section>
   )
 }

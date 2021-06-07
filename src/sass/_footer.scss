@@ -1,3 +1,13 @@
+.footer {
+      padding-left: 3em;
+      padding-right: 3em;
+}
+@media (max-width: 620px) {
+      .footer {
+            padding-left: 1em;
+            padding-right: 1em;
+      }
+}
 .footer-contact-wrapper {
       width: 100%;
       margin-left: auto;

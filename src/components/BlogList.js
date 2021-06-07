@@ -13,6 +13,7 @@ export const BlogList = () => {
           title
           publishedDate(formatString: "DD MMMM, YYYY")
           publishedAt
+          summary
           slug
         }
       }
@@ -28,10 +29,10 @@ export const BlogList = () => {
                   <h2 className="text-lg">
                     {edge.node.title}
                   </h2>
-                  <p>summary goes here</p>
+                  <p>{edge.node.summary}</p>
                     
                     <p><small className="text-xsmall text-gray">
-                      1 Minute(s) Read Time
+                      1 Minute Read Time
                     </small></p>
                   </header>
                   

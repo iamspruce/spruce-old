@@ -99,7 +99,8 @@ html {
 }
 
 body {
-  background-color: var(--bg);
+  background: #f55c7b;
+  background: linear-gradient(90deg, #f55c7b 0%, #f6bc65 100%);
 }
 
 a:focus, button:focus {
@@ -323,7 +324,7 @@ svg {
 }
 
 .header {
-  padding: 1em 0px;
+  padding: 1em 3em;
 }
 
 .header-logo img {
@@ -355,7 +356,7 @@ svg {
 @media (max-width: 620px) {
   .header {
     justify-content: unset;
-    padding: 0.5em 0px;
+    padding: 0.5em 1em;
   }
 
   .header-control {
@@ -427,7 +428,8 @@ svg {
 }
 
 .wrapper {
-  width: 86%;
+  background: var(--bg);
+  width: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -654,11 +656,18 @@ svg {
 }
 
 .section {
-  padding: 3em 0em 1em 0em;
+  padding: 3em 3em 1em 3em;
 }
 
+@media (max-width: 620px) {
+  .section-side-pad {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
 .section-pad {
-  padding: 3em 0em;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 .section-head > * + * {
@@ -1111,6 +1120,17 @@ svg {
   display: none;
 }
 
+.footer {
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+@media (max-width: 620px) {
+  .footer {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
 .footer-contact-wrapper {
   width: 100%;
   margin-left: auto;

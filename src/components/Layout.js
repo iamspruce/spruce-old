@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet"
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="wrapper">
       <Helmet htmlAttributes={{
         lang: 'en'
       }} />

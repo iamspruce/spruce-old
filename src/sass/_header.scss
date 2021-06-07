@@ -4,7 +4,7 @@
     justify-content: space-between;
 }
 .header {
-    padding: 1em 0px;
+    padding: 1em 3em;
 }
 .header-logo {
 
@@ -42,7 +42,7 @@
 @media (max-width: 620px) {
     .header {
         justify-content: unset;
-        padding:.5em 0px;
+        padding:.5em 1em;
     }
     .header-control {
         margin-left: auto;

@@ -18,7 +18,6 @@ const Hero = () => {
   `)
   return (
     <section className="section section--hero">
-      <div className="wrapper">
         <div className="section-flex flex-wrap j-btw">
           <div className="section-content">
             <span className="line">
@@ -73,7 +72,6 @@ const Hero = () => {
             ))}
           </ul>
         </div>
-      </div>
     </section>
   )
 }
