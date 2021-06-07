@@ -1011,9 +1011,10 @@ svg {
 }
 
 @media (max-width: 1020px) {
-  .article-list {
+  .article-list, .article__list {
     grid-gap: 27px;
   }
+
   .article-list a {
     margin: 0px !important;
   }
@@ -1033,10 +1034,10 @@ svg {
 }
 
 @media (max-width: 597px) {
-  .article-list {
+  .article-list, .article__list {
     grid-template-columns: 1fr;
   }
-  .article-list .article-card {
+  .article-list .article-card, .article__list .article-card {
     width: 100%;
   }
 }
@@ -1059,6 +1060,10 @@ svg {
   margin-top: auto;
 }
 
+.article__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .article__list > * + * {
   display: block;
   margin-top: 1em;
@@ -1124,6 +1129,29 @@ svg {
 
 .about-projects.on ~ .article-list {
   display: none;
+}
+
+.post-header {
+  padding: 2em 0em;
+  border-bottom: 1px solid var(--border);
+}
+.post-header__tag {
+  display: inline-block;
+  margin-bottom: 1em;
+}
+.post-header h1 {
+  margin-bottom: 0.4em;
+}
+
+.post-author {
+  margin-top: 3em;
+}
+.post-author figure {
+  display: flex;
+}
+.post-author figure img {
+  border-radius: 50%;
+  margin-right: 0.6em;
 }
 
 .footer {

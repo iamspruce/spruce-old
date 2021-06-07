@@ -4,25 +4,26 @@ import Icon from "./Icon"
 
 export default function BlogPost() {
   const data = useStaticQuery(graphql`
-  query {
-    allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
-      edges {
-        node {
-          id
-          title
-          publishedDate(formatString: "DD MMMM, YYYY")
-          publishedAt
-          slug
+    query {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+        edges {
+          node {
+            id
+            title
+            publishedDate(formatString: "DD MMMM, YYYY")
+            publishedAt
+            slug
+          }
         }
       }
     }
-  }
-`)
+  `)
   return (
     <>
-      <div className='article-list'>
-      {data.allContentfulBlogPost.edges.map((edge) => (
-            <Link to={`/blog/${edge.node.slug}`} key={edge.node.id}>
+      <div className="article-list">
+        {data.allContentfulBlogPost.edges.map(edge => (
+          <li key={edge.node.id}>
+            <Link to={`/blog/${edge.node.slug}`}>
               <article className="article-card">
                 <div className="article-card-content">
                   <header>
@@ -34,8 +35,6 @@ export default function BlogPost() {
                     <small className="text-gray text-xsmall">
                       {edge.node.publishedAt}
                     </small>
-                    
-                    
                   </header>
                   <h5 className="article-card-title text-lg">
                     {edge.node.title}
@@ -44,7 +43,10 @@ export default function BlogPost() {
                     <ul className="flex">
                       <li>
                         <Link to={`/blog/${edge.node.slug}`}>
-                          <span className="text-small">Read more</span>
+                          <span className="text-small">
+                            <span className="sr-only">{edge.node.title}</span>
+                            Read more
+                            </span>
                           <span className="icon icon-left">
                             <Icon name="caret-right" size="13" />
                           </span>
@@ -55,10 +57,9 @@ export default function BlogPost() {
                 </div>
               </article>
             </Link>
+          </li>
         ))}
       </div>
     </>
   )
 }
-
-

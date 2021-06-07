@@ -56,8 +56,8 @@ const Hero = () => {
             </span>
         </div>
         <div className="hero-skills slide-left">
-          <ul className="">
-            <span>Skills:</span>
+          <ul>
+            <li style={{ display: 'inline' }}>Skills:</li>
             {data.site.siteMetadata.skills.map(skill => (
               <li
                 key={skill.name}

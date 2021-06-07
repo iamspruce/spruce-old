@@ -11,12 +11,16 @@ export const query = graphql`
       title
       publishedDate(formatString: "MMM Do, YYYY")
       summary
+      postAction
+      postActionLink
       coverImage {
         title
         description
-        fluid(toFormat: WEBP, maxWidth: 750, resizingBehavior: SCALE) {
+        fixed(toFormat: WEBP, width: 250, height: 250) {
+          width
+          height
           src
-        }
+      }
       }
       body{
         raw
@@ -45,9 +49,9 @@ export default function BlogPost({ data }) {
             return (
             <figure>
             <img src={url} alt={alt}/>
-              <caption>
+              <figcaption>
                 {caption}
-              </caption>
+              </figcaption>
             </figure>
             )
         }
@@ -57,12 +61,30 @@ export default function BlogPost({ data }) {
     <>
     <Head title={post.title} />
     <Layout>
-      <div className="wrapper">
-         <h1>{post.title}</h1>
-         <p>{post.publishedDate}</p>
-         <img src={post.coverImage.fluid.src} />
+      <section className="section-side-pad">
+        <article className="post">
+          <header className="post-header">
+            <span className="post-header__tag">
+              #ReactJs
+            </span>
+          <h1>{post.title}</h1>
+          <p>{post.summary}</p>
+          <div className="post-author">
+            <figure>
+              <img src="/img/spruceNew.jpg" alt="spruce" width="38px" height="38px" />
+              <figcaption>
+                <strong>Spruce</strong> <br />
+                <time>{post.publishedDate}</time> • <a className="btn btn--primary btn--small" href={`${post.postActionLink}`} target="__blank">{`${post.postAction}`}</a>
+              </figcaption>
+            </figure>
+          </div>
+          </header>
+
          <p>{renderRichText(data.contentfulBlogPost.body, options)}</p>
-      </div>
+
+        </article>
+         {/* <img src={} /> */}
+      </section>
     </Layout>
     </>
   )

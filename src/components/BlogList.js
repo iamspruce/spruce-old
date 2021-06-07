@@ -23,7 +23,8 @@ export const BlogList = () => {
       return (
             <ul className="article__list">
                {data.allContentfulBlogPost.edges.map((edge) => (
-            <Link to={`/blog/${edge.node.slug}`} key={edge.node.id}>
+                 <li key={edge.node.id}>
+            <Link to={`/blog/${edge.node.slug}`}>
               <article className="article__post">
                   <header>
                   <h2 className="text-lg">
@@ -59,6 +60,7 @@ export const BlogList = () => {
                   </footer>
               </article>
             </Link>
+            </li>
         ))}   
             </ul>
       )

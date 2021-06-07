@@ -12,8 +12,10 @@
   }
 }
 @media (max-width: 1020px) {
-  .article-list {
+  .article-list,.article__list {
     grid-gap: 27px;
+  }
+  .article-list {
 
     a {
       margin: 0px !important;
@@ -21,7 +23,7 @@
     .article-card {
       margin: 1em 0em;
     }
-  }
+  }    
 }
 .article-card {
   min-height: 280px;
@@ -35,7 +37,7 @@
   }
 }
 @media (max-width: 597px) {
-  .article-list {
+  .article-list,.article__list {
     grid-template-columns: 1fr;
 
     .article-card {
@@ -66,6 +68,8 @@
   }
 }
 .article__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
   > * + * {
     display: block;

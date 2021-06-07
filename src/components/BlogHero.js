@@ -2,8 +2,8 @@ import React from "react"
 
 const BlogHero = () => {
   return (
-    <section className="section blog-hero">
-        <div className="blog-hero__content">
+            <section className="blog-hero">
+        <div className="section-side-pad blog-hero__content">
           <h1>Articles</h1>
           <p>
             Articles on my Thought process, Case Studies, Semantic Web, Best
