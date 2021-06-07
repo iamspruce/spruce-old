@@ -1,6 +1,10 @@
 .section {
   padding: 3em 3em 1em 3em;
 }
+.section-side-pad {
+  padding-left: 3em;
+  padding-right: 3em;
+}
 @media (max-width: 620px) {
   .section-side-pad {
     padding-left: 1em;
