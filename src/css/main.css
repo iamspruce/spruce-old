@@ -1132,6 +1132,7 @@ svg {
 }
 
 .post-header {
+  margin-bottom: 2em;
   padding: 2em 0em;
   border-bottom: 1px solid var(--border);
 }

@@ -13,15 +13,6 @@ export const query = graphql`
       summary
       postAction
       postActionLink
-      coverImage {
-        title
-        description
-        fixed(toFormat: WEBP, width: 250, height: 250) {
-          width
-          height
-          src
-      }
-      }
       body{
         raw
         references {
