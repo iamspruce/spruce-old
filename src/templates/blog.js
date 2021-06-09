@@ -52,7 +52,7 @@ export default function BlogPost({ data }, props) {
   }
   return (
       <Layout>
-        <SEO title={post.title} description={post.summary} image={image} />
+        <SEO title={post.title} description={post.summary} image={image} pageType="article" />
         <section className="section-side-pad">
           <article className="post">
             <header className="post-header">

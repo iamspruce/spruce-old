@@ -1165,7 +1165,7 @@ svg {
 }
 @media (min-width: 1024px) {
   .post-header__title {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 
   .post__meta {

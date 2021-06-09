@@ -10,7 +10,7 @@ import SEO from "../components/SEO"
 export default function Home() {
   return (
     <>
-    <SEO title="Homepage" image="/img/spruce.webp" />
+    <SEO title="Homepage" image="https://iamspruce.dev/img/spruce.webp" />
     <Msg msgTitle="#EndPoliceBrutality" msg="You can't be the Judge, the jailor and executioner at the same time, #EndSars" icon="sad-emoji" type="info" />
     <Layout>
       <Hero />
