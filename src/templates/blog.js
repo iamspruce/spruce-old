@@ -55,20 +55,10 @@ export default function BlogPost({ data }) {
       <section className="section-side-pad">
         <article className="post">
           <header className="post-header">
-            <span className="post-header__tag">
-              #ReactJs
-            </span>
-          <h1>{post.title}</h1>
+          <h1 className="post-header__title">{post.title}</h1>
+          <time>{post.publishedDate}</time> • <a className="btn btn--primary btn--small" href={`${post.postActionLink}`} target="__blank">{`${post.postAction}`}</a>
+
           <p>{post.summary}</p>
-          <div className="post-author">
-            <figure>
-              <img src="/img/spruceNew.jpg" alt="spruce" width="38px" height="38px" />
-              <figcaption>
-                <strong>Spruce</strong> <br />
-                <time>{post.publishedDate}</time> • <a className="btn btn--primary btn--small" href={`${post.postActionLink}`} target="__blank">{`${post.postAction}`}</a>
-              </figcaption>
-            </figure>
-          </div>
           </header>
 
          <p>{renderRichText(data.contentfulBlogPost.body, options)}</p>

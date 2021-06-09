@@ -20,7 +20,7 @@ export default function BlogPost() {
   `)
   return (
     <>
-      <div className="article-list">
+      <ul className="article-list">
         {data.allContentfulBlogPost.edges.map(edge => (
           <li key={edge.node.id}>
             <Link to={`/blog/${edge.node.slug}`}>
@@ -59,7 +59,7 @@ export default function BlogPost() {
             </Link>
           </li>
         ))}
-      </div>
+      </ul>
     </>
   )
 }

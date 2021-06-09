@@ -1131,30 +1131,18 @@ svg {
   display: none;
 }
 
-.post-header {
-  margin-bottom: 2em;
-  padding: 2em 0em;
-  border-bottom: 1px solid var(--border);
-}
-.post-header__tag {
-  display: inline-block;
-  margin-bottom: 1em;
-}
-.post-header h1 {
-  margin-bottom: 0.4em;
+.post-header__title {
+  font-size: 43px;
 }
 
-.post-author {
-  margin-top: 3em;
+@media (max-width: 620px) {
+  .post-header {
+    text-align: left;
+  }
+  .post-header .post-header__title {
+    font-size: 24px;
+  }
 }
-.post-author figure {
-  display: flex;
-}
-.post-author figure img {
-  border-radius: 50%;
-  margin-right: 0.6em;
-}
-
 .footer {
   padding-left: 3em;
   padding-right: 3em;
