@@ -814,7 +814,7 @@ svg {
 }
 
 .btn--small {
-  padding: 4px 24px;
+  padding: 0.4rem 1.2rem;
 }
 
 .btn--default {
@@ -823,7 +823,7 @@ svg {
 
 @media (min-width: 620px) {
   .btn--small {
-    padding: 4px 16px;
+    padding: 0.4rem 1rem;
   }
 }
 .btn--round {
@@ -1131,16 +1131,45 @@ svg {
   display: none;
 }
 
+.post-header {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.post__meta {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.post-header__time, .post__summary {
+  color: var(--text-alt);
+}
+
+.post__summary {
+  margin-bottom: 1rem;
+}
+
 .post-header__title {
-  font-size: 43px;
+  font-size: 2.5rem;
 }
 
 @media (max-width: 620px) {
   .post-header {
     text-align: left;
   }
-  .post-header .post-header__title {
-    font-size: 24px;
+}
+@media (min-width: 760px) {
+  .post-header__title {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .post-header__title {
+    font-size: 6rem;
+  }
+
+  .post__meta {
+    font-size: 1.4rem;
   }
 }
 .footer {
