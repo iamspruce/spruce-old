@@ -13,7 +13,7 @@ const Msg = ({ msgTitle, msg, icon, type }) => {
       </div>
       <div className="msg-content">
         <p className="msg-content__text">
-          <div className="text-bold text-lg">{msgTitle}</div>
+          <strong className="text-lg">{msgTitle}</strong> <br />
           {msg}
         </p>
         <button className="btn btn--small" aria-label="close message" onClick={toggle}>

@@ -18,7 +18,7 @@ const Footer = () => {
           </div>
           <p>
              @2021, iamspruce.dev designed and developed with love and more
-            of <b>GatsbyJs</b> and hosted on <b>Netlify</b>
+            of <b>GatsbyJs</b> and hosted on <b>Gatsby Cloud</b>
           </p>
         </div>
       <nav className="footer-nav flex j-btw">
