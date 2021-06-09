@@ -37,7 +37,7 @@ export default function Header() {
         </Link>
       </div>
       <nav className="header-nav">
-        <button className={`header-btn ${openMenu}`} onClick={toggle} hidden>
+        <button aria-label="toggle Navigation Menu" className={`header-btn ${openMenu}`} onClick={toggle} hidden>
         <Icon name="icon-menu" width="20px" height="20px" className="icon-open" />
         <Icon name="icon-close" width="20px" height="20px" className={`icon-close ${openMenu} `} hidden />
         </button>
@@ -58,7 +58,7 @@ export default function Header() {
       <a href="https://twitter.com/sprucekhalifa" className={`btn btn--primary btn--small header-btn`}>
         Follow Me
       </a>
-      <button className="btn btn--default header-btn theme-btn" onClick={toggleTheme}>
+      <button aria-label="open theme switcher" className="btn btn--default header-btn theme-btn" onClick={toggleTheme}>
         Theme
       </button>
     </div>

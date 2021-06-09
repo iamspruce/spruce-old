@@ -17,6 +17,21 @@ const Head = ({ title, description, image }) => {
   let meta = data.site.siteMetadata
   return (
   <Helmet title={`${meta.title} | ${title}`}>
+    <script type="application/ld+json">
+    {`
+        {
+          "@context": "https://schema.org",
+          "@type": "website",
+          "url": "https://iamspruce.dev",
+          "name": "Spruce",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+2348137781578",
+            "contactType": "Customer Support"
+          }
+        }
+      `}
+  </script>
         <meta name="description" content={`${description}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={`${meta.twitterUsername}`} />

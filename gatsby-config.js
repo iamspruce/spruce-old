@@ -5,8 +5,10 @@ module.exports = {
     author: "Spruce",
     description: "Frontend Web developer from Nigeria, with an eye for great design",
     about: "I’m a Frontend web developer, currently working as a freelencer. I mostly do front-end development, and I’m a Reactjs and CSS kind of person. I don't just like creating web components, i like creating accessible web components. I also share what I learn and my process on my blog iamspruce.dev/blog.",
-    url: "https://spruce.gatsby.io", // No trailing slash allowed!
+    url: "https://iamspruce.dev", // No trailing slash allowed!
+    keywords: ['portfolio','javascript','html','css','reactjs','web development', 'JamStack'],
     image: "/img/spruce1.webp", // Path to your image you placed in the 'static' folder
+
     twitterUsername: "@sprucekhalifa",
     baseUrl: '',
     skills: [

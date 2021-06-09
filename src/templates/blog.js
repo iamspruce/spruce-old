@@ -3,11 +3,16 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
-import Head from "../components/Head";
+import SEO from "../components/SEO";
 
 export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: {eq: $slug}) {
+      coverImage {
+        fluid(toFormat: WEBP, maxWidth: 750) {
+          src
+        }
+      }
       title
       publishedDate(formatString: "MMM Do, YYYY")
       summary
@@ -29,8 +34,9 @@ export const query = graphql`
 }
 `
 
-export default function BlogPost({ data }) {
+export default function BlogPost({ data },props) {
   const post = data.contentfulBlogPost;
+  const image = post.coverImage.fluid.src
   const options = {
     renderNode: {
         "embedded-asset-block": (node) => {
@@ -50,7 +56,11 @@ export default function BlogPost({ data }) {
 }
   return (
     <>
-    <Head title={post.title} />
+    <SEO
+          title={post.title}
+          description={post.summary}
+          image={image}
+        />
     <Layout>
       <section className="section-side-pad">
         <article className="post">
