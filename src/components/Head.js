@@ -27,7 +27,7 @@ const Head = ({ title, description, image }) => {
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+2348137781578",
-            "contactType": "Customer Support"
+            "contactType": "Customer Support" 
           }
         }
       `}
