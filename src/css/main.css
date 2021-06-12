@@ -1011,7 +1011,7 @@ svg {
 }
 
 @media (max-width: 1020px) {
-  .article-list, .article__list {
+  .article-list {
     grid-gap: 27px;
   }
 
@@ -1034,10 +1034,10 @@ svg {
 }
 
 @media (max-width: 597px) {
-  .article-list, .article__list {
+  .article-list {
     grid-template-columns: 1fr;
   }
-  .article-list .article-card, .article__list .article-card {
+  .article-list .article-card {
     width: 100%;
   }
 }
@@ -1060,13 +1060,9 @@ svg {
   margin-top: auto;
 }
 
-.article__list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.article__list > * + * {
-  display: block;
-  margin-top: 1em;
+.article__list > li + li {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .article__list a {
   color: var(--text);
@@ -1172,6 +1168,76 @@ svg {
     font-size: 1.4rem;
   }
 }
+.post__body {
+  max-width: 800px;
+  margin: 1rem auto;
+}
+.post__body figure {
+  background: transparent;
+  border: 0;
+  margin-top: 16px;
+  margin-bottom: 1em;
+}
+.post__body figure figcaption {
+  padding-top: 8px;
+  color: var(--text-alt);
+  text-align: center;
+}
+.post__body figure img, .post__body figure video {
+  display: block;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+.post__body figure ol {
+  list-style: none;
+  counter-reset: listCounter;
+}
+.post__body figure ol, .post__body figure ul {
+  padding: 0;
+  margin: 1em 0;
+  max-width: 100%;
+}
+.post__body figure ol > li {
+  padding-left: 1.75em;
+  padding-left: calc(1.65em + .7vw);
+  position: relative;
+  counter-increment: listCounter;
+  margin-bottom: 1em;
+}
+.post__body figure ol > li::before {
+  content: counter(listCounter, decimal-leading-zero);
+  font-size: 0.7em;
+  font-weight: 700;
+  color: var(--primary-color);
+  left: 0.8em;
+  position: absolute;
+  font-family: Product Sans, AvenirNext, Avenir, -apple-system, BlinkMacSystemFont, Roboto Slab, Droid Serif, Segoe UI, Oxygen-Sans, Ubuntu, Cantarell, Georgia, serif;
+}
+.post__body figure ol ol > li {
+  padding-left: 2.25em;
+  padding-left: calc(1.35em + .7vw);
+}
+.post__body figure ol ol ol > li {
+  padding-left: 3em;
+  padding-left: calc(2.4em + 1.4vw);
+}
+.post__body figure ol[start="0"] {
+  counter-reset: listCounter -1;
+}
+.post__body figure ol ul li:before {
+  content: "";
+}
+.post__body figure ol ol {
+  margin-left: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.post__body figure ol ol > li::before {
+  content: counters(listCounter, ".", decimal-leading-zero) " ";
+  left: -1.5em;
+}
+
 .footer {
   padding-left: 3em;
   padding-right: 3em;

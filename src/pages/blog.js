@@ -2,13 +2,13 @@ import React from 'react'
 import BlogHero from '../components/BlogHero'
 import { BlogList } from '../components/BlogList'
 import Layout from '../components/Layout'
-import Head from "../components/Head";
+import SEO from '../components/SEO';
 
 
 const blog = () => {
     return (
         <div className="blog-page">
-        <Head title="Articles" />
+            <SEO title="Blog" image="https://iamspruce.dev/img/spruce.webp" />
         <Layout>
         <BlogHero />
         <div className="section-side-pad">
