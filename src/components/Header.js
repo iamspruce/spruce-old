@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Icon from "./Icon";
 import JSONData from "../../content/navLinks.json"
-import Msg from "./Msg";
+import Theme from "./Theme";
 
 
 
@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <>
     <div className={`theme-wrapper ${openTheme}`} hidden>
-      <Msg msgTitle="#future Not yet Available" msg="I'm sorry but this feature is not yet available as we are still in development stage" icon="info-emoji" type="info" />
+      <Theme />
     </div>
     <header className="header">
       <div className="header-logo">

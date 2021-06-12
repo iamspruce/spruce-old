@@ -1,6 +1,8 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import theme from "../../content/theme.json"
+
 
 const Head = ({ title, description, image }) => {
   const data = useStaticQuery(graphql`
@@ -14,7 +16,8 @@ const Head = ({ title, description, image }) => {
       }
     }
   `)
-  let meta = data.site.siteMetadata
+  let meta = data.site.siteMetadata;
+  let JsonData = theme
   return (
   <Helmet title={`${meta.title} | ${title}`}>
     <script type="application/ld+json">
@@ -32,6 +35,21 @@ const Head = ({ title, description, image }) => {
         }
       `}
   </script>
+  <style type="text/css">{`
+      :root {
+      
+      }
+        ${JsonData.map((data) => {
+          return (
+            `
+          [data-theme='${data.id}'] {
+            ${JSON.stringify(data.colors)}
+          }
+          
+          `
+          )
+        })}
+    `}</style>
         <meta name="description" content={`${description}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={`${meta.twitterUsername}`} />

@@ -2,13 +2,13 @@ import React from "react";
 import Header from "./Header";
 import "../css/main.css"
 import Footer from "./Footer";
-import SEO from "./SEO";
+import Head from "./Head";
 
 
 export default function Layout({ children }) {
   return (
     <div className="wrapper">
-      <SEO />
+      <Head />
       <Header />
       {children}
       <Footer />

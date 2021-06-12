@@ -102,8 +102,7 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
                 },
               ]
         )
-        .concat(meta)}
-    />
+        .concat(meta)} />
   )
 }
 

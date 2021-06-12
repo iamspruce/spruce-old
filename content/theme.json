@@ -1,0 +1,26 @@
+[
+      {
+            "id": "default",
+            "colors": {
+                "--color-primary": "#0250bb",
+                "----text-dark": "#20123a",
+                "--text": "#000000",
+                "--text-alt": "#42425a",
+                "--border": "#ededf0",
+                "--bg": "#ffffff",
+                "--bg-alt": "#f9f9fa"
+            }
+      },
+      {
+            "id": "dark",
+            "colors": {
+                "--color-primary": "#0250bb",
+                "----text-dark": "#20123a",
+                "--text": "#fff",
+                "--text-alt": "#42425a",
+                "--border": "#ededf0",
+                "--bg": "#000",
+                "--bg-alt": "#f9f9fa"
+            }
+      }
+]
