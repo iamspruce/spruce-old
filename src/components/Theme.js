@@ -3,16 +3,22 @@ import theme from "../../content/theme.json"
 import Icon from "./Icon"
 
 const localFontSize = localStorage.getItem('font-size') || '15';
+const localScheme = localStorage.getItem('scheme') || 'default';
 
 const Theme = () => {
   const [font, setFont] = useState(localFontSize);
-  const [scheme, setScheme] = useState('default'); 
+  const [scheme, setScheme] = useState(localScheme); 
 
-  
+  useEffect(() => {
+    localStorage.setItem('scheme', scheme)
+    let root = document.documentElement;
+    root.setAttribute('data-theme', `${scheme}`)
+
+    
+  }, [scheme])
   useEffect(() => {
     localStorage.setItem('font-size', font)
     let root = document.documentElement;
-    root.setAttribute('data-theme', `${scheme}`)
     let fontSlider = document.querySelector('.theme-range__slider');
     root.style.setProperty('--font-size', `${font}px`);
     fontSlider.style.setProperty('--color-stop', `calc(((${font} / 20) * 100%) - 60%)`);

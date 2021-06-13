@@ -359,6 +359,7 @@ svg {
 
   .header-control {
     margin-left: auto;
+    color: var(--text);
   }
   .header-control > *:first-child {
     display: none;
@@ -863,7 +864,7 @@ svg {
   .section-flex {
     display: flex;
     flex-direction: row-reverse;
-    background: #e0e8eb;
+    background: var(--hero-bg);
     padding-top: 3em;
   }
   .section-flex .section-content {
@@ -949,7 +950,7 @@ svg {
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: var(--bg);
   padding: 1.6em 1em;
   background-position: center;
   background-size: cover;
@@ -1260,7 +1261,7 @@ svg {
   }
 }
 .footer-contact {
-  background: url(https://assets-global.website-files.com/5f3c19f18169b65d9d0bf384/5f3c19f18169b692970bf4d2_asset%2047.png), #e0e8eb;
+  background: url(https://assets-global.website-files.com/5f3c19f18169b65d9d0bf384/5f3c19f18169b692970bf4d2_asset%2047.png), var(--hero-bg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 100% 100%;
@@ -1318,7 +1319,7 @@ svg {
   border: 1px solid var(--border);
   border-radius: 11px;
   outline: 0px;
-  background-color: var(--color-white);
+  background-color: var(--bg);
 }
 .input-label .input {
   margin-top: 0.6em;

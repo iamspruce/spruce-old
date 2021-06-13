@@ -30,7 +30,6 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
     <Helmet
       htmlAttributes={{
         lang,
-        'data-theme': 'default',
       }}
       style={[{
         "cssText": `
@@ -44,6 +43,7 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
             --text-dark: ${data.colors["text-dark"]};
             --bg: ${data.colors["bg"]};
             --bg-alt: ${data.colors["bg-alt"]};
+            --hero-bg: ${data.colors["hero-bg"]};
           }
           
           `

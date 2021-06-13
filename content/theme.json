@@ -8,19 +8,21 @@
                 "text-alt": "#42425a",
                 "border": "#ededf0",
                 "bg": "#ffffff",
-                "bg-alt": "#f9f9fa"
+                "bg-alt": "#f9f9fa",
+                "hero-bg": "#e0e8eb"
             }
       },
       {
             "id": "dark",
             "colors": {
-                "color-primary": "#0250bb",
-                "text-dark": "#20123a",
+                "color-primary": "#434af9",
+                "text-dark": "#2e31be",
                 "text": "#fff",
-                "text-alt": "#42425a",
-                "border": "#ededf0",
-                "bg": "#000",
-                "bg-alt": "#f9f9fa"
+                "text-alt": "#f9f9fa",
+                "border": "#ffa51d",
+                "bg": "#191a35",
+                "bg-alt": "#feeac8",
+                "hero-bg": "#ffa51d"
             }
       }
 ]
