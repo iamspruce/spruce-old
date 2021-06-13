@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import theme from "../../content/theme.json"
+
 
 function SEO({ description, lang, meta, image: metaImage, title, pathname, pageType }) {
   const { site } = useStaticQuery(
@@ -19,7 +21,7 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
       }
     `
   )
-
+  let JsonData = theme
   const metaDescription = description || site.siteMetadata.description
   const image = `${metaImage}`
   const canonical = pathname ? `${site.siteMetadata.url}${pathname}` : null
@@ -28,7 +30,22 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
     <Helmet
       htmlAttributes={{
         lang,
+        'data-theme': 'dark',
       }}
+      style={[{
+        "cssStyles": `
+        ${JsonData.map((data) => {
+          return (
+            `
+          [data-theme='${data.id}'] {
+            ${JSON.stringify(data.colors)}
+          }
+          
+          `
+          )
+        })}
+        `  
+       }]}
       title={title}
       titleTemplate={`${site.siteMetadata.title} | %s`}
       link={

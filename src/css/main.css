@@ -1398,20 +1398,26 @@ svg {
   background-color: var(--bg-alt);
 }
 
+.theme-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .theme-content {
   margin-top: 1rem;
+}
+.theme-content p {
+  color: var(--text-alt);
+  margin-bottom: 1rem;
 }
 .theme-content small {
   color: var(--text-dark);
   display: block;
   margin-bottom: 0.7rem;
 }
-.theme-content p {
-  color: var(--text-alt);
-}
 
 .theme-range {
-  margin: 2rem 0rem;
+  margin: 0.5rem 0rem 2rem 0rem;
   max-width: 40rem;
 }
 .theme-range label {
