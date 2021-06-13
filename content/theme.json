@@ -3,26 +3,26 @@
             "id": "default",
             "colors": {
                 "color-primary": "#0250bb",
-                "text-dark": "#20123a",
-                "text": "#000000",
+                "text": "#20123a",
                 "text-alt": "#42425a",
                 "border": "#ededf0",
                 "bg": "#ffffff",
                 "bg-alt": "#f9f9fa",
-                "hero-bg": "#e0e8eb"
+                "hero-bg": "#e0e8eb",
+                "shadow": "0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12)"
             }
       },
       {
             "id": "dark",
             "colors": {
                 "color-primary": "#434af9",
-                "text-dark": "#2e31be",
-                "text": "#fff",
+                "text": "#ffffff",
                 "text-alt": "#f9f9fa",
-                "border": "#ffa51d",
                 "bg": "#191a35",
                 "bg-alt": "#feeac8",
-                "hero-bg": "#ffa51d"
+                "border": "rgba(225,225,225,.1)",
+                "hero-bg": "#ffa51d",
+                "shadow": "0 8px 12px 1px rgba(225,225,225,.04),0 3px 16px 2px #f9f9fa,0 5px 10px -3px rgba(225,225,225,.12)"
             }
       }
 ]

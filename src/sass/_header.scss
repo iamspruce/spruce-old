@@ -31,7 +31,7 @@
         color: var(--text);
 
         &:hover {
-            color: var(--gray);
+            color: var(--text-alt);
         }
         &.active {
             border-bottom: 1px solid var(--color-primary);
@@ -46,7 +46,6 @@
     }
     .header-control {
         margin-left: auto;
-        color: var(--text);
 
         > *:first-child {
             display: none;
@@ -66,6 +65,13 @@
 
         
     }
+    .header-control, .header-btn {
+
+        button {
+        color: var(--text);
+
+        }
+    }
 
     
     .list-items {
@@ -79,7 +85,7 @@
         flex-direction: column;
         align-items: initial;
         background: var(--bg);
-        box-shadow: 0 0 1px 1px rgba(29,17,51,.04),0 0 3px 2px rgba(9,32,77,.12),0 0 2px -3px rgba(29,17,51,.12);
+        box-shadow: var(--shadow);
 
         li {
 

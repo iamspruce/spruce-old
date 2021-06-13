@@ -36,9 +36,7 @@
   h1,.h1 {
     font-size: 26px;
   }
-  h1,h2,h3,h4,h5,h6 {
-    color: var(--text-dark);
-  }
+  
   /*------------------------------------*  #SHARED
   \*------------------------------------*/
   /**
@@ -70,8 +68,7 @@
       --bold:600;
       --font: "Gothic A1",Arial, Helvetica, sans-serif ;
       --font-size: 15px;
-      --text: #000000;
-      --text-dark: #20123a;
+      --text: #20123a;
       --text-alt: #42425a;
       --border: #ededf0;
       --bg: #ffffff;

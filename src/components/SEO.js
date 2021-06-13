@@ -40,10 +40,10 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
             --color-primary: ${data.colors["color-primary"]};
             --text: ${data.colors["text"]};
             --text-alt: ${data.colors["text-alt"]};
-            --text-dark: ${data.colors["text-dark"]};
             --bg: ${data.colors["bg"]};
             --bg-alt: ${data.colors["bg-alt"]};
             --hero-bg: ${data.colors["hero-bg"]};
+            --shadow: ${data.colors["shadow"]};
           }
           
           `

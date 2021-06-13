@@ -85,7 +85,7 @@
     }
 }
 .title {
-  color: var(--text-dark);
+  color: var(--text);
 }
 .title_alt {
   color: var(--text-alt);
@@ -203,7 +203,7 @@ transform: rotateY(180deg);
   border-radius: 100%;
   width: 112%;
   height: 293px;
-  background-color: white;
+  background-color: var(--bg);
   right: -34%;
   top: 20px;
 }

@@ -2,27 +2,33 @@ import React, { useState,useEffect } from "react"
 import theme from "../../content/theme.json"
 import Icon from "./Icon"
 
-const localFontSize = localStorage.getItem('font-size') || '15';
-const localScheme = localStorage.getItem('scheme') || 'default';
 
 const Theme = () => {
-  const [font, setFont] = useState(localFontSize);
-  const [scheme, setScheme] = useState(localScheme); 
+  function useStickyState(defaultValue, key) {
+    const [value, setValue] = useState(() => {
+      const stickyValue = window.localStorage.getItem(key);
+      return stickyValue !== null
+        ? stickyValue
+        : defaultValue;
+    });
+    useEffect(() => {
+      window.localStorage.setItem(key, JSON.stringify(value));
+      let root = document.documentElement;
+      key !== 'font'
+        ? root.setAttribute('data-theme', value)
+        : root.style.setProperty('--font-size', `${value}px`)
+    }, [key, value]);
+    return [value, setValue];
+  }
+  
+  const [font, setFont] = useStickyState(15, "font");
+  const [scheme, setScheme] = useStickyState('default', "scheme");
 
-  useEffect(() => {
-    localStorage.setItem('scheme', scheme)
-    let root = document.documentElement;
-    root.setAttribute('data-theme', `${scheme}`)
-
-    
-  }, [scheme])
-  useEffect(() => {
+ /*  useEffect(() => {
     localStorage.setItem('font-size', font)
-    let root = document.documentElement;
-    let fontSlider = document.querySelector('.theme-range__slider');
     root.style.setProperty('--font-size', `${font}px`);
     fontSlider.style.setProperty('--color-stop', `calc(((${font} / 20) * 100%) - 60%)`);
-  }, [font]);
+  }, [font]); */
 
 
   return (
