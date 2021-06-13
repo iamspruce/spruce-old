@@ -35,21 +35,7 @@ const Head = ({ title, description, image }) => {
         }
       `}
   </script>
-  <style type="text/css">{`
-      :root {
-      
-      }
-        ${JsonData.map((data) => {
-          return (
-            `
-          [data-theme='${data.id}'] {
-            ${JSON.stringify(data.colors)}
-          }
-          
-          `
-          )
-        })}
-    `}</style>
+ 
         <meta name="description" content={`${description}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={`${meta.twitterUsername}`} />

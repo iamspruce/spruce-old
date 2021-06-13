@@ -30,20 +30,25 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
     <Helmet
       htmlAttributes={{
         lang,
-        'data-theme': 'dark',
+        'data-theme': 'default',
       }}
       style={[{
-        "cssStyles": `
+        "cssText": `
         ${JsonData.map((data) => {
           return (
-            `
+           `
           [data-theme='${data.id}'] {
-            ${JSON.stringify(data.colors)}
+            --color-primary: ${data.colors["color-primary"]};
+            --text: ${data.colors["text"]};
+            --text-alt: ${data.colors["text-alt"]};
+            --text-dark: ${data.colors["text-dark"]};
+            --bg: ${data.colors["bg"]};
+            --bg-alt: ${data.colors["bg-alt"]};
           }
           
           `
           )
-        })}
+        }).join('')}
         `  
        }]}
       title={title}
