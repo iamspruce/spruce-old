@@ -1,19 +1,17 @@
 import React from 'react'
-import BlogHero from '../components/BlogHero'
-import { BlogList } from '../components/BlogList'
 import Layout from '../components/Layout'
+import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
 
 
 const blog = () => {
+    let title = "Articles: Written Accross The Web";
+    let desc = "A list of curated articles both on this site and accross the web...";
     return (
-        <div className="blog-page">
-            <SEO title="Blog" image="https://iamspruce.dev/img/spruce.webp" />
+        <div className="page">
+        <SEO title="Blog" image="https://iamspruce.dev/img/spruce.webp" />
         <Layout>
-        <BlogHero />
-        <div className="section-side-pad">
-            <BlogList />
-            </div>
+        <PageHero title={`${title}`} desc={`${desc}`} />
         </Layout>
         </div>
     )

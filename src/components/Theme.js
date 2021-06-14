@@ -6,13 +6,15 @@ import Icon from "./Icon"
 const Theme = () => {
   function useStickyState(defaultValue, key) {
     const [value, setValue] = useState(() => {
-      const stickyValue = window.localStorage.getItem(key);
-      return stickyValue !== null
+      /* const stickyValue = window.localStorage.getItem(key); */
+      /* return stickyValue !== null
         ? stickyValue
-        : defaultValue;
+        : defaultValue; */
+        return defaultValue;
     });
     useEffect(() => {
-      window.localStorage.setItem(key, JSON.stringify(value));
+
+      window.localStorage.setItem(key, value);
       let root = document.documentElement;
       key !== 'font'
         ? root.setAttribute('data-theme', value)

@@ -4,12 +4,13 @@ import Layout from "../components/Layout"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import SEO from "../components/SEO"
+import PageHero from "../components/PageHero"
 
 export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       coverImage {
-        fluid(toFormat: WEBP, maxWidth: 750) {
+        fixed(toFormat: WEBP, width: 750) {
           src
         }
       }
@@ -34,7 +35,7 @@ export const query = graphql`
 
 export default function BlogPost({ data }, props) {
   const post = data.contentfulBlogPost
-  const image = post.coverImage.fluid.src
+  const image = post.coverImage.fixed.src
   const options = {
     renderNode: {
       "embedded-asset-block": node => {
@@ -51,38 +52,19 @@ export default function BlogPost({ data }, props) {
     },
   }
   return (
+    <div className="page">
       <Layout>
         <SEO title={post.title} description={post.summary} image={image} pageType="article" />
-        <section className="section-side-pad">
           <article className="post">
-            <header className="post-header">
-              <h1 className="post-header__title p-name" itemprop="headline">
-                {post.title}
-              </h1>
-              <div className="post__meta">
-                <time
-                  className="post-header__time dt-published"
-                  itemprop="datePublished"
-                  datetime="2018-06-14T00:00:00"
-                >
-                  {post.publishedDate}
-                </time>{" "}
-                •{" "}
-                <a
-                  className="btn btn--primary btn--small"
-                  href={`${post.postActionLink}`}
-                  target="__blank"
-                  rel="noopener noreferrer"
-                >{`${post.postAction}`}</a>
-              </div>
+            <header>
+              <PageHero title={post.title} desc={post.summary} time={post.publishedDate} />
             </header>
 
-            <div className="post__body e-content" itemprop="articleBody">
-              <p className="post__summary">{post.summary}</p>
+            <div className="wrapper__inner post__body e-content" itemprop="articleBody">
               {renderRichText(data.contentfulBlogPost.body, options)}
             </div>
           </article>
-        </section>
       </Layout>
+      </div>
   )
 }
