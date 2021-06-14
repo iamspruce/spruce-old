@@ -4,7 +4,7 @@ import JSONData from "../../content/skills.json"
 const specialize = () => {
   return (
     <>
-      <section className="section-pad section-bg-alt">
+      <section className="section-side-pad section-pad section-bg-alt">
             <div className="section-head text-center">
           <h2 className="title">Specializes In</h2>
           <p>Below are some of the services I offer.</p>

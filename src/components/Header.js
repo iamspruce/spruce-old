@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 import Icon from "./Icon";
 import JSONData from "../../content/navLinks.json"
 import Theme from "./Theme";
+import Button from "./Button";
 
 
 
@@ -58,9 +59,7 @@ export default function Header() {
       <a href="https://twitter.com/sprucekhalifa" className={`btn btn--primary btn--small header-btn`}>
         Follow Me
       </a>
-      <button aria-label="open theme switcher" className="btn btn--default header-btn theme-btn" onClick={toggleTheme}>
-        Theme
-      </button>
+      <Button name="Theme" label="open theme switcher" btnSize="small" btnType="default" className="header-btn theme-btn" event={toggleTheme} />
     </div>
    </header>
     </>

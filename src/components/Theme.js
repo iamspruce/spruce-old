@@ -1,19 +1,17 @@
 import React, { useState,useEffect } from "react"
 import theme from "../../content/theme.json"
-import Icon from "./Icon"
+import Button from "./Button";
 
 
 const Theme = () => {
   function useStickyState(defaultValue, key) {
     const [value, setValue] = useState(() => {
-      /* const stickyValue = window.localStorage.getItem(key); */
-      /* return stickyValue !== null
+      const stickyValue = typeof window !== 'undefined' && window.localStorage.getItem(key); 
+      return stickyValue !== null
         ? stickyValue
-        : defaultValue; */
-        return defaultValue;
+        : defaultValue;
     });
     useEffect(() => {
-
       window.localStorage.setItem(key, value);
       let root = document.documentElement;
       key !== 'font'
@@ -34,13 +32,11 @@ const Theme = () => {
 
 
   return (
-    <div className="theme" aria-modal="true">
-      <div className="theme-wrapper__inner wrapper">
+    <div className="theme">
+      <div className="theme-wrapper__inner">
         <div className="theme-header">
         <strong className="theme-title textlarge">Customize Theme</strong>
-          <button aria-label="close theme switcher" className="btn">
-            <Icon name="icon-close" size="16" />
-          </button>
+        <Button icon="icon-close" label="close theme switcher" btnSize="small" btnType="default" />
         </div>
       <div className="theme-content">
       <p>
