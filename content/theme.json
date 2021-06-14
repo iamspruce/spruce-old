@@ -15,14 +15,27 @@
       {
             "id": "dark",
             "colors": {
-                "color-primary": "#434af9",
-                "text": "#ffffff",
-                "text-alt": "#f9f9fa",
-                "bg": "#191a35",
-                "bg-alt": "#feeac8",
+                "color-primary": "#ff8906",
+                "text": "#fffffe",
+                "text-alt": "#a7a9be",
+                "bg": "#0f0e17",
+                "bg-alt": "#000",
                 "border": "rgba(225,225,225,.1)",
-                "hero-bg": "#ffa51d",
-                "shadow": "0 8px 12px 1px rgba(225,225,225,.04),0 3px 16px 2px #f9f9fa,0 5px 10px -3px rgba(225,225,225,.12)"
+                "hero-bg": "#f25f4c",
+                "shadow": "rgba(225,225,225,.1)"
+            }
+      },
+      {
+            "id": "warm",
+            "colors": {
+                "color-primary": "#ff8e3c",
+                "text": "#0d0d0d",
+                "text-alt": "#2a2a2a",
+                "bg": "#eff0f3",
+                "bg-alt": "#fff",
+                "border": "#ededf0",
+                "hero-bg": "#fffffe",
+                "shadow": "0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12)"
             }
       }
 ]

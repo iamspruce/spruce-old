@@ -1,6 +1,11 @@
 .btn {
     text-align: center;
     transition: all .4s cubic-bezier(0.23, 1, 0.320, 1);
+    color: currentColor;
+
+    svg {
+        fill: currentColor;
+    }
 }
 
 .btn.btn--primary {
