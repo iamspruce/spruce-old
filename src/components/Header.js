@@ -43,11 +43,11 @@ export default function Header() {
         <Icon name="icon-close" width="20px" height="20px" className={`icon-close ${openMenu} `} hidden />
         </button>
         <ul className={`list-items ${openMenu}`}>
-        <div className="list-items__btn" hidden>
+        <li className="list-items__btn" hidden>
         <a href="https://twitter.com/sprucekhalifa" className={`btn btn--primary btn--small list-items__btn`}>
         Follow Me
       </a>
-        </div>
+        </li>
         {JSONData.content.map((data, index) => {
           return <li key={`content_item_${index}`}>
             <Link to={data.link} activeClassName="active" onClick={toggle}>{data.name}</Link>

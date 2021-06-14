@@ -1389,9 +1389,16 @@ svg {
 }
 
 .schemes {
-  display: flex;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 1.5rem 2rem;
 }
-.schemes > * + * {
+.schemes > * {
   margin-right: 0.7rem;
 }
 

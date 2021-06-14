@@ -52,7 +52,7 @@ const Hero = () => {
             </Link>
           </div>
             <span className="line line-vertical">
-              <span>Default</span>
+              <span className="js-themeName">Default</span>
             </span>
         </div>
         <div className="hero-skills slide-left">

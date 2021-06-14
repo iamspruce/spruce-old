@@ -7,6 +7,7 @@ const Theme = () => {
   function useStickyState(defaultValue, key) {
     const [value, setValue] = useState(() => {
       const stickyValue = typeof window !== 'undefined' && window.localStorage.getItem(key); 
+      
       return stickyValue !== null
         ? stickyValue
         : defaultValue;
@@ -36,7 +37,7 @@ const Theme = () => {
       <div className="theme-wrapper__inner">
         <div className="theme-header">
         <strong className="theme-title textlarge">Customize Theme</strong>
-        <Button icon="icon-close" label="close theme switcher" btnSize="small" btnType="default" />
+        <Button icon="icon-close" iconSize="16" label="close theme switcher" btnSize="small" btnType="default" />
         </div>
       <div className="theme-content">
       <p>
