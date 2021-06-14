@@ -1396,7 +1396,7 @@ svg {
   overflow-x: auto;
   text-align: center;
   -webkit-overflow-scrolling: touch;
-  padding: 1rem 1.5rem 2rem;
+  padding: 1rem 0.5rem 2rem;
 }
 .schemes > * {
   margin-right: 0.7rem;
