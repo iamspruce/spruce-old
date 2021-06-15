@@ -1,104 +1,112 @@
-import React, { useState,useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import theme from "../../content/theme.json"
-import Button from "./Button";
-
+import Button from "./Button"
 
 const Theme = () => {
- /*  function useStickyState(defaultValue, key) {
-    const [value, setValue] = useState(() => {
-      const stickyValue = typeof window !== 'undefined' && window.localStorage.getItem(key); 
-      
-      return stickyValue !== null
-        ? stickyValue
-        : defaultValue;
-    });
-    useEffect(() => {
-      window.localStorage.setItem(key, value);
-      let root = document.documentElement;
-      key !== 'font'
-        ? root.setAttribute('data-theme', value)
-        : root.style.setProperty('--font-size', `${value}px`)
-    }, [key, value]);
-    return [value, setValue];
+  const [openTheme, setOpenTheme] = useState("off")
+  function toggleTheme() {
+    setOpenTheme(openTheme === "on" ? "off" : "on");
   }
-  
-  const [font, setFont] = useStickyState(15, "font");
-  const [scheme, setScheme] = useStickyState('default', "scheme");
- */
- /*  useEffect(() => {
-    localStorage.setItem('font-size', font)
-    root.style.setProperty('--font-size', `${font}px`);
-    fontSlider.style.setProperty('--color-stop', `calc(((${font} / 20) * 100%) - 60%)`);
-  }, [font]); */
-
   const [state, setState] = useState(() => {
-    const localVal = typeof window !== 'undefined' && window.localStorage.getItem('theme');
+    const localVal =
+      typeof window !== "undefined" && window.localStorage.getItem("theme")
 
     let obj = {
       font: 15,
-      scheme: 'default'
+      scheme: "default",
     }
-    return localVal !== null
-      ? JSON.parse(localVal)
-      : obj
+    return localVal !== null ? JSON.parse(localVal) : obj
   })
 
   const update = e => {
-    const {name, value} = e.target;
+    const { name, value } = e.target
     setState(prevState => ({
       ...prevState,
-      [name]: value
-    }))
+      [name]: value,
+    }));
   }
   useEffect(() => {
-    window.localStorage.setItem('theme', JSON.stringify(state));
+    window.localStorage.setItem("theme", JSON.stringify(state))
+    if (document.querySelector('.js-themeName') !== null) {
+      let themeName = document.querySelector('.js-themeName');
+      themeName.innerHTML = state.scheme
+    }
+    let schemes = document.querySelectorAll('.js-scheme-btn');
+    schemes.forEach((item) => {
+      item.value == state.scheme ? item.classList.add('active') : item.classList.remove('active');
+    })
     let root = document.documentElement;
-    root.setAttribute('data-theme', state.scheme)
-    root.style.setProperty('--font-size', `${state.font}px`)
-
+    root.setAttribute("data-theme", state.scheme)
+    root.style.setProperty("--font-size", `${state.font}px`)
   }, [state])
 
   return (
     <div className="theme">
+      <div className="theme-close text-right">
+        <Button
+          icon="icon-close"
+          iconSize="16"
+          label="close theme switcher"
+          btnSize="small"
+          btnType="default btn--close"
+          event={toggleTheme}
+        />
+      </div>
       <div className="theme-wrapper__inner">
-        <div className="theme-header">
-        <strong className="theme-title textlarge">Customize Theme</strong>
-        <Button icon="icon-close" iconSize="16" label="close theme switcher" btnSize="small" btnType="default" />
-        </div>
-      <div className="theme-content">
-      <p>
-          Please Note that Changes made here will affect other pages across the entire site.
+      <div className="theme-header text-center">
+        <strong className="theme-title">Select Theme</strong>
+        <p>
+          Please Note that Changes made here will affect other pages across the
+          entire site.
         </p>
-        <small>Font Size</small>
-        <div className="theme-range">
-              <label htmlFor="font">
-            <span className="text-xsmall">Aa</span>
-              <input type="range" name="font" id="font-size" min="10" max="20" className="theme-range__slider" onChange={update} value={state.font} />
-                  <span className="text-large">Aa</span>
-              </label>
-        </div>
       </div>
       <div className="theme-content">
-        <small>Color Schemes</small>
-        <div className="schemes">
-          {theme.map((data) => {
+        <ul className="schemes">
+          {theme.map(data => {
             return (
-            <button onClick={update} className="scheme js-scheme" aria-label={`${data.id}`} name="scheme" value={`${data.id}`} style={{ backgroundColor: `${data.colors["bg"]}`, border: `1px solid ${data.colors["color-primary"]}`}}>
-              <span className="scheme__pallete">
-              <span style={{ backgroundColor: `${data.colors["color-primary"]}`}}></span>
-              <span style={{ backgroundColor: `${data.colors["text"]}`}}></span>
-              <span style={{ backgroundColor: `${data.colors["text-alt"]}`}}></span>
-              <span style={{ backgroundColor: `${data.colors["border"]}`}}></span>
-              <span style={{ backgroundColor: `${data.colors["bg-alt"]}`}}></span>
-              </span>
-            </button>
+            <li className="scheme">
+              <button
+                onClick={update}
+                className="scheme-btn js-scheme-btn"
+                aria-label={`${data.id}`}
+                name="scheme"
+                value={`${data.id}`}
+                style={{ backgroundColor: `${data.colors["bg"]}` }}
+              ></button>
+            </li>
             )
           })}
+        </ul>
+      </div>
+      <div className="theme-content">
+        <div className="theme-range">
+          <label htmlFor="font">
+          <span className="text-xsmall">Aa</span>
+            <input
+              type="range"
+              name="font"
+              min="10"
+              max="20"
+              step="2"
+              className="theme-range__slider"
+              onChange={update}
+              value={state.font}
+              list="font-size"
+            />
+          <span className="text-large">Aa</span>
+            <datalist id="font-size">
+              <option value="10"></option>
+              <option value="12"></option>
+              <option value="14"></option>
+              <option value="16"></option>
+              <option value="18"></option>
+              <option value="20"></option>
+            </datalist>
+          </label>
         </div>
       </div>
+      </div>
     </div>
-    </div>
-
   )
 }
 

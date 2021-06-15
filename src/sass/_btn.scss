@@ -37,6 +37,10 @@
 .btn--default {
     padding: 1em;
 }
+.btn--close {
+    background: var(--border);
+    border-radius: 11px;
+}
 @media (min-width: 620px) {
     .btn--small {
         padding: .4rem 1rem;

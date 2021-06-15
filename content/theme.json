@@ -17,9 +17,9 @@
                 "color-primary": "#ff8906",
                 "text": "#fffffe",
                 "text-alt": "#a7a9be",
+                "border": "rgba(225,225,225,.1)",
                 "bg": "#0f0e17",
                 "bg-alt": "#333",
-                "border": "rgba(225,225,225,.1)",
                 "shadow": "rgba(225,225,225,.1)"
             }
       },
@@ -31,7 +31,7 @@
                 "text-alt": "#2a2a2a",
                 "bg": "#eff0f3",
                 "bg-alt": "#fff",
-                "border": "#ededf0",
+                "border": "rgba(0,0,0,.1)",
                 "shadow": "0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12)"
             }
       }

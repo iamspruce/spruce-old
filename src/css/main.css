@@ -798,6 +798,11 @@ svg {
   padding: 1em;
 }
 
+.btn--close {
+  background: var(--border);
+  border-radius: 11px;
+}
+
 @media (min-width: 620px) {
   .btn--small {
     padding: 0.4rem 1rem;
@@ -929,6 +934,7 @@ svg {
 
 .card {
   background-color: var(--bg);
+  border-radius: 11px;
   padding: 1.6em 1em;
   background-position: center;
   background-size: cover;
@@ -978,13 +984,11 @@ svg {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.article-list > a:nth-child(2) {
+.article-list > li:nth-child(2) {
   margin-top: 60px;
-  display: inline-block;
 }
-.article-list > a:nth-child(3) {
+.article-list > li:nth-child(3) {
   margin-top: -60px;
-  display: inline-block;
 }
 
 @media (max-width: 1020px) {
@@ -992,7 +996,7 @@ svg {
     grid-gap: 27px;
   }
 
-  .article-list a {
+  .article-list li {
     margin: 0px !important;
   }
   .article-list .article-card {
@@ -1002,9 +1006,10 @@ svg {
 .article-card {
   min-height: 280px;
   margin: 4px;
-  background-color: var(--bg);
+  background-color: var(--bg-alt);
   box-shadow: var(--shadow);
   transition: all 0.2s ease-in-out;
+  border-radius: 14px;
 }
 .article-card:hover {
   transform: scale(1.1);
@@ -1045,41 +1050,6 @@ svg {
   color: var(--text);
 }
 
-.article__post {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--bg);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  padding: 1em;
-  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.article__post:hover {
-  box-shadow: initial;
-}
-.article__post header {
-  max-width: 25em;
-}
-.article__post header > * + * {
-  margin-top: 0.6em;
-}
-
-@media (max-width: 620px) {
-  .article__post {
-    padding-bottom: 0px;
-    flex-direction: column;
-  }
-  .article__post footer {
-    padding: 1em 0px;
-    margin-top: 1.2em;
-    border-top: 1px solid var(--border);
-  }
-}
-@media (min-width: 621px) {
-  .article__post {
-    align-items: center;
-  }
-}
 .about-tab {
   max-width: max-content;
 }
@@ -1319,10 +1289,19 @@ svg {
 
 .theme {
   background-color: var(--bg-alt);
-  padding-top: 1em;
+  border-bottom: 1px solid var(--border);
+}
+
+.theme-close {
+  padding: 1rem;
+}
+
+.theme-wrapper__inner {
   padding-bottom: 2em;
   padding-left: 1em;
   padding-right: 1em;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 @media (min-width: 620px) {
@@ -1331,32 +1310,24 @@ svg {
     padding-right: 3em;
   }
 }
-.theme-wrapper__inner.wrapper {
-  background-color: var(--bg-alt);
-}
-
 .theme-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 1rem;
+}
+.theme-header p {
+  margin-top: 0.6rem;
+  color: var(--text-alt);
 }
 
 .theme-content {
   margin-top: 1rem;
 }
-.theme-content p {
-  color: var(--text-alt);
-  margin-bottom: 1rem;
-}
-.theme-content small {
-  color: var(--text);
-  display: block;
-  margin-bottom: 0.7rem;
-}
 
 .theme-range {
-  margin: 0.5rem 0rem 2rem 0rem;
-  max-width: 40rem;
+  padding: 2rem 1rem;
+  background-color: var(--bg);
+  border-radius: 11px;
+  box-shadow: var(--shadow);
+  margin-top: 3rem;
 }
 .theme-range label {
   display: flex;
@@ -1389,33 +1360,35 @@ svg {
 }
 
 .schemes {
-  display: block;
-  width: 100%;
-  white-space: nowrap;
-  overflow-y: hidden;
-  overflow-x: auto;
-  text-align: center;
-  -webkit-overflow-scrolling: touch;
-  padding: 1rem 0.5rem 2rem;
-}
-.schemes > * {
-  margin-right: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem 0rem;
 }
 
-.scheme {
+.scheme-btn {
   display: inline-block;
-  padding: 1rem;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
   box-shadow: var(--shadow);
 }
-.scheme:hover {
+.scheme-btn:hover {
   box-shadow: initial;
 }
-.scheme .scheme__pallete span {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
+
+.scheme-btn.active {
+  position: relative;
+}
+.scheme-btn.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
-  box-shadow: 0 0 0 2px #fff;
+  border: 2px solid var(--color-primary);
 }/*# sourceMappingURL=main.css.map */

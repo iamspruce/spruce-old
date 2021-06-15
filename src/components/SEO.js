@@ -42,6 +42,7 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
             --text-alt: ${data.colors["text-alt"]};
             --bg: ${data.colors["bg"]};
             --bg-alt: ${data.colors["bg-alt"]};
+            --border: ${data.colors["border"]};
             --hero-bg: ${data.colors["hero-bg"]};
             --shadow: ${data.colors["shadow"]};
           }
