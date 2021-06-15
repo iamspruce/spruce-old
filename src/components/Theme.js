@@ -4,7 +4,7 @@ import Button from "./Button";
 
 
 const Theme = () => {
-  function useStickyState(defaultValue, key) {
+ /*  function useStickyState(defaultValue, key) {
     const [value, setValue] = useState(() => {
       const stickyValue = typeof window !== 'undefined' && window.localStorage.getItem(key); 
       
@@ -24,13 +24,39 @@ const Theme = () => {
   
   const [font, setFont] = useStickyState(15, "font");
   const [scheme, setScheme] = useStickyState('default', "scheme");
-
+ */
  /*  useEffect(() => {
     localStorage.setItem('font-size', font)
     root.style.setProperty('--font-size', `${font}px`);
     fontSlider.style.setProperty('--color-stop', `calc(((${font} / 20) * 100%) - 60%)`);
   }, [font]); */
 
+  const [state, setState] = useState(() => {
+    const localVal = typeof window !== 'undefined' && window.localStorage.getItem('theme');
+
+    let obj = {
+      font: 15,
+      scheme: 'default'
+    }
+    return localVal !== null
+      ? JSON.parse(localVal)
+      : obj
+  })
+
+  const update = e => {
+    const {name, value} = e.target;
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
+  useEffect(() => {
+    window.localStorage.setItem('theme', JSON.stringify(state));
+    let root = document.documentElement;
+    root.setAttribute('data-theme', state.scheme)
+    root.style.setProperty('--font-size', `${state.font}px`)
+
+  }, [state])
 
   return (
     <div className="theme">
@@ -47,7 +73,7 @@ const Theme = () => {
         <div className="theme-range">
               <label htmlFor="font">
             <span className="text-xsmall">Aa</span>
-              <input type="range" name="font" id="font-size" min="10" max="20" className="theme-range__slider" onChange={e => setFont(e.target.value)} value={font} />
+              <input type="range" name="font" id="font-size" min="10" max="20" className="theme-range__slider" onChange={update} value={state.font} />
                   <span className="text-large">Aa</span>
               </label>
         </div>
@@ -57,7 +83,7 @@ const Theme = () => {
         <div className="schemes">
           {theme.map((data) => {
             return (
-            <button onClick={e => setScheme(e.target.value)} className="scheme js-scheme" aria-label={`${data.id}`} value={`${data.id}`} style={{ backgroundColor: `${data.colors["bg"]}`, border: `1px solid ${data.colors["color-primary"]}`}}>
+            <button onClick={update} className="scheme js-scheme" aria-label={`${data.id}`} name="scheme" value={`${data.id}`} style={{ backgroundColor: `${data.colors["bg"]}`, border: `1px solid ${data.colors["color-primary"]}`}}>
               <span className="scheme__pallete">
               <span style={{ backgroundColor: `${data.colors["color-primary"]}`}}></span>
               <span style={{ backgroundColor: `${data.colors["text"]}`}}></span>

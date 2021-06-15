@@ -8,7 +8,6 @@
                 "border": "#ededf0",
                 "bg": "#ffffff",
                 "bg-alt": "#f9f9fa",
-                "hero-bg": "#e0e8eb",
                 "shadow": "0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12)"
             }
       },
@@ -19,9 +18,8 @@
                 "text": "#fffffe",
                 "text-alt": "#a7a9be",
                 "bg": "#0f0e17",
-                "bg-alt": "#000",
+                "bg-alt": "#333",
                 "border": "rgba(225,225,225,.1)",
-                "hero-bg": "#f25f4c",
                 "shadow": "rgba(225,225,225,.1)"
             }
       },
@@ -34,7 +32,6 @@
                 "bg": "#eff0f3",
                 "bg-alt": "#fff",
                 "border": "#ededf0",
-                "hero-bg": "#fffffe",
                 "shadow": "0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12)"
             }
       }

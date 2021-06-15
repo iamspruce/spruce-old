@@ -428,13 +428,13 @@ svg {
 }
 
 .page .header {
-  background-color: var(--hero-bg);
+  background-color: var(--bg-alt);
 }
 
 .page-wrapper {
   padding-top: 48px;
   padding-bottom: 36px;
-  background-color: var(--hero-bg);
+  background-color: var(--bg-alt);
 }
 
 .page-content {
@@ -703,7 +703,7 @@ svg {
     padding-top: 7px;
   }
   .section-flex .section-img {
-    background-color: var(--hero-bg);
+    background-color: var(--bg-alt);
     text-align: center;
     margin-top: 2em;
     padding-top: 1em;
@@ -842,7 +842,7 @@ svg {
   .section-flex {
     display: flex;
     flex-direction: row-reverse;
-    background: var(--hero-bg);
+    background: var(--bg-alt);
     padding-top: 3em;
   }
   .section-flex .section-content {
@@ -1194,7 +1194,7 @@ svg {
   }
 }
 .footer-contact {
-  background: url(https://assets-global.website-files.com/5f3c19f18169b65d9d0bf384/5f3c19f18169b692970bf4d2_asset%2047.png), var(--hero-bg);
+  background: url(https://assets-global.website-files.com/5f3c19f18169b65d9d0bf384/5f3c19f18169b692970bf4d2_asset%2047.png), var(--bg-alt);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 100% 100%;
