@@ -1368,9 +1368,9 @@ svg {
 
 .scheme-btn {
   display: inline-block;
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 50%;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 14px;
   box-shadow: var(--shadow);
 }
 .scheme-btn:hover {
@@ -1387,8 +1387,8 @@ svg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 14px;
   border: 2px dashed var(--color-primary);
 }/*# sourceMappingURL=main.css.map */

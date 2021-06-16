@@ -91,17 +91,9 @@ const Theme = () => {
               className="theme-range__slider"
               onChange={update}
               value={state.font}
-              list="font-size"
             />
           <span className="text-large">Aa</span>
-            <datalist id="font-size">
-              <option value="10"></option>
-              <option value="12"></option>
-              <option value="14"></option>
-              <option value="16"></option>
-              <option value="18"></option>
-              <option value="20"></option>
-            </datalist>
+            
           </label>
         </div>
       </div>
