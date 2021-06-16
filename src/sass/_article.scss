@@ -46,6 +46,12 @@
     color: var(--text);
   }
 }
+.blog-list {
+
+  > li + li {
+    margin-top: 2em;
+  }
+}
 
 
 .about-tab {
