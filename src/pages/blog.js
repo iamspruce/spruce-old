@@ -2,19 +2,54 @@ import React from 'react'
 import Layout from '../components/Layout'
 import PageHero from '../components/PageHero';
 import SEO from '../components/SEO';
+import Card from '../components/Card'
+import { graphql, Link, useStaticQuery } from "gatsby"
 
 
-const blog = () => {
+
+export default function Blog() {
     let title = "Articles: Written Accross The Web";
     let desc = "A list of curated articles both on this site and accross the web...";
+    const data = useStaticQuery(graphql`
+    query {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+        edges {
+          node {
+            id
+            title
+            publishedDate(formatString: "DD MMMM, YYYY")
+            publishedAt
+            slug
+          }
+        }
+      }
+    }
+  `)
     return (
         <div className="page">
-        <SEO title="Blog" image="https://iamspruce.dev/img/spruce.webp" />
         <Layout>
+        <SEO title="Blog" image="https://iamspruce.dev/img/spruce.webp" />
         <PageHero title={`${title}`} desc={`${desc}`} />
+        <div className="section-side-pad section-pad">
+            
+        <ul className="blog-list">
+        {data.allContentfulBlogPost.edges.map(edge => (
+          <li key={edge.node.id}>
+            <Link to={`/blog/${edge.node.slug}`}>
+              <Card
+                date={edge.node.publishedDate}
+                desc={edge.node.publishedAt}
+                title={edge.node.title}
+                icon="caret-right"
+                iconDesc="Read More"
+              />
+            </Link>
+          </li>
+        ))}
+      </ul>
+        </div>
         </Layout>
         </div>
     )
 }
 
-export default blog

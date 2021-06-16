@@ -9,7 +9,7 @@ const specialize = () => {
           <h2 className="title">Specializes In</h2>
           <p>Below are some of the services I offer.</p>
         </div>
-      <ul className="card-wrapper flex flex-wrap j-center">
+      <ul className="flex flex-wrap j-center" style={{ marginTop: 2 + 'em', marginBottom: 2 + 'em' }}>
         {JSONData.content.map((data, index) => {
           return <li key={`content_item_${index}`} className="card skill-card">
                 <h3 className="h1">{data.title}</h3>

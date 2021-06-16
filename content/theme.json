@@ -20,7 +20,7 @@
                 "border": "#010101",
                 "bg": "#16161a",
                 "bg-alt": "#242629",
-                "shadow": "0px 2px 4px rgba(225,225,225,.1)"
+                "shadow": "0px 2px 4px #010101"
             }
       },
       {
@@ -44,7 +44,7 @@
                 "bg": "#f2f7f5",
                 "bg-alt": "#ffffff",
                 "border": "#00332c",
-                "shadow": "0 8px 12px 1px #00332c,0 3px 16px 2px #00332c,0 5px 10px -3px #00332c"
+                "shadow": "rgba(0,0,0,.1)"
             }
       },
       {
