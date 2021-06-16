@@ -1339,8 +1339,8 @@ svg {
 }
 .theme-range__slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50% 50% 55% 45%/65% 62% 38% 35%;
   box-shadow: 1px 2px 4px var(--border);
   background-color: var(--border);
@@ -1360,8 +1360,8 @@ svg {
 
 .scheme-btn {
   display: inline-block;
-  width: 3.3em;
-  height: 3.3em;
+  width: 3.2em;
+  height: 3.2em;
   border-radius: 14px;
   box-shadow: var(--shadow);
 }
@@ -1379,8 +1379,8 @@ svg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 3.5em;
-  height: 3.5em;
+  width: 3.8em;
+  height: 3.8em;
   border-radius: 14px;
   border: 2px dashed var(--color-primary);
 }/*# sourceMappingURL=main.css.map */
