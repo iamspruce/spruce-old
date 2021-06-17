@@ -31,7 +31,12 @@ export default function Blog() {
         <SEO title="Blog" image="https://iamspruce.dev/img/spruce.webp" />
         <PageHero title={`${title}`} desc={`${desc}`} />
         <div className="section-side-pad section-pad">
-            
+          <div className="flex">
+            <div className="line-wrapper">
+            <span className="line line-vertical">
+              <span>Articles</span>
+            </span>
+            </div>
         <ul className="blog-list">
         {data.allContentfulBlogPost.edges.map(edge => (
           <li key={edge.node.id}>
@@ -47,6 +52,7 @@ export default function Blog() {
           </li>
         ))}
       </ul>
+      </div>
         </div>
         </Layout>
         </div>

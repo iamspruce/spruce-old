@@ -513,32 +513,24 @@ svg {
   position: absolute;
   transform: translate(0, 100%) rotate(90deg);
   transform-origin: top left;
-  top: -7em;
-  left: 97%;
-  padding: 0;
-  margin: 0;
-  height: 20%;
-}
-.line-vertical::before {
-  width: 1px;
-  height: calc(100% - 1em);
-  top: 1px;
-  left: 5px;
-  transform: rotate(90deg);
-  transform-origin: top right;
 }
 .line-vertical span {
   transform: translate(1em, -50%);
   position: absolute;
 }
 
+.line-vertical.theme-line {
+  top: -7em;
+  left: 97%;
+}
+
 @media (max-width: 663px) {
-  .line-vertical {
+  .line-vertical.theme-line {
     display: none;
   }
 }
 @media (min-width: 664px) and (max-width: 757px) {
-  .line-vertical {
+  .line-vertical.theme-line {
     left: 4em;
     top: 0px;
   }
@@ -928,15 +920,9 @@ svg {
   margin-top: 0.8em;
 }
 
-.card-wrappe {
-  margin: 2em 0em;
-}
-
 .card {
   background-color: var(--bg-alt);
   border-radius: 14px;
-  padding: 1.6em 1em;
-  border-radius: 11px;
   box-shadow: var(--shadow);
   transition: all 0.2s ease-in-out;
   min-height: 280px;
@@ -969,6 +955,7 @@ svg {
   background-color: var(--bg);
   border-bottom-right-radius: 59px;
   margin: 1em;
+  padding: 1.6em 1em;
   position: relative;
 }
 .card.skill-card h3 {
@@ -1042,8 +1029,12 @@ svg {
   color: var(--text);
 }
 
-.blog-list > li + li {
-  margin-top: 2em;
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 16px;
+  margin-left: 18px;
+  width: 100%;
 }
 
 .about-tab {
@@ -1329,12 +1320,23 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+.theme-range label::after {
+  content: attr(title);
+  display: block;
+  position: absolute;
+}
+.theme-range label::before {
+  content: var(--slider-toolTip);
+  display: block;
+  position: absolute;
 }
 .theme-range__slider {
   cursor: pointer;
   -webkit-appearance: none;
-  --color-stop: 0%;
-  background-image: linear-gradient(90deg, var(--color-primary) var(--color-stop), var(--border) var(--color-stop));
+  --slider-toolTip: 0;
+  background: var(--border);
   width: 100%;
   height: 4px;
   border-radius: 4rem;

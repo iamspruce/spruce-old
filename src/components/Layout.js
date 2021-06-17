@@ -10,7 +10,9 @@ export default function Layout({ children }) {
     <div className="wrapper">
       <SEO />
       <Header />
+      <main id="main">
       {children}
+      </main>
       <Footer />
     </div>
   )

@@ -45,13 +45,13 @@ const Hero = () => {
               <span>recent projects</span>
             </span>
             <h2 className="title">
-              <Link to="/projects">Earthly Countries App</Link>
+              <a href="https://earthly.vercel.app">Earthly Countries App</a>
             </h2>
             <Link to="#0" className="link">
               Explore
             </Link>
           </div>
-            <span className="line line-vertical">
+            <span className="line line-vertical theme-line">
               <span className="js-themeName">Default</span>
             </span>
         </div>

@@ -80,7 +80,7 @@ const Theme = () => {
       </div>
       <div className="theme-content">
         <div className="theme-range">
-          <label htmlFor="font">
+          <label htmlFor="font" title={state.font}>
           <span className="text-xsmall">Aa</span>
             <input
               type="range"
