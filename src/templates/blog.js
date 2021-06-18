@@ -24,7 +24,7 @@ export const query = graphql`
         references {
           title
           description
-          fluid(toFormat: WEBP, maxWidth: 750) {
+          fluid(toFormat: WEBP, maxWidth: 686) {
             src
           }
         }
@@ -49,6 +49,7 @@ export default function BlogPost({ data }, props) {
           </figure>
         )
       },
+      [BLOCKS.PARAGRAPH]: (node, children) => <p style={{ marginBottom: 2 + 'em'}}>{children}</p>
     },
   }
   return (

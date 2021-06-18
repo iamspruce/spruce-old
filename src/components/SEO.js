@@ -4,8 +4,15 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import theme from "../../content/theme.json"
 
-
-function SEO({ description, lang, meta, image: metaImage, title, pathname, pageType }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  image: metaImage,
+  title,
+  pathname,
+  pageType,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,7 +28,7 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
       }
     `
   )
-  let JsonData = theme
+  let themes = theme
   const metaDescription = description || site.siteMetadata.description
   const image = `${metaImage}`
   const canonical = pathname ? `${site.siteMetadata.url}${pathname}` : null
@@ -31,27 +38,31 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
       htmlAttributes={{
         lang,
       }}
-      style={[{
-        "cssText": `
-        ${JsonData.map((data) => {
-          return (
-           `
-          [data-theme='${data.id}'] {
-            --color-primary: ${data.colors["color-primary"]};
+      style={[
+        {
+          cssText: `
+        :root {
+          --font-size: 15px;
+        }
+        ${themes.map((data, index) => {
+          let themeColor = `
+            --primary-color: ${data.colors["primary-color"]};
             --text: ${data.colors["text"]};
             --text-alt: ${data.colors["text-alt"]};
-            --bg: ${data.colors["bg"]};
-            --bg-alt: ${data.colors["bg-alt"]};
+            --background: ${data.colors["background"]};
+            --background-alt: ${data.colors["background-alt"]};
             --border: ${data.colors["border"]};
-            --hero-bg: ${data.colors["hero-bg"]};
             --shadow: ${data.colors["shadow"]};
-          }
-          
           `
-          )
-        }).join('')}
-        `  
-       }]}
+          return `
+            [data-theme='${data.id}'] {
+                ${themeColor}
+              }
+              `
+        }).join("")}
+        `,
+        },
+      ]}
       title={title}
       titleTemplate={`${site.siteMetadata.title} | %s`}
       link={
@@ -125,7 +136,8 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname, pageT
                 },
               ]
         )
-        .concat(meta)} />
+        .concat(meta)}
+    />
   )
 }
 

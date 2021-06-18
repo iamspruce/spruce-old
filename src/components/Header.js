@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <>
     <div className={`theme-wrapper ${openTheme}`} hidden>
-      <Theme />
+      <Theme toggleTheme={toggleTheme} />
     </div>
     <header className="header">
       <div className="header-logo">

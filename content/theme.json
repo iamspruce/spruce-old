@@ -2,35 +2,35 @@
       {
             "id": "default",
             "colors": {
-                "color-primary": "#0250bb",
+                "primary-color": "#0250bb",
                 "text": "#20123a",
                 "text-alt": "#42425a",
                 "border": "#ededf0",
-                "bg": "#ffffff",
-                "bg-alt": "#f9f9fa",
+                "background": "#ffffff",
+                "background-alt": "#f9f9fa",
                 "shadow": "0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12)"
             }
       },
       {
             "id": "dark",
             "colors": {
-                "color-primary": "#7f5af0",
+                "primary-color": "#7f5af0",
                 "text": "#fffffe",
                 "text-alt": "#94a1b2",
                 "border": "#010101",
-                "bg": "#16161a",
-                "bg-alt": "#242629",
+                "background": "#16161a",
+                "background-alt": "#242629",
                 "shadow": "0px 2px 4px #010101"
             }
       },
       {
             "id": "warm",
             "colors": {
-                "color-primary": "#ff8e3c",
+                "primary-color": "#ff8e3c",
                 "text": "#0d0d0d",
                 "text-alt": "#2a2a2a",
-                "bg": "#eff0f3",
-                "bg-alt": "#fff",
+                "background": "#eff0f3",
+                "background-alt": "#fff",
                 "border": "rgba(0,0,0,.1)",
                 "shadow": "0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12)"
             }
@@ -38,11 +38,11 @@
       {
             "id": "nature",
             "colors": {
-                "color-primary": "#faae2b",
+                "primary-color": "#faae2b",
                 "text": "#00473e",
                 "text-alt": "#475d5b",
-                "bg": "#f2f7f5",
-                "bg-alt": "#ffffff",
+                "background": "#f2f7f5",
+                "background-alt": "#ffffff",
                 "border": "#00332c",
                 "shadow": "rgba(0,0,0,.1)"
             }
@@ -50,11 +50,11 @@
       {
             "id": "hot",
             "colors": {
-                "color-primary": "#8c7851",
+                "primary-color": "#8c7851",
                 "text": "#020826",
                 "text-alt": "#716040",
-                "bg": "#f9f4ef",
-                "bg-alt": "#ffffff",
+                "background": "#f9f4ef",
+                "background-alt": "#ffffff",
                 "border": "rgba(0,0,0,.1)",
                 "shadow": "0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12)"
             }

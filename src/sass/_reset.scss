@@ -71,10 +71,9 @@
       --text: #20123a;
       --text-alt: #42425a;
       --border: #ededf0;
-      --bg: #ffffff;
-      --bg-alt: #f9f9fa;
-      --color-primary: #0250bb;
-      --hero-bg: #e0e8eb;
+      --background: #ffffff;
+      --background-alt: #f9f9fa;
+      --primary-color: #0250bb;
       --shadow: 0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12);
      }
   
@@ -121,7 +120,7 @@
      */
     a {
       text-decoration: none;
-      color: var(--color-primary);
+      color: var(--primary-color);
       transition: color .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .link {

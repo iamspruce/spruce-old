@@ -1,5 +1,5 @@
 .card {
-      background-color: var(--bg-alt);
+      background-color: var(--background-alt);
       border-radius: 14px;
       box-shadow: var(--shadow);
       transition: all 0.2s ease-in-out;
@@ -33,7 +33,7 @@
 }
 
 .card.skill-card {
-      background-color: var(--bg);
+      background-color: var(--background);
       border-bottom-right-radius: 59px;
       margin: 1em;
       padding:1.6em 1em;
@@ -44,7 +44,7 @@
       }
 
       &:hover {
-            background-color: var(--color-primary);
+            background-color: var(--primary-color);
             color: white;
       }
 
@@ -52,7 +52,7 @@
             content: "";
             display: inline-block;
             width: 80%;
-            border-top:3px solid var(--color-primary);
+            border-top:3px solid var(--primary-color);
             height: 100%;
             background: transparent;
             position: absolute;

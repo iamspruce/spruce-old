@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react"
 import theme from "../../content/theme.json"
 import Button from "./Button"
 
-const Theme = () => {
-  const [openTheme, setOpenTheme] = useState("off")
-  function toggleTheme() {
-    setOpenTheme(openTheme === "on" ? "off" : "on");
-  }
+const Theme = ({toggleTheme}) => {
   const [state, setState] = useState(() => {
     const localVal =
       typeof window !== "undefined" && window.localStorage.getItem("theme")
@@ -71,7 +67,7 @@ const Theme = () => {
                 aria-label={`${data.id}`}
                 name="scheme"
                 value={`${data.id}`}
-                style={{ backgroundColor: `${data.colors["bg"]}` }}
+                style={{ backgroundColor: `${data.colors["background"]}` }}
               ></button>
             </li>
             )
