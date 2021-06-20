@@ -41,9 +41,6 @@ function SEO({
       style={[
         {
           cssText: `
-        :root {
-          --font-size: 15px;
-        }
         ${themes.map((data, index) => {
           let themeColor = `
             --primary-color: ${data.colors["primary-color"]};
@@ -53,6 +50,7 @@ function SEO({
             --background-alt: ${data.colors["background-alt"]};
             --border: ${data.colors["border"]};
             --shadow: ${data.colors["shadow"]};
+            color-scheme: ${data.colors["color-scheme"]};
           `
           return `
             [data-theme='${data.id}'] {

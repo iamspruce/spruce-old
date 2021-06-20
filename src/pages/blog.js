@@ -34,7 +34,7 @@ export default function Blog() {
           <div className="flex">
             <div className="line-wrapper">
             <span className="line line-vertical">
-              <span>Articles</span>
+              <span>&lt;Articles/&gt;</span>
             </span>
             </div>
         <ul className="blog-list">
