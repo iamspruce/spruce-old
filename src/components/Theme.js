@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useLayoutEffect } from "react"
 import theme from "../../content/theme.json"
 import Button from "./Button"
 

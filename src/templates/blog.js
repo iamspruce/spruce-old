@@ -2,8 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import SEO from "../components/SEO"
+import { BLOCKS } from "@contentful/rich-text-types"
 import PageHero from "../components/PageHero"
 
 export const query = graphql`
@@ -33,9 +32,8 @@ export const query = graphql`
   }
 `
 
-export default function BlogPost({ data }, props) {
+export default function BlogPost({ data, location }) {
   const post = data.contentfulBlogPost
-  const image = post.coverImage.fixed.src
   const options = {
     renderNode: {
       "embedded-asset-block": node => {
@@ -54,8 +52,14 @@ export default function BlogPost({ data }, props) {
   }
   return (
     <div className="page">
-      <Layout>
-        <SEO title={post.title} description={post.summary} image={image} pageType="article" />
+      <Layout
+        pageMeta={{
+          title: `${post.title}`,
+          description: `${post.summary}`,
+          image: `${post.coverImage.fixed.src}`
+        }}
+        location={location}
+      >
           <article className="post">
             <header>
               <PageHero title={post.title} desc={post.summary} time={post.publishedDate} />

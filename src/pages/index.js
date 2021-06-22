@@ -4,13 +4,17 @@ import Hero from "../components/Hero"
 import Specialize from "../components/Specialize"
 import About from "../components/About"
 import Contact from "../components/Contact"
-import SEO from "../components/SEO"
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
-    <Layout>
-    <SEO title="Homepage" image="https://iamspruce.dev/img/spruce.webp" />
+    <Layout
+      pageMeta={{
+        title: "Homepage",
+        keywords: ["cars", "cheap", "deal"],
+      }}
+      location={props.location}
+    >
       <Hero />
       <Specialize />
       <About />
