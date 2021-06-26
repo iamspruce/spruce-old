@@ -57,7 +57,7 @@
     
     .header-btn {
         display: block;
-        padding: 1em .5em;
+        padding: .5em;
         color: var(--text);
 
         svg {
@@ -111,9 +111,11 @@
         justify-content: center;
     }
     .header-btn.on {
-        position: relative;
+        position: fixed;
         z-index: 9999;
         color: var(--text);
+        right: 10px;
+        top: 20px;
     }
     .header-btn.on .icon-open {
         display: none;

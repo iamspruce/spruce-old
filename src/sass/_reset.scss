@@ -82,6 +82,11 @@
       background: hsla(348, 88%, 66%, 1);
       background: linear-gradient(90deg, hsla(348, 88%, 66%, 1) 0%, hsla(36, 89%, 68%, 1) 100%);
     }
+    @media (min-width: 1210px) {
+      body {
+        padding-top: 4em;
+      }
+    }
     
     a:focus,button:focus {
       border: 1px dashed var(--text);

@@ -37,9 +37,10 @@ export default function Layout({ children, pageMeta, location }) {
     `
   )
 
-  const metaDescription = pageMeta.description || site.siteMetadata.description;
-  const metaImg = site.siteMetadata.url/pageMeta.image || site.siteMetadata.image;
-  const metaKeywords = pageMeta.keywords || site.siteMetadata.keywords;
+  const metaDescription = pageMeta.description || site.siteMetadata.description
+  const metaImg =
+    pageMeta.image || `${site.siteMetadata.url}${site.siteMetadata.image}`
+  const metaKeywords = pageMeta.keywords || site.siteMetadata.keywords
 
   return (
     <div className="wrapper">
@@ -51,7 +52,10 @@ export default function Layout({ children, pageMeta, location }) {
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={metaKeywords.join(",")} />
 
-        <meta property="og:url" content={`${site.siteMetadata.url}${location.pathname}`} />
+        <meta
+          property="og:url"
+          content={`${site.siteMetadata.url}${location.pathname}`}
+        />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={pageMeta.title} />
         <meta property="og:image" content={metaImg} />
@@ -61,16 +65,19 @@ export default function Layout({ children, pageMeta, location }) {
         <meta property="article:author" content={site.siteMetadata.author} />
 
         <meta name="twitter:card" content="summary__large" />
-        <meta name="twitter:site" content={`${site.siteMetadata.url}${location.pathname}`} />
+        <meta
+          name="twitter:site"
+          content={`${site.siteMetadata.url}${location.pathname}`}
+        />
         <meta name="twitter:creator" content="@sprucekhalifa" />
-        <meta name="twitter:url" content={`${site.siteMetadata.url}${location.pathname}`} />
+        <meta
+          name="twitter:url"
+          content={`${site.siteMetadata.url}${location.pathname}`}
+        />
         <meta name="twitter:title" content={pageMeta.title} />
         <meta name="twitter:image" content={metaImg} />
 
-        <meta
-          name="twitter:description"
-          content={metaDescription}
-        />
+        <meta name="twitter:description" content={metaDescription} />
 
         <script type="application/ld+json">{`
 {
@@ -115,7 +122,7 @@ export default function Layout({ children, pageMeta, location }) {
         `
         }
       })
-      .join("")};
+      .join("")}
     ${themes
       .map(theme => {
         return `

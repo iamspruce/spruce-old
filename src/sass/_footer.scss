@@ -30,6 +30,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       padding:2em 1em;
+      box-shadow: var(--shadow);
 
       > * {
             flex: 1 0 50%;
@@ -91,6 +92,11 @@
             outline: 0px;
             display: block;
             background-color: transparent;
+            box-shadow: var(--shadow);
+      }
+      
+      textarea {
+            height: 102px;
       }
 }
 .input-full {
@@ -102,7 +108,7 @@
       top: 0%;
       left: 0px;
       font-size: 12px;
-      background-color: var(--background);
+      background-color: transparent;
       padding: 10px 10px 0px 10px;
 }
 

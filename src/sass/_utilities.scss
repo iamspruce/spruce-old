@@ -5,6 +5,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 1210px) {
+  .wrapper {
+    box-shadow: var(--shadow);
+  }
+}
 .wrapper__inner {
   max-width: 670px;
   margin-left: auto;

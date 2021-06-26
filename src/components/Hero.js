@@ -47,7 +47,7 @@ const Hero = () => {
             <h2 className="title">
               <a href="https://earthly.vercel.app">Earthly Countries App</a>
             </h2>
-            <Link to="#0" className="link">
+            <Link to="/projects" className="link">
               Explore
             </Link>
           </div>

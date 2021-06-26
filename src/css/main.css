@@ -89,6 +89,11 @@ body {
   background: linear-gradient(90deg, #f55c7b 0%, #f6bc65 100%);
 }
 
+@media (min-width: 1210px) {
+  body {
+    padding-top: 4em;
+  }
+}
 a:focus, button:focus {
   border: 1px dashed var(--text);
 }
@@ -358,7 +363,7 @@ svg {
 
   .header-btn {
     display: block;
-    padding: 1em 0.5em;
+    padding: 0.5em;
     color: var(--text);
   }
   .header-btn svg {
@@ -401,9 +406,11 @@ svg {
   }
 
   .header-btn.on {
-    position: relative;
+    position: fixed;
     z-index: 9999;
     color: var(--text);
+    right: 10px;
+    top: 20px;
   }
 
   .header-btn.on .icon-open {
@@ -446,6 +453,11 @@ svg {
   margin-right: auto;
 }
 
+@media (min-width: 1210px) {
+  .wrapper {
+    box-shadow: var(--shadow);
+  }
+}
 .wrapper__inner {
   max-width: 670px;
   margin-left: auto;
@@ -1150,6 +1162,7 @@ svg {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 2em 1em;
+  box-shadow: var(--shadow);
 }
 .footer-contact > * {
   flex: 1 0 50%;
@@ -1211,6 +1224,10 @@ svg {
   outline: 0px;
   display: block;
   background-color: transparent;
+  box-shadow: var(--shadow);
+}
+.input-label textarea {
+  height: 102px;
 }
 
 .input-full {
@@ -1223,7 +1240,7 @@ svg {
   top: 0%;
   left: 0px;
   font-size: 12px;
-  background-color: var(--background);
+  background-color: transparent;
   padding: 10px 10px 0px 10px;
 }
 
