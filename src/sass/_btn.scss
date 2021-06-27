@@ -12,10 +12,12 @@
     background: transparent;
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
+    box-shadow: var(--shadow);
 
     &:hover {
         color: #ffffff;
         background: var(--primary-color);
+        box-shadow: initial;
     }
 
 }

@@ -79,8 +79,8 @@
    }
    
     body {
-      background: hsla(348, 88%, 66%, 1);
-      background: linear-gradient(90deg, hsla(348, 88%, 66%, 1) 0%, hsla(36, 89%, 68%, 1) 100%);
+      background: var(--primary-color);
+      background: linear-gradient(90deg, var(--primary-color) 0%, hsla(36, 89%, 68%, 1) 100%);
     }
     @media (min-width: 1210px) {
       body {

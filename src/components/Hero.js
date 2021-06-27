@@ -17,7 +17,7 @@ const Hero = () => {
     }
   `)
   return (
-    <section className="section section--hero">
+    <section className="section section-border-btm section--hero">
         <div className="section-flex flex-wrap j-btw">
           <div className="section-content">
             <span className="line">

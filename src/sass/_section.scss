@@ -1,6 +1,9 @@
 .section {
   padding: 3em 3em 1em 3em;
 }
+.section-border-btm {
+  border-bottom: 1px solid var(--border);
+}
 .section-side-pad {
   padding-left: 3em;
   padding-right: 3em;

@@ -9,7 +9,7 @@ export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       coverImage {
-        fixed(toFormat: WEBP, width: 750) {
+        fixed(toFormat: WEBP, width: 600, height: 314) {
           src
         }
       }

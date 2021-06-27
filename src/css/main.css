@@ -85,8 +85,8 @@ html {
 }
 
 body {
-  background: #f55c7b;
-  background: linear-gradient(90deg, #f55c7b 0%, #f6bc65 100%);
+  background: var(--primary-color);
+  background: linear-gradient(90deg, var(--primary-color) 0%, #f6bc65 100%);
 }
 
 @media (min-width: 1210px) {
@@ -409,8 +409,8 @@ svg {
     position: fixed;
     z-index: 9999;
     color: var(--text);
-    right: 10px;
-    top: 20px;
+    right: 18px;
+    top: 10px;
   }
 
   .header-btn.on .icon-open {
@@ -629,6 +629,10 @@ svg {
   padding: 3em 3em 1em 3em;
 }
 
+.section-border-btm {
+  border-bottom: 1px solid var(--border);
+}
+
 .section-side-pad {
   padding-left: 3em;
   padding-right: 3em;
@@ -769,10 +773,12 @@ svg {
   background: transparent;
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
+  box-shadow: var(--shadow);
 }
 .btn.btn--primary:hover {
   color: #ffffff;
   background: var(--primary-color);
+  box-shadow: initial;
 }
 
 .btn--white {
@@ -1224,7 +1230,6 @@ svg {
   outline: 0px;
   display: block;
   background-color: transparent;
-  box-shadow: var(--shadow);
 }
 .input-label textarea {
   height: 102px;
