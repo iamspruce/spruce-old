@@ -9,6 +9,7 @@ export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       coverImage {
+        description
         fixed(toFormat: WEBP, width: 600, height: 314) {
           src
         }
@@ -54,7 +55,8 @@ export default function BlogPost({ data, location }) {
         pageMeta={{
           title: `${post.title}`,
           description: `${post.summary}`,
-          image: `${post.coverImage.fixed.src}`
+          image: `${post.coverImage.fixed.src}`,
+          imageDesc: `${post.coverImage.description}`
         }}
         location={location}
       >

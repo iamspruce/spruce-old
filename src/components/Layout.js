@@ -76,7 +76,7 @@ export default function Layout({ children, pageMeta, location }) {
         />
         <meta name="twitter:title" content={pageMeta.title} />
         <meta name="twitter:image" content={metaImg} />
-
+        <meta name="twitter:image:alt" content={pageMeta.imageDesc}></meta>
         <meta name="twitter:description" content={metaDescription} />
 
         <script type="application/ld+json">{`
