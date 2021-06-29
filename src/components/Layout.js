@@ -28,7 +28,7 @@ export default function Layout({ children, pageMeta, location }) {
             description
             author
             keywords
-            url
+            siteUrl
             twitterUsername
             image
           }
@@ -39,7 +39,7 @@ export default function Layout({ children, pageMeta, location }) {
 
   const metaDescription = pageMeta.description || site.siteMetadata.description
   const metaImg =
-    pageMeta.image || `${site.siteMetadata.url}${site.siteMetadata.image}`
+    pageMeta.image || `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`
   const metaKeywords = pageMeta.keywords || site.siteMetadata.keywords
 
   return (
@@ -53,26 +53,26 @@ export default function Layout({ children, pageMeta, location }) {
         <meta name="keywords" content={metaKeywords.join(",")} />
 
         <meta
-          property="og:url"
-          content={`${site.siteMetadata.url}${location.pathname}`}
+          property="og:site"
+          content={`${site.siteMetadata.siteUrl}${location.pathname}`}
         />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={pageMeta.title} />
         <meta property="og:image" content={metaImg} />
         <meta property="og:description" content={metaDescription} />
-        <meta property="og:site_name" content="iamspruce.dev" />
+        <meta property="og:site_name" content="Spruce" />
         <meta property="og:locale" content="en_US" />
         <meta property="article:author" content={site.siteMetadata.author} />
 
         <meta name="twitter:card" content="summary__large" />
         <meta
           name="twitter:site"
-          content={`${site.siteMetadata.url}${location.pathname}`}
+          content={`${site.siteMetadata.siteUrl}${location.pathname}`}
         />
         <meta name="twitter:creator" content="@sprucekhalifa" />
         <meta
-          name="twitter:url"
-          content={`${site.siteMetadata.url}${location.pathname}`}
+          name="twitter:site"
+          content={`${site.siteMetadata.siteUrl}${location.pathname}`}
         />
         <meta name="twitter:title" content={pageMeta.title} />
         <meta name="twitter:image" content={metaImg} />
