@@ -16,8 +16,6 @@ export const query = graphql`
       title
       publishedDate(formatString: "MMM Do, YYYY")
       summary
-      postAction
-      postActionLink
       body {
         raw
         references {

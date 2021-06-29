@@ -59,6 +59,7 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     `gatsby-plugin-image`,
-    `@contentful/rich-text-react-renderer`
+    `@contentful/rich-text-react-renderer`,
+    'gatsby-plugin-sitemap'
   ]
 }
