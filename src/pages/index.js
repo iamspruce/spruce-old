@@ -11,7 +11,7 @@ export default function Home(props) {
     <Layout
       pageMeta={{
         title: "Homepage",
-        keywords: ["cars", "cheap", "deal"],
+        themeColor: "#ffffff"
       }}
       location={props.location}
     >

@@ -45,65 +45,85 @@ export default function Layout({ children, pageMeta, location }) {
   return (
     <div className="wrapper">
       <Helmet>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>{`Spruce | ${pageMeta.title}`}</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="Spruce" />
-        <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={metaKeywords.join(",")} />
-
         <meta
-          property="og:site"
-          content={`${site.siteMetadata.siteUrl}${location.pathname}`}
+          name="description"
+          content={metaDescription}
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={pageMeta.title} />
-        <meta property="og:image" content={metaImg} />
-        <meta property="og:description" content={metaDescription} />
-        <meta property="og:site_name" content="Spruce" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="article:author" content={site.siteMetadata.author} />
-
-        <meta name="twitter:card" content="summary__large" />
+        <meta property="og:title" content={site.siteMetadata.author} />
         <meta
-          name="twitter:site"
-          content={`${site.siteMetadata.siteUrl}${location.pathname}`}
+          property="og:description"
+          content={metaDescription}
         />
-        <meta name="twitter:creator" content="@sprucekhalifa" />
+        <meta property="og:url" content={`${site.siteMetadata.siteUrl}${location.pathname}`} />
         <meta
-          name="twitter:site"
-          content={`${site.siteMetadata.siteUrl}${location.pathname}`}
+          property="og:image"
+          content={metaImg}
         />
-        <meta name="twitter:title" content={pageMeta.title} />
-        <meta name="twitter:image" content={metaImg} />
         <meta name="twitter:image:alt" content={pageMeta.imageDesc}></meta>
-        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="author" content={site.siteMetadata.author} />
+        <meta property="og:site_name" content={site.siteMetadata.author} />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:site" content={site.siteMetadata.twitterUsername} />
+        <meta name="twitter:creator" content={site.siteMetadata.twitterUsername} />
+        {/* <meta property="fb:app_id" content="127677017332959" /> */}
+        <link rel="canonical" href={`${site.siteMetadata.siteUrl}${location.pathname}`} />
+        <script type="application/ld+json">
+          {`
+        "name": ${site.siteMetadata.author},
+        "description": ${metaDescription},
+        "author": {
+            "@type":"Person",
+            "name":${site.siteMetadata.author}
+        },
+        "@type":"WebSite",
+        "url": ${`${site.siteMetadata.siteUrl}${location.pathname}`},
+        "image": ${metaImg},
+        "headline": ${site.siteMetadata.author},
+        "sameAs":[
+            "https://twitter.com/sprucekhalifa",
+            "https://github.com/iamspruce",
+            "http://www.facebook.com/spruce.emma",
+            "http://instagram.com/iam_spruce"
+        ],
+        "@context":"http://schema.org"
+    `}
+        </script>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png?v=1"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-32x32.png?v=1"
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-16x16.png?v=1"
+          sizes="16x16"
+        />
+        
+        <link
+          rel="shortcut icon"
+          href="/favicon.ico?v=1"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content={pageMeta.themeColor} />
+        {/* <link
+          type="application/atom+xml"
+          rel="alternate"
+          href="https://mxb.dev/feed.xml"
+          title={site.siteMetadata.author}
+        /> */}
 
-        <script type="application/ld+json">{`
-{
-  "@context": "http://schema.org",
-  "@type": "website",
-  "address": {
-  "@type": "PostalAddress",
-  "addressLocality": "Nigeria",
-  "addressRegion": "NG",
-  "postalCode":"11340",
-  "streetAddress": "jattu"
-  },
-  "description": "description will go here",
-  "name": "iamspruce.dev",
-  "telephone": "+2348137781578",
-  "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
-  "geo": {
-  "@type": "GeoCoordinates",
-  "latitude": "40.75",
-  "longitude": "73.98"
-  }, 			
-  "sameAs" : ["http://www.facebook.com/spruce.emma",
-  "http://www.twitter.com/sprucekhalifa",
-  "http://instagram.com/iam_spruce"]
-}
-`}</script>
         <style type="text/css">
           {`
     ${themes
