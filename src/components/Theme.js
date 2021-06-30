@@ -29,7 +29,7 @@ const Theme = ({ toggleTheme }) => {
     }
     let schemes = document.querySelectorAll(".js-scheme-btn")
     schemes.forEach(item => {
-      item.value == state.scheme
+      item.value === state.scheme
         ? item.classList.add("active")
         : item.classList.remove("active")
     })
