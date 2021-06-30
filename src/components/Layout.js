@@ -53,7 +53,7 @@ export default function Layout({ children, pageMeta, location }) {
           name="description"
           content={metaDescription}
         />
-        <meta property="og:title" content={site.siteMetadata.author} />
+        <meta property="og:title" content={pageMeta.title} />
         <meta
           property="og:description"
           content={metaDescription}
@@ -74,7 +74,7 @@ export default function Layout({ children, pageMeta, location }) {
         <link rel="canonical" href={`${site.siteMetadata.siteUrl}${location.pathname}`} />
         <script type="application/ld+json">
           {`
-        "name": ${site.siteMetadata.author},
+        "name": ${pageMeta.title},
         "description": ${metaDescription},
         "author": {
             "@type":"Person",
@@ -83,7 +83,7 @@ export default function Layout({ children, pageMeta, location }) {
         "@type":"WebSite",
         "url": ${`${site.siteMetadata.siteUrl}${location.pathname}`},
         "image": ${metaImg},
-        "headline": ${site.siteMetadata.author},
+        "headline": ${pageMeta.title},
         "sameAs":[
             "https://twitter.com/sprucekhalifa",
             "https://github.com/iamspruce",

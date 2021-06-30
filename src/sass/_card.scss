@@ -38,6 +38,8 @@
       margin: 1em;
       padding:1.6em 1em;
       position: relative;
+      display: flex;
+      flex-direction: column;
 
       h3 {
             margin-bottom: .5em;
@@ -65,7 +67,7 @@
             border-color: #ffffff;
       }
       .line {
-            margin-top: 2em;
+            margin-top: auto;
       }
 }
 

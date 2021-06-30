@@ -966,6 +966,8 @@ svg {
   margin: 1em;
   padding: 1.6em 1em;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .card.skill-card h3 {
   margin-bottom: 0.5em;
@@ -991,7 +993,7 @@ svg {
   border-color: #ffffff;
 }
 .card.skill-card .line {
-  margin-top: 2em;
+  margin-top: auto;
 }
 
 @media (min-width: 559px) {
