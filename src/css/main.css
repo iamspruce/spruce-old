@@ -459,7 +459,7 @@ svg {
   }
 }
 .wrapper__inner {
-  max-width: 670px;
+  max-width: 775px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5rem;
@@ -1072,6 +1072,9 @@ svg {
   display: none;
 }
 
+.post__body p {
+  letter-spacing: 0.02rem;
+}
 .post__body figure {
   background: transparent;
   border: 0;
@@ -1089,23 +1092,23 @@ svg {
   border: 1px solid var(--border);
   border-radius: 4px;
 }
-.post__body figure ol {
+.post__body ol {
   list-style: none;
   counter-reset: listCounter;
 }
-.post__body figure ol, .post__body figure ul {
+.post__body ol, .post__body ul {
   padding: 0;
   margin: 1em 0;
   max-width: 100%;
 }
-.post__body figure ol > li {
+.post__body ol > li {
   padding-left: 1.75em;
   padding-left: calc(1.65em + .7vw);
   position: relative;
   counter-increment: listCounter;
   margin-bottom: 1em;
 }
-.post__body figure ol > li::before {
+.post__body ol > li::before {
   content: counter(listCounter, decimal-leading-zero);
   font-size: 0.7em;
   font-weight: 700;
@@ -1113,28 +1116,34 @@ svg {
   left: 0.8em;
   position: absolute;
 }
-.post__body figure ol ol > li {
+.post__body ol ol > li {
   padding-left: 2.25em;
   padding-left: calc(1.35em + .7vw);
 }
-.post__body figure ol ol ol > li {
+.post__body ol ol ol > li {
   padding-left: 3em;
   padding-left: calc(2.4em + 1.4vw);
 }
-.post__body figure ol[start="0"] {
+.post__body ol[start="0"] {
   counter-reset: listCounter -1;
 }
-.post__body figure ol ul li:before {
+.post__body ol ul li:before {
   content: "";
 }
-.post__body figure ol ol {
+.post__body ol ol {
   margin-left: 1em;
   margin-top: 0;
   margin-bottom: 0;
 }
-.post__body figure ol ol > li::before {
+.post__body ol ol > li::before {
   content: counters(listCounter, ".", decimal-leading-zero) " ";
   left: -1.5em;
+}
+
+.post__hr {
+  border: 1px solid var(--border);
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .footer {

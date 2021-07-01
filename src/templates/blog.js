@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { BLOCKS } from "@contentful/rich-text-types"
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import PageHero from "../components/PageHero"
 
 export const query = graphql`
@@ -46,7 +46,19 @@ export default function BlogPost({ data, location }) {
           </figure>
         )
       },
-      [BLOCKS.PARAGRAPH]: (node, children) => <p style={{ marginBottom: '0.8' + 'rem'}}>{children}</p>
+      "hr": node => {
+        return (
+          <hr className="post__hr" />
+        )
+      },
+      [BLOCKS.PARAGRAPH]: (node, children) => {
+        if (node.content[0].marks.type == 'code' )
+         {
+          return <pre><code>{node.content[0].value}</code></pre>;
+        }
+      
+        return <p style={{ marginBottom: '0.8' + 'rem'}}>{children}</p>;
+      },
     },
   }
   return (
