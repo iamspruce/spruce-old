@@ -46,7 +46,7 @@ export default function BlogPost({ data, location }) {
           </figure>
         )
       },
-      [BLOCKS.PARAGRAPH]: (node, children) => <p style={{ marginBottom: 2 + 'em'}}>{children}</p>
+      [BLOCKS.PARAGRAPH]: (node, children) => <p style={{ marginBottom: 0.8 + 'rem'}}>{children}</p>
     },
   }
   return (

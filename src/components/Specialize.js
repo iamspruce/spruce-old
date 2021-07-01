@@ -17,7 +17,7 @@ const specialize = () => {
                   {data.item}
                 </p>
                 <div className="line">
-                      <span>web dev</span>
+                      <span>{data.count}</span>
                 </div>
                 </li>
         })}

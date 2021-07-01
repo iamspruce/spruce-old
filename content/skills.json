@@ -2,15 +2,18 @@
       "content": [
         {
           "item": "I dont just create amazing web components, i also put accessbility first",
-          "title": "A11ty Components"
+          "title": "A11ty Components",
+          "count": "1"
         },
         {
           "item": "I specialize in creating html,css and javascript(mainly with React) websites",
-          "title": "UI/UX Development"
+          "title": "UI/UX Development",
+          "count": "2"
         },
         {
           "item": "I design products for website and apps that meets the general needs of the clients",
-          "title": "Product Design"
+          "title": "Product Design",
+          "count": "3"
         }
       ]
     }

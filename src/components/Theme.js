@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useLayoutEffect } from "react"
 import theme from "../../content/theme.json"
 import Button from "./Button"
 
@@ -21,7 +21,7 @@ const Theme = ({ toggleTheme }) => {
       [name]: value,
     }))
   }
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.localStorage.setItem("theme", JSON.stringify(state))
     if (document.querySelector(".js-themeName") !== null) {
       let themeName = document.querySelector(".js-themeName")
