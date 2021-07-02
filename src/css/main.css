@@ -1056,10 +1056,6 @@ svg {
   display: none;
 }
 
-.about-projects.off {
-  display: block;
-}
-
 .about-projects.off ~ .article-list {
   display: none;
 }
