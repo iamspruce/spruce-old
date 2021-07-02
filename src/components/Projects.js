@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Card from "./Card"
 
-export default function Projects({openTab,props}) {
+export default function Projects({openTab}) {
   const data = useStaticQuery(graphql`
     query {
       allContentfulProjects(sort: { fields: name, order: DESC }) {
@@ -21,7 +21,7 @@ export default function Projects({openTab,props}) {
   `)
   return (
     <>
-      <div className={`article-list about-projects ${openTab}`}>
+      <ul className={`article-list`}>
       {data.allContentfulProjects.edges.map(edge => (
                 <li key={edge.node.id}>
                   <a href={`${edge.node.url}`}>
@@ -35,7 +35,7 @@ export default function Projects({openTab,props}) {
                   </a>
                 </li>
               ))}
-      </div>
+      </ul>
     </>
   )
 }

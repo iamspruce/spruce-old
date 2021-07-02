@@ -86,7 +86,7 @@ html {
 
 body {
   background: var(--primary-color);
-  background: linear-gradient(90deg, var(--primary-color) 0%, #f6bc65 100%);
+  background: linear-gradient(45deg, var(--primary-color) 0%, #f6bc65 100%);
 }
 
 @media (min-width: 1210px) {
@@ -218,19 +218,6 @@ svg {
   vertical-align: middle;
 }
 
-@media (max-width: 597px) {
-  .slide-left {
-    animation: slide-left 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite both;
-  }
-}
-@keyframes slide-left {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-130%);
-  }
-}
 .msg {
   display: none;
   max-width: 1200px;
@@ -409,8 +396,8 @@ svg {
     position: fixed;
     z-index: 9999;
     color: var(--text);
-    right: 18px;
-    top: 10px;
+    right: 10px;
+    top: 8px;
   }
 
   .header-btn.on .icon-open {
@@ -874,8 +861,13 @@ svg {
   }
 }
 @media (max-width: 596px) {
+  .section-img, .hero-skills {
+    display: none;
+  }
+
   .section-content {
     text-align: center;
+    padding-bottom: 3em;
   }
   .section-content .line {
     text-align: left;
@@ -1052,23 +1044,23 @@ svg {
   max-width: max-content;
 }
 
-.about-tab.on {
+.about-tab.off {
   border-bottom: 2px solid var(--primary-color);
 }
 
-.about-tab.off ~ .about-tab {
+.about-tab.on ~ .about-tab {
   border-bottom: 2px solid var(--primary-color);
-}
-
-.about-projects.off {
-  display: none;
 }
 
 .about-projects.on {
+  display: none;
+}
+
+.about-projects.off {
   display: block;
 }
 
-.about-projects.on ~ .article-list {
+.about-projects.off ~ .article-list {
   display: none;
 }
 

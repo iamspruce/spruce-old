@@ -56,9 +56,10 @@ export default function BlogPost({ data, location }) {
          {
           return <pre><code>{node.content[0].value}</code></pre>;
         }
-      
+        console.log(node.content[0])
         return <p style={{ marginBottom: '0.8' + 'rem'}}>{children}</p>;
       },
+      
     },
   }
   return (

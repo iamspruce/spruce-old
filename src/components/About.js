@@ -29,7 +29,7 @@ const About = () => {
                 <Link to="#0" className={`flex j-bsl`} onClick={toggle}>
                   <span className="span-num">01</span>
                   <span className="line" style={{ marginLeft: 12 + "px" }}>
-                    Projects
+                    Articles
                   </span>
                 </Link>
               </li>
@@ -37,7 +37,7 @@ const About = () => {
                 <Link to="#0" className={`flex j-bsl`}  onClick={toggle}>
                   <span className="span-num">02</span>
                   <span className="line" style={{ marginLeft: 12 + "px" }}>
-                    articles
+                    Projects
                   </span>
                 </Link>
               </li>
@@ -63,8 +63,8 @@ const About = () => {
             </ul>
           </div>
           <div className="section-cards">
-            <Projects openTab={openTab} />
-            <BlogPost />
+          <BlogPost openTab={openTab} />
+          <Projects />
           </div>
         </div>
     </section>

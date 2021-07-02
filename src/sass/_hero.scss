@@ -74,8 +74,12 @@
 }
 
 @media (max-width: 596px) {
+  .section-img,.hero-skills {
+    display: none;
+  }
   .section-content {
     text-align: center;
+    padding-bottom: 3em;
 
     .line {
       text-align: left;

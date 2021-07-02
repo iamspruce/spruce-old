@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import Card from "./Card"
 
-export default function BlogPost() {
+export default function BlogPost({openTab}) {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     }
   `)
   return (
-      <ul className="article-list">
+      <ul className={`article-list about-projects ${openTab}`}>
         {data.allContentfulBlogPost.edges.map(edge => (
           <li key={edge.node.id}>
             <Link to={`/blog/${edge.node.slug}`}>

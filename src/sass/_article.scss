@@ -58,18 +58,16 @@
 .about-tab {
   max-width: max-content;
 }
-.about-tab.on {
+.about-tab.off {
   border-bottom: 2px solid var(--primary-color);
 }
-.about-tab.off ~ .about-tab {
+.about-tab.on ~ .about-tab {
   border-bottom: 2px solid var(--primary-color);
-}
-.about-projects.off {
-  display: none;
 }
 .about-projects.on {
-  display: block;
+  display: none;
 }
-.about-projects.on ~ .article-list {
+
+.about-projects.off ~ .article-list {
   display: none;
 }
