@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Logo from "../img/spruce-logo1.webp"
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           <div className="header-logo">
             <Link to="/">
               <img
-                src="/img/spruce-logo1.webp"
+                src={Logo}
                 alt="spruce"
                 width="32px"
                 height="32px"

@@ -4,6 +4,7 @@ import Icon from "./Icon";
 import JSONData from "../../content/navLinks.json"
 import Theme from "./Theme";
 import Button from "./Button";
+import Logo from "../img/spruce-logo1.webp"
 
 
 
@@ -33,7 +34,7 @@ export default function Header() {
     <header className="header">
       <div className="header-logo">
         <Link to="/">
-          <img src="/img/spruce-logo1.webp" alt="spruce" width="38px" height="38px" />
+          <img src={Logo} alt="spruce" width="38px" height="38px" />
           <span>{data.site.siteMetadata.author}</span>
         </Link>
       </div>
