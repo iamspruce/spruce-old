@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import PageHero from "../components/PageHero"
+
 
 export const query = graphql`
   query($slug: String!) {
@@ -56,26 +56,27 @@ export default function BlogPost({ data, location }) {
          {
           return <pre><code>{node.content[0].value}</code></pre>;
         }
-        console.log(node.content[0])
-        return <p style={{ marginBottom: '0.8' + 'rem'}}>{children}</p>;
+        return <p>{children}</p>;
       },
       
     },
   }
   return (
-    <div className="page">
+    <div>
       <Layout
         pageMeta={{
           title: `${post.title}`,
           description: `${post.summary}`,
           image: `${post.coverImage.fixed.src}`,
-          imageDesc: `${post.coverImage.description}`
+          imageDesc: `${post.coverImage.description}`,
+          pageType: "article"
         }}
         location={location}
       >
           <article className="post">
-            <header>
-              <PageHero title={post.title} desc={post.summary} time={post.publishedDate} />
+            <header className="text-center">
+            <a href="#0" target="_blank" rel="noopener noreferrer">Spruce</a> - <time>{post.publishedDate}</time>
+              <h1 className="post-title">{post.title}</h1>
             </header>
 
             <div className="wrapper__inner post__body e-content" itemprop="articleBody">

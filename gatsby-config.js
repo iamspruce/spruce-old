@@ -67,7 +67,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Gothic+A1:300,400,400,700`
+          `Gothic+A1:300,400,400,700`,
+          `Rock+Salt`
         ],
         display: 'swap'
       }

@@ -80,8 +80,7 @@ html {
   color: var(--text);
   font-size: var(--font-size);
   transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  line-height: 1.4;
-  letter-spacing: 0.011em;
+  line-height: 1.7;
 }
 
 body {
@@ -109,7 +108,7 @@ a:focus, button:focus {
  * Basic styling for paragraphs.
  */
 p {
-  line-height: 1.4;
+  margin: 0 0 1.5rem;
 }
 
 /*------------------------------------*  #LINKS
@@ -1060,8 +1059,33 @@ svg {
   display: none;
 }
 
-.post__body p {
-  letter-spacing: 0.02rem;
+.post header {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.post header time {
+  font-size: 90%;
+}
+.post header h1 {
+  font-size: 2.5rem;
+  position: relative;
+  font-size: 50px;
+  background: linear-gradient(to right, #fb7319 0%, #d53a23 12.5%, #8e2649 25%, #319197 37.5%, #fb7319 50%, #d53a23 62.5%, #8e2649 75%, #319197 87.5%, #fb7319 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.post header h1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url(../img/underline.svg.svg);
+}
+
+.post__body {
+  overflow-wrap: break-word;
+  font-size: 1.2rem;
 }
 .post__body figure {
   background: transparent;
@@ -1129,7 +1153,8 @@ svg {
 }
 
 .post__hr {
-  border: 1px solid var(--border);
+  border: 0px;
+  border-bottom: 1px solid var(--border);
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }

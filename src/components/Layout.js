@@ -45,10 +45,11 @@ export default function Layout({ children, pageMeta, location }) {
   return (
     <div className="wrapper">
       <Helmet>
+        <html lang="en-US" />
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>{`Spruce | ${pageMeta.title}`}</title>
+        <title>{`${pageMeta.title} | Spruce`}</title>
         <meta
           name="description"
           content={metaDescription}
@@ -65,6 +66,16 @@ export default function Layout({ children, pageMeta, location }) {
         />
         <meta name="twitter:image:alt" content={pageMeta.imageDesc}></meta>
         <meta name="twitter:card" content="summary" />
+        {pageMeta.pageType && 
+          <meta name="twitter:card" content="summary__large" />
+        }
+        {pageMeta.pageType && 
+          <style>{`
+            .post-title {
+              font-family: 'Rock Salt', sans-serif;
+            }
+          `}</style>
+        }
         <meta name="author" content={site.siteMetadata.author} />
         <meta property="og:site_name" content={site.siteMetadata.author} />
         <meta property="og:locale" content="en_US" />
