@@ -4,7 +4,6 @@ import Layout from "../components/Layout"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 
-
 export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
@@ -46,19 +45,19 @@ export default function BlogPost({ data, location }) {
           </figure>
         )
       },
-      "hr": node => {
-        return (
-          <hr className="post__hr" />
-        )
+      hr: node => {
+        return <hr className="post__hr" />
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
-        if (node.content[0].marks.type == 'code' )
-         {
-          return <pre><code>{node.content[0].value}</code></pre>;
+        if (node.content[0].marks.type == "code") {
+          return (
+            <pre>
+              <code>{node.content[0].value}</code>
+            </pre>
+          )
         }
-        return <p>{children}</p>;
+        return <p>{children}</p>
       },
-      
     },
   }
   return (
@@ -69,21 +68,56 @@ export default function BlogPost({ data, location }) {
           description: `${post.summary}`,
           image: `${post.coverImage.fixed.src}`,
           imageDesc: `${post.coverImage.description}`,
-          pageType: "article"
+          pageType: "article",
         }}
         location={location}
       >
-          <article className="post">
-            <header className="text-center">
-            <a href="#0" target="_blank" rel="noopener noreferrer">Spruce</a> - <time>{post.publishedDate}</time>
-              <h1 className="post-title">{post.title}</h1>
-            </header>
+        <article className="post">
+          <header className="text-center">
+            <a href="#0" target="_blank" rel="noopener noreferrer">
+              Spruce
+            </a>{" "}
+            - <time>{post.publishedDate}</time>
+            <h1 className="post-title">{post.title}</h1>
+            <svg
+              width="300"
+              height="8"
+              viewBox="0 0 300 8"
+              fill="none"
+              className=""
+            >
+              <defs>
+                <linearGradient id="Gradient1">
+                  <stop stop-color="var(--primary-color)" offset="0%" />
+                  <stop stop-color="var(--secondary-color)" offset="12.5%" />
+                  <stop stop-color="var(--secondary-color)" offset="25%" />
+                  <stop stop-color="var(--primary-color-alt)" offset="37.5%" />
+                  <stop stop-color="var(--primary-color)" offset="50%" />
+                  <stop stop-color="var(--secondary-color)" offset="62.5%" />
+                  <stop stop-color="var(--primary-color-alt)" offset="75%" />
+                  <stop stop-color="var(--primary-color-alt)" offset="87.5%" />
+                  <stop stop-color="var(--primary-color)" offset="100%" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M 8 5.3997 C 59.8848 -1.0859 51.5872 -0.1283 66.6912 6.4799 C 66.7848 6.5207 92.8152 2.7287 98.7376 2.3391 C 111.1928 1.5197 133.2752 2.9692 146.9872 2.9692 C 173.32 2.9692 185.5776 1.6976 213.96 2.7892 C 238.0408 3.7154 261.5632 3.7794 286.6944 3.7794"
+                stroke="var(--primary-color)"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </header>
 
-            <div className="wrapper__inner post__body e-content" itemprop="articleBody">
-              {renderRichText(data.contentfulBlogPost.body, options)}
-            </div>
-          </article>
+          <div
+            className="wrapper__inner post__body e-content"
+            itemprop="articleBody"
+          >
+            <p className="post-summary">{post.summary}</p>
+            {renderRichText(data.contentfulBlogPost.body, options)}
+          </div>
+        </article>
       </Layout>
-      </div>
+    </div>
   )
 }

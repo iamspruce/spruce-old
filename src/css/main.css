@@ -349,7 +349,7 @@ svg {
 
   .header-btn {
     display: block;
-    padding: 0.5em;
+    padding: 1em;
     color: var(--text);
   }
   .header-btn svg {
@@ -1059,30 +1059,46 @@ svg {
   display: none;
 }
 
+.post {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
 .post header {
   padding-top: 4rem;
-  padding-bottom: 4rem;
 }
 .post header time {
   font-size: 90%;
 }
 .post header h1 {
-  font-size: 2.5rem;
-  position: relative;
+  margin: 1rem 0px;
   font-size: 50px;
-  background: linear-gradient(to right, #fb7319 0%, #d53a23 12.5%, #8e2649 25%, #319197 37.5%, #fb7319 50%, #d53a23 62.5%, #8e2649 75%, #319197 87.5%, #fb7319 100%);
+  background: linear-gradient(to right, var(--primary-color) 0%, var(--secondary-color) 12.5%, var(--secondary-color) 25%, var(--primary-color-alt) 37.5%, var(--primary-color) 50%, var(--secondary-color) 62.5%, var(--secondary-color) 75%, var(--primary-color-alt) 87.5%, var(--primary-color) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.post header h1::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background-image: url(../img/underline.svg.svg);
+  animation: Animation 7s linear infinite;
 }
 
+@keyframes Animation {
+  0% {
+    background-position: 0 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
+@media (max-width: 620px) {
+  .post header .post-title {
+    font-size: 40px;
+  }
+}
+@media (max-width: 500px) {
+  .post header .post-title {
+    font-size: 1.8rem;
+  }
+}
 .post__body {
   overflow-wrap: break-word;
   font-size: 1.2rem;

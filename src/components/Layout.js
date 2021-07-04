@@ -10,6 +10,8 @@ export default function Layout({ children, pageMeta, location }) {
   function colors(theme) {
     return `
           --primary-color: ${theme.colors["primary-color"]};
+          --primary-color-alt: ${theme.colors["primary-color-alt"]};
+          --secondary-color: ${theme.colors["secondary-color"]};
           --text: ${theme.colors["text"]};
           --text-alt: ${theme.colors["text-alt"]};
           --background: ${theme.colors["background"]};
