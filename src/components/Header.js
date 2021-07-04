@@ -31,7 +31,7 @@ export default function Header() {
       </div>
       <header className="header">
         <div className="header-logo">
-          <Link to="/">
+          <Link title="Spruce" to="/">
             <StaticImage
               src="../img/spruce-logo1.webp"
               alt="Spruce"

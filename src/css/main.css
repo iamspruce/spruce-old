@@ -311,6 +311,8 @@ svg {
 .header-logo a {
   display: inline-block;
   color: var(--text);
+  display: flex;
+  align-items: center;
 }
 .header-logo span {
   color: var(--text);

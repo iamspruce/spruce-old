@@ -38,8 +38,6 @@ const Hero = () => {
                 alt="Spruce"
                 placeholder="blurred"
                 layout="constrained"
-                width={38}
-                height={38}
               />
             </span>
             <span className="hero-img-msg" hidden>
