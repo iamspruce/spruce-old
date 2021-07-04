@@ -85,6 +85,7 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     `@contentful/rich-text-react-renderer`,
     'gatsby-plugin-sitemap'
   ]

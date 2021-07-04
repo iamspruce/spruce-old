@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import Logo from "../img/spruce-logo1.webp"
+import { StaticImage } from "gatsby-plugin-image"
+
 
 const Footer = () => {
   return (
@@ -9,12 +10,14 @@ const Footer = () => {
         <div className="footer-content__copy">
           <div className="header-logo">
             <Link to="/">
-              <img
-                src={Logo}
-                alt="spruce"
-                width="32px"
-                height="32px"
-              />
+            <StaticImage
+              src="../img/spruce-logo1.webp"
+              alt="Spruce"
+              placeholder="blurred"
+              layout="fixed"
+              width={32}
+              height={32}
+            />
             </Link>
           </div>
           <p>
