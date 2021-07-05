@@ -1081,7 +1081,11 @@ svg {
 .post header h1 {
   margin: 1rem 0px;
   font-size: 50px;
-  background: linear-gradient(to right, var(--primary-color) 0%, var(--secondary-color) 12.5%, var(--secondary-color) 25%, var(--primary-color-alt) 37.5%, var(--primary-color) 50%, var(--secondary-color) 62.5%, var(--secondary-color) 75%, var(--primary-color-alt) 87.5%, var(--primary-color) 100%);
+  background: -webkit-linear-gradient(to right, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: -moz-linear-gradient(to right, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(to right, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
