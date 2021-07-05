@@ -40,7 +40,7 @@ const Hero = () => {
               />
             </span>
             <span className="hero-img-msg" hidden>
-              <p>Hey there! I make Websites, Want one?</p>
+              <strong>Hey there! I make Websites, Want one?</strong><br />
               <Link to="#contact">Contact Me</Link>
             </span>
           </div>

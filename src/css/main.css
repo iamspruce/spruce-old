@@ -85,7 +85,7 @@ html {
 
 body {
   background: var(--primary-color);
-  background: linear-gradient(45deg, var(--primary-color) 0%, #f6bc65 100%);
+  background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
 
 @media (min-width: 1210px) {
@@ -427,6 +427,7 @@ svg {
   margin-top: 5.8rem;
   max-width: 36rem;
 }
+
 .page-content .page-title {
   margin-top: 1.2rem;
   margin-bottom: 0.6rem;
@@ -1002,7 +1003,7 @@ svg {
   margin-top: 60px;
 }
 .article-list > li:nth-child(3) {
-  margin-top: -60px;
+  margin-top: -40px;
 }
 
 @media (max-width: 1020px) {
@@ -1068,17 +1069,21 @@ svg {
   padding-left: 16px;
   padding-right: 16px;
 }
+
 .post header {
   padding-top: 4rem;
 }
+
 .post header time {
   font-size: 90%;
 }
+
 .post header h1 {
   margin: 1rem 0px;
   font-size: 50px;
   background: linear-gradient(to right, var(--primary-color) 0%, var(--secondary-color) 12.5%, var(--secondary-color) 25%, var(--primary-color-alt) 37.5%, var(--primary-color) 50%, var(--secondary-color) 62.5%, var(--secondary-color) 75%, var(--primary-color-alt) 87.5%, var(--primary-color) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: Animation 7s linear infinite;
 }
@@ -1105,32 +1110,38 @@ svg {
   overflow-wrap: break-word;
   font-size: 1.2rem;
 }
+
 .post__body figure {
   background: transparent;
   border: 0;
   margin-top: 16px;
   margin-bottom: 1em;
 }
+
 .post__body figure figcaption {
   padding-top: 8px;
   color: var(--text-alt);
   text-align: center;
 }
+
 .post__body figure img, .post__body figure video {
   display: block;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
   border: 1px solid var(--border);
   border-radius: 4px;
 }
+
 .post__body ol {
   list-style: none;
   counter-reset: listCounter;
 }
+
 .post__body ol, .post__body ul {
   padding: 0;
   margin: 1em 0;
   max-width: 100%;
 }
+
 .post__body ol > li {
   padding-left: 1.75em;
   padding-left: calc(1.65em + .7vw);
@@ -1138,6 +1149,7 @@ svg {
   counter-increment: listCounter;
   margin-bottom: 1em;
 }
+
 .post__body ol > li::before {
   content: counter(listCounter, decimal-leading-zero);
   font-size: 0.7em;
@@ -1146,25 +1158,31 @@ svg {
   left: 0.8em;
   position: absolute;
 }
+
 .post__body ol ol > li {
   padding-left: 2.25em;
   padding-left: calc(1.35em + .7vw);
 }
+
 .post__body ol ol ol > li {
   padding-left: 3em;
   padding-left: calc(2.4em + 1.4vw);
 }
+
 .post__body ol[start="0"] {
   counter-reset: listCounter -1;
 }
+
 .post__body ol ul li:before {
   content: "";
 }
+
 .post__body ol ol {
   margin-left: 1em;
   margin-top: 0;
   margin-bottom: 0;
 }
+
 .post__body ol ol > li::before {
   content: counters(listCounter, ".", decimal-leading-zero) " ";
   left: -1.5em;
@@ -1175,6 +1193,14 @@ svg {
   border-bottom: 1px solid var(--border);
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
+}
+
+.post__footer-text {
+  font-family: "Rock Salt";
+  font-size: 2rem;
+  text-align: right;
+  text-align: end;
+  margin-top: 2rem;
 }
 
 .footer {
@@ -1354,6 +1380,7 @@ svg {
 .theme-header {
   margin-top: 1rem;
 }
+
 .theme-header p {
   margin-top: 0.6rem;
   color: var(--text-alt);
@@ -1370,12 +1397,14 @@ svg {
   box-shadow: var(--shadow);
   margin-top: 3rem;
 }
+
 .theme-range label {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
 }
+
 .theme-range__slider {
   cursor: pointer;
   /* -webkit-appearance: none; */
@@ -1386,6 +1415,7 @@ svg {
   margin-right: 1rem;
   margin-left: 1rem;
 }
+
 .theme-range__slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 1.8rem;
@@ -1396,6 +1426,7 @@ svg {
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   cursor: pointer;
 }
+
 .theme-range__slider::-webkit-slider-thumb:hover {
   box-shadow: initial;
 }
@@ -1414,6 +1445,7 @@ svg {
   border-radius: 14px;
   box-shadow: var(--shadow);
 }
+
 .scheme-btn:hover {
   box-shadow: initial;
 }
@@ -1421,6 +1453,7 @@ svg {
 .scheme-btn.active {
   position: relative;
 }
+
 .scheme-btn.active::after {
   content: "";
   display: block;

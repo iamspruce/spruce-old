@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-content__copy">
           <div className="header-logo">
-            <Link to="/">
+            <Link title="Spruce" to="/">
             <StaticImage
               src="../img/spruce-logo1.webp"
               alt="Spruce"

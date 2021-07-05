@@ -21,6 +21,7 @@ export default function Layout({ children, pageMeta, location }) {
           color-scheme: ${theme.colors["color-scheme"]};
     `
   }
+  
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -43,6 +44,7 @@ export default function Layout({ children, pageMeta, location }) {
   const metaImg =
     pageMeta.image || `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`
   const metaKeywords = pageMeta.keywords || site.siteMetadata.keywords
+  
 
   return (
     <div className="wrapper">
@@ -106,7 +108,7 @@ export default function Layout({ children, pageMeta, location }) {
         ],
         "@context":"http://schema.org"
     `}
-        </script>
+    </script>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -134,7 +136,7 @@ export default function Layout({ children, pageMeta, location }) {
         {/* <link
           type="application/atom+xml"
           rel="alternate"
-          href="https://mxb.dev/feed.xml"
+          href="https://iamspruce.dev/feed.xml"
           title={site.siteMetadata.author}
         /> */}
 
