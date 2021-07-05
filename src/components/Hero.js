@@ -37,7 +37,6 @@ const Hero = () => {
                 src="../img/spruce2.webp"
                 alt="Spruce"
                 placeholder="blurred"
-                layout="constrained"
               />
             </span>
             <span className="hero-img-msg" hidden>

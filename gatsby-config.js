@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -87,6 +90,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `@contentful/rich-text-react-renderer`,
-    'gatsby-plugin-sitemap'
+    'gatsby-plugin-sitemap',
   ]
 }
