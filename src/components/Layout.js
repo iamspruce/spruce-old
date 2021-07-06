@@ -55,6 +55,8 @@ export default function Layout({ children, pageMeta, location }) {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>{`${pageMeta.title} | Spruce`}</title>
         <link rel="me" href="https://twitter.com/sprucekhalifa" />
+        <link rel="webmention" href="https://webmention.io/iamspruce.dev/webmention" />
+        <link rel="pingback" href="https://webmention.io/iamspruce.dev/xmlrpc" />
         <meta
           name="description"
           content={metaDescription}
