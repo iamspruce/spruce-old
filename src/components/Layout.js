@@ -45,7 +45,6 @@ export default function Layout({ children, pageMeta, location }) {
     pageMeta.image || `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`
   const metaKeywords = pageMeta.keywords || site.siteMetadata.keywords
   
-
   return (
     <div className="wrapper">
       <Helmet>
@@ -134,7 +133,6 @@ export default function Layout({ children, pageMeta, location }) {
           href="/favicon.ico?v=1"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content={pageMeta.themeColor} />
         {/* <link
           type="application/atom+xml"
           rel="alternate"

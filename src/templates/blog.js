@@ -72,13 +72,13 @@ export default function BlogPost({ data, location }) {
         }}
         location={location}
       >
-        <article className="post">
+        <article className="post h-entry">
           <header className="text-center">
-            <a href="#0" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/sprucekhalifa" className="p-author h-card" target="_blank" rel="noopener noreferrer">
               Spruce
             </a>{" "}
-            - <time>{post.publishedDate}</time>
-            <h1 className="post-title">{post.title}</h1>
+            - <time className="dt-published" datetime={post.publishedDate}>{post.publishedDate}</time>
+            <h1 className="post-title p-name">{post.title}</h1>
             <svg
               width="300"
               height="8"
@@ -96,11 +96,13 @@ export default function BlogPost({ data, location }) {
             </svg>
           </header>
           <div
-            className="wrapper__inner post__body e-content"
+            className="wrapper__inner post__body"
             itemprop="articleBody"
           >
-            <p className="post-summary">{post.summary}</p>
+            <p className="post-summary p-summary">{post.summary}</p>
+            <p className="e-content">
             {renderRichText(data.contentfulBlogPost.body, options)}
+            </p>
           </div>
           <footer className="post__footer">
             <p className="post__footer-text">
