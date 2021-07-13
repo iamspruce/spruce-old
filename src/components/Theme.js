@@ -1,8 +1,6 @@
-import React, { useState, useLayoutEffect } from "react"
+import React, { useState, useEffect } from "react"
 import theme from "../../content/theme.json"
 import Button from "./Button"
-import { Helmet } from "react-helmet"
-
 
 const Theme = ({ toggleTheme }) => {
   const [state, setState] = useState(() => {
@@ -23,7 +21,7 @@ const Theme = ({ toggleTheme }) => {
       [name]: value,
     }))
   }
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.localStorage.setItem("theme", JSON.stringify(state))
     if (document.querySelector(".js-themeName") !== null) {
       let themeName = document.querySelector(".js-themeName")
@@ -37,11 +35,18 @@ const Theme = ({ toggleTheme }) => {
     })
     let root = document.documentElement
     root.setAttribute("data-theme", state.scheme)
-    root.style.setProperty("--font-size", `${state.font}px`);
+    root.style.setProperty("--font-size", `${state.font}px`)
+    let themeColor = document.querySelector('meta[name="theme-color"]')
 
-    <Helmet>
-    <meta name="theme-color" content={state.scheme} />
-    </Helmet>
+    theme.map(color => {
+      if (color.id === root.getAttribute("data-theme")) {
+        console.log(color)
+        if (themeColor) {
+        themeColor.setAttribute("content", color.colors["background"])
+          
+        }
+      }
+    })
   }, [state])
 
   return (

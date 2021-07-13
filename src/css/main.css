@@ -18,6 +18,7 @@ html {
 html, body {
   width: 100vw;
   overflow-x: hidden;
+  transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -79,7 +80,6 @@ html {
   font-weight: var(--normal);
   color: var(--text);
   font-size: var(--font-size);
-  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   line-height: 1.7;
 }
 
@@ -213,7 +213,6 @@ blockquote {
 }
 
 svg {
-  fill: currentColor;
   vertical-align: middle;
 }
 
@@ -1469,4 +1468,64 @@ svg {
   height: 3.8em;
   border-radius: 14px;
   border: 2px dashed var(--primary-color);
+}
+
+.webmentions__list {
+  margin: 2rem 0px;
+}
+
+.webmentions-item {
+  margin-bottom: 1rem;
+}
+
+.webmentions-meta {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.webmentions-meta__head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.webmentions-meta__head strong {
+  display: inline-block;
+  margin-left: 0.7rem;
+}
+.webmentions-meta__head img {
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+.webmentions-meta__body .webmentions__content {
+  font-size: var(--font-size);
+  margin-top: 0.5rem;
+}
+
+.webmention-meta__divider {
+  display: inline-block;
+  margin: 0px 0.4rem;
+}
+
+.webmention-like {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.webmention-like__img a + a {
+  display: inline-block;
+  margin-left: -6px;
+}
+.webmention-like__img a + a:hover {
+  margin: 0px;
+}
+.webmention-like__img a .gatsby-image-wrapper {
+  overflow: initial;
+}
+.webmention-like__img img {
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }/*# sourceMappingURL=main.css.map */

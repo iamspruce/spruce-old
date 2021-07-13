@@ -1,0 +1,17 @@
+{
+  "name": "gatsby-source-webmentions",
+  "version": "1.0.0",
+  "description": "gatsby plugin for webmentions",
+  "main": "gatsby-node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "spruce",
+  "license": "ISC",
+  "dependencies": {
+    "gatsby-source-filesystem": "^3.9.0",
+    "graphql-request": "^3.4.0",
+    "node-fetch": "^2.6.1"
+  }
+}

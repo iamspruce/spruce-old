@@ -2,11 +2,61 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { BLOCKS } from "@contentful/rich-text-types"
+import Comments from "../components/Comments"
+import LoadMore from "../components/LoadMore"
 
 export const query = graphql`
   query($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
+    comments: allWebmention(filter: { slug: { eq: $slug } }) {
+      likes: group(field: like_of) {
+        totalCount
+        edges {
+          node {
+            authorName
+            authorPhoto {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 38
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            } 
+            authorUrl
+          }
+        }
+      }
+    
+      replies: group(field: in_reply_to) {
+        totalCount
+        edges {
+          node {
+            id
+            published
+            publishedFormated: published(formatString: "MMM Do, YYYY")
+            authorName
+            authorPhoto {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 48
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            } 
+            authorUrl
+            url
+            wm_id
+            content {
+              html
+            }
+          }
+        }
+      }
+    }
+
+    posts: contentfulBlogPost(slug: { eq: $slug }) {
       coverImage {
         description
         fixed(toFormat: WEBP, width: 600, height: 314) {
@@ -31,7 +81,9 @@ export const query = graphql`
 `
 
 export default function BlogPost({ data, location }) {
-  const post = data.contentfulBlogPost
+  const post = data.posts
+  const comment = data.comments.replies
+  const like = data.comments.likes
   const options = {
     renderNode: {
       "embedded-asset-block": node => {
@@ -74,10 +126,18 @@ export default function BlogPost({ data, location }) {
       >
         <article className="post h-entry">
           <header className="text-center">
-            <a href="https://twitter.com/sprucekhalifa" className="p-author h-card" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://twitter.com/sprucekhalifa"
+              className="p-author h-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Spruce
             </a>{" "}
-            - <time className="dt-published" datetime={post.publishedDate}>{post.publishedDate}</time>
+            -{" "}
+            <time className="dt-published" datetime={post.publishedDate}>
+              {post.publishedDate}
+            </time>
             <h1 className="post-title p-name">{post.title}</h1>
             <svg
               width="300"
@@ -89,25 +149,23 @@ export default function BlogPost({ data, location }) {
               <path
                 d="M 8 5.3997 C 59.8848 -1.0859 51.5872 -0.1283 66.6912 6.4799 C 66.7848 6.5207 92.8152 2.7287 98.7376 2.3391 C 111.1928 1.5197 133.2752 2.9692 146.9872 2.9692 C 173.32 2.9692 185.5776 1.6976 213.96 2.7892 C 238.0408 3.7154 261.5632 3.7794 286.6944 3.7794"
                 stroke="var(--primary-color)"
-                stroke-width="4"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="4.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></path>
             </svg>
           </header>
-          <div
-            className="wrapper__inner post__body"
-            itemprop="articleBody"
-          >
+          <div className="wrapper__inner post__body" itemprop="articleBody">
             <p className="post-summary p-summary">{post.summary}</p>
-            <p className="e-content">
-            {renderRichText(data.contentfulBlogPost.body, options)}
-            </p>
+            <p className="e-content">{renderRichText(post.body, options)}</p>
           </div>
           <footer className="post__footer">
             <p className="post__footer-text">
               Thanks For Reading, <br /> Spruce.
             </p>
+
+            <Comments comment={comment} likes={like} />
+            <LoadMore mentions={comment} />
           </footer>
         </article>
       </Layout>
