@@ -39,7 +39,7 @@ const Theme = ({ toggleTheme }) => {
     let themeColor = document.querySelector('meta[name="theme-color"]')
 
     theme.map(color => {
-      if (color.id === root.getAttribute("data-theme")) {
+      if (color.id === state.scheme) {
         console.log(color)
         if (themeColor) {
         themeColor.setAttribute("content", color.colors["background"])
