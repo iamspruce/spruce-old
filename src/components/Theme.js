@@ -40,10 +40,8 @@ const Theme = ({ toggleTheme }) => {
 
     theme.map(color => {
       if (color.id === state.scheme) {
-        console.log(color)
         if (themeColor) {
         themeColor.setAttribute("content", color.colors["background"])
-          
         }
       }
     })
