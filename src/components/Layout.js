@@ -56,7 +56,7 @@ export default function Layout({ children, pageMeta, location }) {
         <link rel="me" href="https://twitter.com/sprucekhalifa" />
         <link rel="webmention" href="https://webmention.io/iamspruce.dev/webmention" />
         <link rel="pingback" href="https://webmention.io/iamspruce.dev/xmlrpc" />
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" />
         <meta
           name="description"
           content={metaDescription}

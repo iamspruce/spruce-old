@@ -3,12 +3,11 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { BLOCKS } from "@contentful/rich-text-types"
-import Comments from "../components/Comments"
 import LoadMore from "../components/LoadMore"
 
 export const query = graphql`
   query($slug: String!) {
-    comments: allWebmention(filter: { slug: { eq: $slug } }) {
+    mentions: allWebmention(filter: { slug: { eq: $slug } }) {
       likes: group(field: like_of) {
         totalCount
         edges {
@@ -39,7 +38,7 @@ export const query = graphql`
             authorPhoto {
               childImageSharp {
                 gatsbyImageData(
-                  width: 48
+                  width: 38
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                 )
@@ -82,8 +81,7 @@ export const query = graphql`
 
 export default function BlogPost({ data, location }) {
   const post = data.posts
-  const comment = data.comments.replies
-  const like = data.comments.likes
+  const mentions = data.mentions.replies
   const options = {
     renderNode: {
       "embedded-asset-block": node => {
@@ -164,8 +162,7 @@ export default function BlogPost({ data, location }) {
               Thanks For Reading, <br /> Spruce.
             </p>
 
-            <Comments comment={comment} likes={like} />
-            <LoadMore mentions={comment} />
+            <LoadMore mentions={mentions} />
           </footer>
         </article>
       </Layout>
