@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
 import Button from "./Button"
-import Comment from "../components/Comment"
+import Comment from "./Comment"
+import Likes from "./Likes"
 
 
-const LoadMore = ({ mentions }) => {
+
+const LoadMore = ({ mentions, likes }) => {
   const replies = mentions
-
   const [state, setState] = useState({
     list: [...replies.slice(0, 5)],
     LoadMore: false,
@@ -14,7 +15,6 @@ const LoadMore = ({ mentions }) => {
   const handleState = () => {
     state.LoadMore = true
   }
-  console.log(state.list)
   //handle loading more mentions
   useEffect(() => {
     if (state.LoadMore && state.has_more) {
@@ -33,14 +33,16 @@ const LoadMore = ({ mentions }) => {
     setState.has_more = is_more
   }, [state.list])
   return (
-    <>
-    <h4>Comments {replies.length > 0 && replies[0].totalCount} </h4>
+    <div className="webmentions-wrapper">
+      {replies.length > 0 ? (
+        <>
+    <h4>Comments <span className="webmentions-counter">{replies[0].totalCount}</span> </h4>
+    <Likes likes={likes} />
     <ol className="webmentions__list">
-
-      {state.list.length > 0 ? state.list[0].edges.map(edge => (
+      {state.list[0].edges.map(edge => (
         <Comment
           key={edge.node.wm_id}
-          imageUrl={edge.node.authorPhoto}
+          imageUrl={edge.node.authorImg}
           authorUrl={edge.node.authorUrl}
           authorName={edge.node.authorName}
           dtPublished={edge.node.published}
@@ -48,13 +50,9 @@ const LoadMore = ({ mentions }) => {
           content={edge.node.content && edge.node.content.html}
           url={edge.node.url}
         />
-        
-      )) : (
-        <p>No webmentions for this post</p>
-      )}
+      ))}
       </ol>
-
-    <div className="webmentions-load text-center">
+      <div className="webmentions-load text-center">
       {state.has_more ? (
           <Button
             event={handleState}
@@ -64,10 +62,14 @@ const LoadMore = ({ mentions }) => {
             btnType="primary"
           />
       ) : (
-        <p>No more Results</p>
+        <p>No More Mentions...</p>
       )}
     </div>
-    </>
+        </>
+      ) : (
+        <p>no webmentions found</p>
+      )}
+    </div>
   )
 }
 

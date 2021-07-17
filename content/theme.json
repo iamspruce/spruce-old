@@ -2,14 +2,14 @@
   {
     "id": "default",
     "colors": {
-      "primary-color": "#0250bb",
-      "primary-color-alt": "#fbdd74",
-      "secondary-color": "#994ff3",
-      "text": "#20123a",
-      "text-alt": "#42425a",
-      "border": "#ededf0",
-      "background": "#ffffff",
-      "background-alt": "#f9f9fa",
+      "primary-color": "#00ebc7",
+      "primary-color-alt": "#fde24f",
+      "secondary-color": "#ff5470",
+      "text": "#1b2d45",
+      "text-alt": "#00214d",
+      "background": "#fffffe",
+      "background-alt": "#f2f4f6",
+      "border": "rgba(0,0,0,.1)",
       "shadow": "0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12)",
       "color-scheme": "light"
     }
@@ -25,37 +25,37 @@
       "border": "#010101",
       "background": "#16161a",
       "background-alt": "#242629",
-      "shadow": "0 0 5rem #100e17",
+      "shadow": "0 0 2rem #100e17",
       "color-scheme": "dark"
     }
   },
   {
     "id": "warm",
     "colors": {
-      "primary-color": "#00ebc7",
-      "primary-color-alt": "#fde24f",
-      "secondary-color": "#ff5470",
-      "text": "#1b2d45",
-      "text-alt": "#00214d",
-      "background": "#fffffe",
-      "background-alt": "#f2f4f6",
+      "primary-color": "#ff8e3c",
+      "primary-color-alt": "#d9376e",
+      "secondary-color": "#fffffe",
+      "text": "#2a2a2a",
+      "text-alt": "#0d0d0d",
+      "background": "#eff0f3",
+      "background-alt": "#fffffe",
       "border": "rgba(0,0,0,.1)",
       "shadow": "0 8px 12px 1px rgba(29,17,51,.04),0 3px 16px 2px rgba(9,32,77,.12),0 5px 10px -3px rgba(29,17,51,.12)",
       "color-scheme": "light"
     }
   },
   {
-    "id": "nature",
+    "id": "Nature",
     "colors": {
-      "primary-color": "#faae2b",
-      "primary-color-alt": "#fa5246",
-      "secondary-color": "#ffa8ba",
-      "text": "#00473e",
-      "text-alt": "#475d5b",
-      "background": "#f2f7f5",
-      "background-alt": "#ffffff",
-      "border": "#00332c",
-      "shadow": "rgba(0,0,0,.1)",
+      "primary-color": "#eebbc3",
+      "primary-color-alt": "#fffffe",
+      "secondary-color": "#eebbc3",
+      "text": "#b8c1ec",
+      "text-alt": "#fffffe",
+      "background": "#232946",
+      "background-alt": "#100e17",
+      "border": "rgba(0,0,0,.1)",
+      "shadow": "0 0 2rem #100e17",
       "color-scheme": "dark"
     }
   },

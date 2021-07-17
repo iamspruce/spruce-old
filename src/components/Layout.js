@@ -43,7 +43,6 @@ export default function Layout({ children, pageMeta, location }) {
   const metaDescription = pageMeta.description || site.siteMetadata.description
   const metaImg =
     pageMeta.image || `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`
-  const metaKeywords = pageMeta.keywords || site.siteMetadata.keywords
   
   return (
     <div className="wrapper">
@@ -52,7 +51,7 @@ export default function Layout({ children, pageMeta, location }) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>{`${pageMeta.title} | Spruce`}</title>
+        <title>{`Spruce | ${pageMeta.title}`}</title>
         <link rel="me" href="https://twitter.com/sprucekhalifa" />
         <link rel="webmention" href="https://webmention.io/iamspruce.dev/webmention" />
         <link rel="pingback" href="https://webmention.io/iamspruce.dev/xmlrpc" />

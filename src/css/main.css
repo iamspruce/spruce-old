@@ -1512,10 +1512,17 @@ svg {
   font-size: 90%;
 }
 
+.webmentions-counter {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+
 .webmention-like {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-top: 1rem;
 }
 .webmention-like__img a + a {
   display: inline-block;
@@ -1525,7 +1532,7 @@ svg {
   margin: 0px;
 }
 .webmention-like__img a .gatsby-image-wrapper {
-  overflow: initial;
+  overflow: initial !important;
 }
 .webmention-like__img img {
   border-radius: 50%;

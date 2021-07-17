@@ -4,34 +4,34 @@ import Icon from "./Icon"
 
 const Likes = ({ likes }) => {
   return (
-    <>
-      <li className="webmention-like__img">
-        {likes.length > 0 ?
-          likes[0].edges.map(edge => {
-            const image = getImage(edge.node.authorPhoto)
+    <div className="webmention-like">
+    {likes.length > 0 ? (
+      <>
+        <div className="webmention-like__img">
+          
+          {likes[0].edges.map(edge => {
+          const image = getImage(edge.node.authorImg)
             return (
-              <a
-                href={edge.node.authorUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GatsbyImage image={image} alt={edge.node.authorName} />
-              </a>
-            )
-          }) : (
-            <span>No Like for this post yet</span>
-          )}
-      </li>
-      <li className="webmention-like__icon">
-        <span className="webmention-meta__divider"></span>
-        <span>
-          {likes.length > 0 && likes[0].totalCount }
-        </span>
-        <span>
+              <a href={edge.node.authorUrl} target="_blank" rel="noopener noreferrer">
+              <GatsbyImage image={image} alt={edge.node.authorName} />
+            </a>
+            )})}
+        </div>
+        <div className="webmention-like__meta flex j-bsl">
+          {likes[0].totalCount > 3 ? (
+            <>
+            <span className="webmention-meta__divider">+</span>
+            <span>{likes[0].totalCount - 3}</span> 
+            </>
+          ) : ""}
+          <span className="webmention-meta__divider">Liked This</span>
           <Icon name="icon-love" size="24" fill="red" />
-        </span>
-      </li>
-    </>
+        </div>
+        </>
+    ) : (
+      <p>0 likes</p>
+    )}
+    </div>
   )
 }
 

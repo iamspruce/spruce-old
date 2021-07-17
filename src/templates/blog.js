@@ -7,13 +7,13 @@ import LoadMore from "../components/LoadMore"
 
 export const query = graphql`
   query($slug: String!) {
-    mentions: allWebmention(filter: { slug: { eq: $slug } }) {
+    mentions: allWebmention(filter: { wm_slug: { eq: $slug } }) {
       likes: group(field: like_of) {
         totalCount
         edges {
           node {
             authorName
-            authorPhoto {
+            authorImg {
               childImageSharp {
                 gatsbyImageData(
                   width: 38
@@ -35,7 +35,7 @@ export const query = graphql`
             published
             publishedFormated: published(formatString: "MMM Do, YYYY")
             authorName
-            authorPhoto {
+            authorImg {
               childImageSharp {
                 gatsbyImageData(
                   width: 38
@@ -82,6 +82,8 @@ export const query = graphql`
 export default function BlogPost({ data, location }) {
   const post = data.posts
   const mentions = data.mentions.replies
+  console.log(mentions)
+  const likes = data.mentions.likes
   const options = {
     renderNode: {
       "embedded-asset-block": node => {
@@ -162,7 +164,7 @@ export default function BlogPost({ data, location }) {
               Thanks For Reading, <br /> Spruce.
             </p>
 
-            <LoadMore mentions={mentions} />
+            <LoadMore mentions={mentions} likes={likes} />
           </footer>
         </article>
       </Layout>

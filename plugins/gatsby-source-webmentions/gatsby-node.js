@@ -32,9 +32,9 @@ exports.sourceNodes = async ({
     ...carrier,
     authorName: author.name,
     authorUrl: author.url,
-    authorPhoto: author.photo,
+    authorImg: author.photo,
     authorType: author.type,
-    slug: carrier["wm-target"].split("/").pop(),
+    wm_slug: carrier["wm-target"].split("/").pop(),
     id: createNodeId(carrier["wm-id"]),
     internal: {
       type: POST_NODE_TYPE,
@@ -55,12 +55,12 @@ exports.onCreateNode = async ({
   createNodeId,
   reporter
 }) => {
-  if (node.internal.type === POST_NODE_TYPE && node.authorPhoto) {
+  if (node.internal.type === POST_NODE_TYPE && node.authorImg) {
     let pictureNode
 
     try {
       const { id } = await createRemoteFileNode({
-        url: node.authorPhoto,
+        url: node.authorImg,
         parentNodeId: node.id,
         store,
         cache,
@@ -70,10 +70,10 @@ exports.onCreateNode = async ({
 
       pictureNode = id;
     } catch (error) {
-      reporter.log(`${POST_NODE_TYPE}: no photo at ${node.authorPhoto}`)
+      reporter.log(`${POST_NODE_TYPE}: no photo at ${node.authorImg}`)
     }
 
-    node.authorPhoto___NODE = pictureNode
+    node.authorImg___NODE = pictureNode
   }
 }
 
