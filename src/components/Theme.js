@@ -11,6 +11,13 @@ const Theme = ({ toggleTheme }) => {
       font: 15,
       scheme: "default",
     }
+    let themeColor = document.documentElement.querySelector('meta[name="theme-color"]')
+    
+    theme.forEach(color => {
+      return color.id === JSON.parse(localVal).scheme && themeColor
+        ? themeColor.setAttribute("content", color.colors["background"])
+        : ""
+    })
     return localVal !== null ? JSON.parse(localVal) : obj
   })
 
@@ -39,7 +46,7 @@ const Theme = ({ toggleTheme }) => {
     let themeColor = document.documentElement.querySelector('meta[name="theme-color"]')
 
     theme.forEach(color => {
-      return color.id === state.scheme
+      return color.id === state.scheme && themeColor
         ? themeColor.setAttribute("content", color.colors["background"])
         : ""
     })

@@ -9,28 +9,29 @@ const LoadMore = ({ mentions, likes }) => {
   const replies = mentions
   const [state, setState] = useState({
     list: [...replies.slice(0, 5)],
-    LoadMore: false,
+    Load_more: false,
     has_more: replies.length > 5,
   })
   const handleState = () => {
-    state.LoadMore = true
+    state.Load_more = true
   }
   //handle loading more mentions
   useEffect(() => {
-    if (state.LoadMore && state.has_more) {
+    if (state.Load_more && state.has_more) {
       const currentLength = state.list.length
       const is_more = currentLength < replies.length
       const new_list = is_more
-        ? replies.slice(currentLength, currentLength + 10)
+        ? replies.slice(currentLength, currentLength + 5)
         : []
       setState.list = [...state.list, ...new_list]
-      setState.LoadMore = false
+      setState.Load_more = false
     }
-  }, [state.LoadMore, state.has_more, replies, state.list])
+  }, [state.Load_more, state.has_more, replies, state.list])
 
   useEffect(() => {
     const is_more = state.list.length < replies.length
     setState.has_more = is_more
+
   }, [state.list,replies.length])
   return (
     <div className="webmentions-wrapper">
