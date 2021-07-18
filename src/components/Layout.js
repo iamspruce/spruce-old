@@ -54,6 +54,8 @@ export default function Layout({ children, pageMeta, location }) {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>{`Spruce | ${pageMeta.title}`}</title>
         <link rel="me" href="https://twitter.com/sprucekhalifa" />
+        <link rel="me" href="https://facebook.com/spruce.emma" />
+        <link rel="me" href="https://github.com/iamspruce" />
         <link
           rel="webmention"
           href="https://webmention.io/iamspruce.dev/webmention"
