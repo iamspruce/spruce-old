@@ -1522,7 +1522,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 1rem;
+  margin: 1rem 0rem;
 }
 .webmention-like__img a + a {
   display: inline-block;

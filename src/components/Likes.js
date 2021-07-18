@@ -21,7 +21,7 @@ const Likes = ({ likes }) => {
           {likes[0].totalCount > 3 ? (
             <>
             <span className="webmention-meta__divider">+</span>
-            <span>{likes[0].totalCount - 3}</span> 
+            <span>{likes[0].totalCount - 3} Others</span> 
             </>
           ) : ""}
           <span className="webmention-meta__divider">Liked This</span>

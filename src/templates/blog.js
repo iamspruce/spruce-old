@@ -82,7 +82,6 @@ export const query = graphql`
 export default function BlogPost({ data, location }) {
   const post = data.posts
   const mentions = data.mentions.replies
-  console.log(mentions)
   const likes = data.mentions.likes
   const options = {
     renderNode: {
@@ -101,7 +100,7 @@ export default function BlogPost({ data, location }) {
         return <hr className="post__hr" />
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
-        if (node.content[0].marks.type == "code") {
+        if (node.content[0].marks.type === "code") {
           return (
             <pre>
               <code>{node.content[0].value}</code>

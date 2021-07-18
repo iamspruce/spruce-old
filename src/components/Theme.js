@@ -36,14 +36,12 @@ const Theme = ({ toggleTheme }) => {
     let root = document.documentElement
     root.setAttribute("data-theme", state.scheme)
     root.style.setProperty("--font-size", `${state.font}px`)
-    let themeColor = document.querySelector('meta[name="theme-color"]')
+    let themeColor = document.documentElement.querySelector('meta[name="theme-color"]')
 
-    theme.map(color => {
-      if (color.id === state.scheme) {
-        if (themeColor) {
-        themeColor.setAttribute("content", color.colors["background"])
-        }
-      }
+    theme.forEach(color => {
+      return color.id === state.scheme
+        ? themeColor.setAttribute("content", color.colors["background"])
+        : ""
     })
   }, [state])
 

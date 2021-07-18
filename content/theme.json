@@ -54,8 +54,8 @@
       "text-alt": "#b8c1ec",
       "background": "#232946",
       "background-alt": "#100e17",
-      "border": "rgba(0,0,0,.1)",
-      "shadow": "0 0 2rem #100e17",
+      "border": "rgba(225,225,225,.1)",
+      "shadow": "0 0 2rem #232946",
       "color-scheme": "dark"
     }
   },

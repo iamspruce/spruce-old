@@ -26,12 +26,12 @@ const LoadMore = ({ mentions, likes }) => {
       setState.list = [...state.list, ...new_list]
       setState.LoadMore = false
     }
-  }, [state.LoadMore, state.has_more])
+  }, [state.LoadMore, state.has_more, replies, state.list])
 
   useEffect(() => {
     const is_more = state.list.length < replies.length
     setState.has_more = is_more
-  }, [state.list])
+  }, [state.list,replies.length])
   return (
     <div className="webmentions-wrapper">
       {replies.length > 0 ? (
@@ -67,7 +67,7 @@ const LoadMore = ({ mentions, likes }) => {
     </div>
         </>
       ) : (
-        <p>no webmentions found</p>
+        <p>No Webmentions found</p>
       )}
     </div>
   )
