@@ -43,9 +43,9 @@ const LoadMore = ({ mentions, likes }) => {
       {state.list[0].edges.map(edge => (
         <Comment
           key={edge.node.wm_id}
-          imageUrl={edge.node.authorImg}
-          authorUrl={edge.node.authorUrl}
-          authorName={edge.node.authorName}
+          imageUrl={edge.node.author.photoSharp}
+          authorUrl={edge.node.author.url}
+          authorName={edge.node.author.name}
           dtPublished={edge.node.published}
           dtPublishedFormated={edge.node.publishedFormated}
           content={edge.node.content && edge.node.content.html}

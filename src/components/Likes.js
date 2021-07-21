@@ -10,10 +10,10 @@ const Likes = ({ likes }) => {
         <div className="webmention-like__img">
           
           {likes[0].edges.map(edge => {
-          const image = getImage(edge.node.authorImg)
+          const image = getImage(edge.node.author.photoSharp)
             return (
-              <a href={edge.node.authorUrl} target="_blank" rel="noopener noreferrer">
-              <GatsbyImage image={image} alt={edge.node.authorName} />
+              <a href={edge.node.author.url} target="_blank" rel="noopener noreferrer">
+              <GatsbyImage image={image} alt={edge.node.author.name} />
             </a>
             )})}
         </div>

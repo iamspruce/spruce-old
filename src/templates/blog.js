@@ -12,21 +12,23 @@ export const query = graphql`
         totalCount
         edges {
           node {
-            authorName
-            authorImg {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 38
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
-            } 
-            authorUrl
+            author {
+              name
+              url
+              photoSharp {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 38
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+            }
+            }
           }
         }
       }
-    
+
       replies: group(field: in_reply_to) {
         totalCount
         edges {
@@ -34,17 +36,19 @@ export const query = graphql`
             id
             published
             publishedFormated: published(formatString: "MMM Do, YYYY")
-            authorName
-            authorImg {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 38
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
-            } 
-            authorUrl
+            author {
+              name
+              url
+              photoSharp {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 38
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+            }
+            }
             url
             wm_id
             content {

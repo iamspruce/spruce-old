@@ -10,14 +10,9 @@ const Theme = ({ toggleTheme }) => {
     let obj = {
       font: 15,
       scheme: "default",
+      themeColor: "#fffffe",
     }
-    let themeColor = document.documentElement.querySelector('meta[name="theme-color"]')
-    
-    theme.forEach(color => {
-      return color.id === JSON.parse(localVal).scheme && themeColor
-        ? themeColor.setAttribute("content", color.colors["background"])
-        : ""
-    })
+
     return localVal !== null ? JSON.parse(localVal) : obj
   })
 
@@ -27,12 +22,26 @@ const Theme = ({ toggleTheme }) => {
       ...prevState,
       [name]: value,
     }))
+
   }
+
   useEffect(() => {
+    theme.forEach(color => {
+      return color.id === state.scheme
+        ? setState.themeColor = color.colors.background
+        : ""
+    })
+
     window.localStorage.setItem("theme", JSON.stringify(state))
     if (document.querySelector(".js-themeName") !== null) {
       let themeName = document.querySelector(".js-themeName")
-      themeName.innerHTML = state.scheme
+      themeName.innerHTML = state.scheme;
+
+
+    }
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      let themeColor = document.querySelector('meta[name="theme-color"]')
+      themeColor.setAttribute("content", state.themeColor)
     }
     let schemes = document.querySelectorAll(".js-scheme-btn")
     schemes.forEach(item => {
@@ -43,13 +52,9 @@ const Theme = ({ toggleTheme }) => {
     let root = document.documentElement
     root.setAttribute("data-theme", state.scheme)
     root.style.setProperty("--font-size", `${state.font}px`)
-    let themeColor = document.documentElement.querySelector('meta[name="theme-color"]')
 
-    theme.forEach(color => {
-      return color.id === state.scheme && themeColor
-        ? themeColor.setAttribute("content", color.colors["background"])
-        : ""
-    })
+
+
   }, [state])
 
   return (

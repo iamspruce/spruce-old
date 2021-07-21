@@ -104,7 +104,6 @@ module.exports = {
       options: {
         DOMAIN: "iamspruce.dev",
         TOKEN: process.env.WEBMENTIONS_TOKEN,
-        perPage: 20,
       },
     },
   ],

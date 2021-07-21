@@ -63,7 +63,7 @@ export default function Layout({ children, pageMeta, location }) {
           rel="pingback"
           href="https://webmention.io/iamspruce.dev/xmlrpc"
         />
-        <meta name="theme-color" content="#fffffe" />
+        <meta name="theme-color" content="" />
         <meta name="description" content={metaDescription} />
         <meta property="og:title" content={pageMeta.title} />
         <meta property="og:description" content={metaDescription} />

@@ -12,7 +12,7 @@ exports.sourceNodes = async ({
 }, {
   TOKEN,
   DOMAIN,
-  perPage
+  perPage = 10000
 }) => {
   if (!TOKEN) return reporter.panic("you must provide token");
   const lastFetched = await cache.get(`timestamp`)
@@ -26,24 +26,20 @@ exports.sourceNodes = async ({
       ...json
     }
   }
-  const {children: carriers} = json
+  const {children: mentions} = json
 
-  const processCarrier = async ({author, ...carrier}) => ({
-    ...carrier,
-    authorName: author.name,
-    authorUrl: author.url,
-    authorImg: author.photo,
-    authorType: author.type,
-    wm_slug: carrier["wm-target"].split("/").pop(),
-    id: createNodeId(carrier["wm-id"]),
+  const processMention = async ({...mention}) => ({
+    ...mention,
+    wm_slug: mention["wm-target"].split("/").pop(),
+    id: createNodeId(mention["wm-id"]),
     internal: {
       type: POST_NODE_TYPE,
-      contentDigest: createContentDigest(carrier)
+      contentDigest: createContentDigest(mention)
     }
   });
 
   await Promise.all(
-    carriers.map(async (carrier) => createNode(await processCarrier(carrier)))
+    mentions.map(async (mention) => createNode(await processMention(mention)))
   );
 };
 
@@ -55,12 +51,12 @@ exports.onCreateNode = async ({
   createNodeId,
   reporter
 }) => {
-  if (node.internal.type === POST_NODE_TYPE && node.authorImg) {
+  if (node.internal.type === POST_NODE_TYPE && node.author.photo !== null) {
     let pictureNode
 
     try {
       const { id } = await createRemoteFileNode({
-        url: node.authorImg,
+        url: node.author.photo,
         parentNodeId: node.id,
         store,
         cache,
@@ -70,10 +66,10 @@ exports.onCreateNode = async ({
 
       pictureNode = id;
     } catch (error) {
-      reporter.log(`${POST_NODE_TYPE}: no photo at ${node.authorImg}`)
+      reporter.log(`${POST_NODE_TYPE}: no photo at ${node.author.photo}`)
     }
 
-    node.authorImg___NODE = pictureNode
+    node.author.photoSharp___NODE = pictureNode
   }
 }
 
