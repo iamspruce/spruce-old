@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-webmentions",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "gatsby plugin to source webmentions from webmention.io",
   "main": "gatsby-node.js",
   "scripts": {
@@ -15,7 +15,7 @@
   "author": "spruce",
   "license": "ISC",
   "dependencies": {
-    "gatsby-source-filesystem": "^3.9.0",
+    "gatsby-source-filesystem": "^3.10.0",
     "graphql-request": "^3.4.0",
     "node-fetch": "^2.6.1"
   }
