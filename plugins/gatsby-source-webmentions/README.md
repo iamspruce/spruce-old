@@ -9,8 +9,8 @@ Although it is not required but if you want to optimize the images returned from
 
 ### Learning Resources
 
-For a detailed tutorial on how to use this plugin please refer to:
-
+For a detailed tutorial on how to use this plugin refer to:
+[How to Use Webmentions with Gatsby.js – A Beginner's Guide](https://www.freecodecamp.org/news/how-to-use-webmentions-with-gatsby-beginners-guide/)
 
 ## How to install
 To install this plugin, run the following command
