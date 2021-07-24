@@ -5,7 +5,7 @@ import Card from "./Card"
 export default function BlogPost({openTab}) {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }, limit: 4) {
         edges {
           node {
             id

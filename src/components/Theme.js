@@ -28,7 +28,7 @@ const Theme = ({ toggleTheme }) => {
   useEffect(() => {
     theme.forEach(color => {
       return color.id === state.scheme
-        ? setState.themeColor = color.colors.background
+        ? state.themeColor = color.colors.background
         : ""
     })
 
@@ -41,7 +41,12 @@ const Theme = ({ toggleTheme }) => {
     }
     if (document.querySelector('meta[name="theme-color"]') !== null) {
       let themeColor = document.querySelector('meta[name="theme-color"]')
-      themeColor.setAttribute("content", state.themeColor)
+      if (themeColor.getAttribute("content") == "") {
+        themeColor.setAttribute("content", state.themeColor)
+      } else {
+        themeColor.setAttribute("content", state.themeColor) 
+      }
+      
     }
     let schemes = document.querySelectorAll(".js-scheme-btn")
     schemes.forEach(item => {

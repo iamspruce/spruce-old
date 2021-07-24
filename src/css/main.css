@@ -80,7 +80,7 @@ html {
   font-weight: var(--normal);
   color: var(--text);
   font-size: var(--font-size);
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 body {
@@ -944,6 +944,10 @@ svg {
 }
 .card-wrapper h5 {
   margin-top: auto;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 .card-wrapper header > * + * {
   display: block;
